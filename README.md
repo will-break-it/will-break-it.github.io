@@ -17,5 +17,3 @@ Curious engineer with founder DNA – passionate about **TypeScript**, **Rust**,
 ---
 
 [📄 Full CV](https://will-break-it.github.io) • [🔗 LinkedIn](https://linkedin.com/in/wwolff)
-
----
