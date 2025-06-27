@@ -2,6 +2,9 @@ title: "William Wolff"
 description: "Software Engineer & Technical Architect"
 url: "https://will-break-it.github.io"
 
+# Analytics (add your GA4 measurement ID)
+# google_analytics: G-XXXXXXXXXX
+
 # Custom minimal layout (no theme)
 markdown: kramdown
 highlighter: rouge

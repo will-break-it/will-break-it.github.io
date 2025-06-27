@@ -31,7 +31,7 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 
 ## EXPERIENCE
 
-### **R&D Innovation Lead – Ouroboros Leios**
+### **R&D Innovation Lead Technical Architect – Ouroboros Leios**
 **Input Output Global (IOG)** • *Remote* • `Nov 2024 - Present`
 - Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
 - Produced architecture, CIP draft and decision log guiding current implementation phase
@@ -76,29 +76,29 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 
 ### **Dump it! – AI-Enhanced Note Taking App**
 *Mobile & Web Development* • `2023 - Present`
-- **Full-stack development:** Built native iOS (Swift), Android (Kotlin), and React web applications
-- **E2E Encryption:** Implemented Diffie-Hellman key exchange + AES for secure note storage
-- **AI Integration:** Self-hosted Whisper v3 for speech-to-text, summaries, and translations
-- **Offline-first architecture:** Designed persistent queue system for seamless cross-platform syncing
-- **Product success:** 5k+ notes created, 200+ users, 70% weekly retention within 2 months
-- **Distribution:** Successfully launched on web, App Store, and Google Play Store
+- Built native iOS (Swift), Android (Kotlin), and React web applications with end-to-end encryption
+- Implemented Diffie-Hellman key exchange + AES for secure note storage across platforms
+- Self-hosted Whisper v3 for speech-to-text transcription, summaries, and translations
+- Designed offline-first architecture with persistent queue system for seamless cross-platform syncing
+- Achieved 5k+ notes created and 200+ users with 70% weekly retention within first 2 months
+- Successfully launched on web, App Store, and Google Play Store
 
 ### **Drip Dropz – NFT Marketplace**
 *Blockchain Development* • `2022 - 2024`
-- **Full marketplace development:** Built complete NFT trading platform from scratch using React/TypeScript
-- **Blockchain integration:** Implemented CIP-30 wallet standard and transaction construction libraries
-- **Novel architecture:** Created background web worker sync approach for event-driven wallet updates (later adopted by Lace team)
-- **Smart contract integration:** Built transaction construction for bidding, selling, swapping, and order management
-- **Business success:** 10k+ NFT listings, first revenue within 48 hours of launch
-- **Test-driven development:** Comprehensive testing strategy ensuring platform reliability
+- Built complete NFT trading platform from scratch using React/TypeScript with comprehensive testing
+- Implemented CIP-30 wallet standard and developed transaction construction libraries for Cardano
+- Created background web worker sync approach for event-driven wallet updates (later adopted by Lace team)
+- Developed smart contract integration for bidding, selling, swapping, and order management
+- Launched with 10k+ NFT listings and achieved first revenue within 48 hours
+- Established test-driven development practices and CI/CD pipeline for reliable deployments
 
 ### **Berlin Pool – Cardano Stakepool Operations**
 *Blockchain Infrastructure* • `2021 - 2024`
-- **Infrastructure management:** Operated Cardano consensus nodes producing 2k+ mainnet blocks
-- **DevOps automation:** Implemented Docker, Ansible, and Terraform for automated deployment and scaling
-- **Security hardening:** Managed cryptographic key security, backup systems, and high-availability architecture
-- **Network participation:** Attracted 15M+ ADA in delegation, contributing to network decentralization
-- **Monitoring & alerting:** Built comprehensive monitoring stack for node performance and network health
+- Operated Cardano consensus nodes producing 2k+ mainnet blocks and attracting 15M+ ADA delegation
+- Implemented automated deployment and scaling using Docker, Ansible, and Terraform
+- Managed cryptographic key security, backup systems, and high-availability infrastructure
+- Built comprehensive monitoring stack for node performance, network health, and alerting
+- Contributed to Cardano network decentralization while maintaining 99.9% uptime
 
 ---
 
