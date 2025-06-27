@@ -1,6 +1,6 @@
 ### Hi, I'm Willi (prefer Will) 👋
 
-![Build Status](https://img.shields.io/badge/Build%20Status-Always%20Shipping-brightgreen?style=flat) ![Learning](https://img.shields.io/badge/Curiosity%20Level-100%25-blue?style=flat) ![Version](https://img.shields.io/badge/Version-Founder%20Edition-orange?style=flat) ![Deployment](https://img.shields.io/badge/Deployment-Continuous%20Learning-9C27B0?style=flat)
+![Build Status](https://img.shields.io/badge/Build%20Status-Always%20Shipping-brightgreen?style=flat-square) ![Learning](https://img.shields.io/badge/Curiosity%20Level-100%25-blue?style=flat-square) ![Version](https://img.shields.io/badge/Version-Founder%20Edition-orange?style=flat-square) ![Deployment](https://img.shields.io/badge/Deployment-Continuous%20Learning-9C27B0?style=flat-square)
 
 **Building the future of blockchain infrastructure** 
 
