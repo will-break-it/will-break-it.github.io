@@ -31,7 +31,7 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 
 ## EXPERIENCE
 
-### **R&D Innovation Lead Technical Architect – Ouroboros Leios**
+### **R&D Innovation Lead – Ouroboros Leios**
 **Input Output Global (IOG)** • *Remote* • `Nov 2024 - Present`
 - Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
 - Produced architecture, CIP draft and decision log guiding current implementation phase
@@ -51,20 +51,6 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 - Conducted Cardano workshops for 100+ Amazon engineers on eUTxO model and blockchain architecture
 - Specialized in on-chain/off-chain dApp architecture and Plutus contract development
 
-### **Lead Software Engineer**
-**Dump it! GmbH** • *Remote/Berlin* • `Jan 2023 - May 2025`
-- Built end-to-end encrypted, AI-enhanced note taking app for mobile (iOS/Android) & web
-- Implemented E2E encryption via Diffie-Hellman key exchange and AES; hosted Whisper v3 for AI features
-- Achieved 5k+ notes created, 200+ users with 70% weekly retention in first 2 months
-- Built offline-first architecture with persistent queue system for cross-platform syncing
-
-### **Lead Software Engineer**
-**Drip Dropz LLC** • *Remote* • `Oct 2022 - Mar 2024`
-- Developed complete NFT marketplace from scratch using React/TypeScript with test-driven approach
-- Achieved 10k+ listings and first revenue within 48 hours of launch
-- Built novel background web worker sync approach for event-driven wallet integration (later adopted by Lace)
-- Integrated CIP-30 wallet standard and constructed transactions for bidding/selling/swapping via smart contracts
-
 ### **Senior Software Engineer & Migration Lead**
 **Deloitte US** • *San Francisco, CA* • `Sep 2016 - Nov 2019`
 - Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8
@@ -78,17 +64,41 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 - Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services
 - Built real-time ad pricing system by probing nearby devices for audience size measurement
 
-### **Blockchain Stakepool Operator**
-**Self Employed** • *Remote* • `Jan 2021 - Feb 2024`
-- Operated Cardano consensus nodes: produced 2k+ mainnet blocks, attracted 15M+ ADA in delegation
-- Implemented robust infrastructure using Docker, Ansible, and Terraform for automated deployment
-- Managed key security, fallback systems, and server hardening for high-availability operations
-
 ### **Co-Founder & CTO**
 **CityXcape Inc.** • *San Francisco, CA* • `Feb 2015 - Sep 2016`
 - Co-founded social discovery platform for exploring cities through community-driven "secret spots"
 - Raised ~€150k in seed funding; built iOS native app and Django/Ruby on Rails web platform
 - Led technical development from concept to App Store launch
+
+---
+
+## SELECTED SIDE PROJECTS & CONSULTING
+
+### **Dump it! – AI-Enhanced Note Taking App**
+*Mobile & Web Development* • `2023 - Present`
+- **Full-stack development:** Built native iOS (Swift), Android (Kotlin), and React web applications
+- **E2E Encryption:** Implemented Diffie-Hellman key exchange + AES for secure note storage
+- **AI Integration:** Self-hosted Whisper v3 for speech-to-text, summaries, and translations
+- **Offline-first architecture:** Designed persistent queue system for seamless cross-platform syncing
+- **Product success:** 5k+ notes created, 200+ users, 70% weekly retention within 2 months
+- **Distribution:** Successfully launched on web, App Store, and Google Play Store
+
+### **Drip Dropz – NFT Marketplace**
+*Blockchain Development* • `2022 - 2024`
+- **Full marketplace development:** Built complete NFT trading platform from scratch using React/TypeScript
+- **Blockchain integration:** Implemented CIP-30 wallet standard and transaction construction libraries
+- **Novel architecture:** Created background web worker sync approach for event-driven wallet updates (later adopted by Lace team)
+- **Smart contract integration:** Built transaction construction for bidding, selling, swapping, and order management
+- **Business success:** 10k+ NFT listings, first revenue within 48 hours of launch
+- **Test-driven development:** Comprehensive testing strategy ensuring platform reliability
+
+### **Berlin Pool – Cardano Stakepool Operations**
+*Blockchain Infrastructure* • `2021 - 2024`
+- **Infrastructure management:** Operated Cardano consensus nodes producing 2k+ mainnet blocks
+- **DevOps automation:** Implemented Docker, Ansible, and Terraform for automated deployment and scaling
+- **Security hardening:** Managed cryptographic key security, backup systems, and high-availability architecture
+- **Network participation:** Attracted 15M+ ADA in delegation, contributing to network decentralization
+- **Monitoring & alerting:** Built comprehensive monitoring stack for node performance and network health
 
 ---
 
