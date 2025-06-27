@@ -21,8 +21,8 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ```
 TypeScript • Rust • Swift • Java/Kotlin • Python • Bash
-React/React Native • Vert.x • Node.js • gRPC • Plutus (Haskell)
-PostgreSQL • Firebase/Firestore • ELK Stack • Redis
+React/React Native • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)
+PostgreSQL • Supabase • ELK Stack • Redis
 Docker • Terraform • Ansible • GitHub Actions • AWS
 Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 ```
@@ -42,7 +42,7 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 **Input Output Global (IOG)** • *Remote* • `Sep 2023 - Nov 2024`
 - Re-engineered wallet backend from poll-based to **event-driven** → sync latency ↓ 45%, infra cost ↓ >60%
 - Authored CIP and built first main-/test-net indexers (>2k tx/s ingest capacity)
-- Led 7-person team delivering MetaDex swap feature (first revenue stream for Lace)
+- Led 7-person team delivering MetaDex swap feature using NestJS backend (first revenue stream for Lace)
 - Built custom chain indexer with bloom filters and credential indexing for wallet optimization
 
 ### **Solutions Architect**
@@ -77,7 +77,7 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 ### **Dump it! – AI-Enhanced Note Taking App**
 *Mobile & Web Development* • `2023 - Present`
 - Built native iOS (Swift), Android (Kotlin), and React web applications with end-to-end encryption
-- Implemented Diffie-Hellman key exchange + AES for secure note storage across platforms
+- Implemented Diffie-Hellman key exchange + AES for secure note storage using Supabase backend
 - Self-hosted Whisper v3 for speech-to-text transcription, summaries, and translations
 - Designed offline-first architecture with persistent queue system for seamless cross-platform syncing
 - Achieved 5k+ notes created and 200+ users with 70% weekly retention within first 2 months
