@@ -105,4 +105,8 @@ Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 ## EDUCATION
 
 **Bachelor of Science in Computer Science**  
-*DHBW Stuttgart* • Stuttgart, DE • `Oct 2011 - Aug 2014` 
+*DHBW Stuttgart* • Stuttgart, DE • `Oct 2011 - Aug 2014`
+
+---
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=will-break-it.github.io&color=2196F3&style=flat-square) 
