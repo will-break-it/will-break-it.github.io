@@ -1,0 +1,15 @@
+title: "William Wolff"
+description: "Software Engineer & Technical Architect"
+url: "https://will-break-it.github.io"
+
+# Custom minimal layout (no theme)
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/ 
