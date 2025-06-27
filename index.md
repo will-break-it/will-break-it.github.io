@@ -34,40 +34,40 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 ## EXPERIENCE
 
 ### **R&D Innovation Lead Technical Architect – Ouroboros Leios**
-**Input Output Global (IOG)** • *Remote* • `Nov 2024 - Present`
+**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Present</span>
 - Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
 - Produced architecture, CIP draft and decision log guiding current implementation phase
 - Host monthly public demos & Q&A sessions (YouTube ~5k views average)
 - Organized week-long on-site workshop that reduced open research questions by >50%
 
 ### **Principal Architect – Lace Wallet**
-**Input Output Global (IOG)** • *Remote* • `Sep 2023 - Nov 2024`
+**Input Output Global (IOG)** • *Remote* • <span class="date">Sep 2023 - Nov 2024</span>
 - Re-engineered wallet backend from poll-based to **event-driven** → sync latency ↓ 45%, infra cost ↓ >60%
 - Authored CIP and built first main-/test-net indexers (>2k tx/s ingest capacity)
 - Led 7-person team delivering MetaDex swap feature using NestJS backend (first revenue stream for Lace)
 - Built custom chain indexer with bloom filters and credential indexing for wallet optimization
 
 ### **Solutions Architect**
-**Input Output Global (IOG)** • *Remote* • `Nov 2021 - Nov 2022`
+**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2021 - Nov 2022</span>
 - Designed Plutus smart-contract stack for collateralized debt position platform
 - Conducted Cardano workshops for 100+ Amazon engineers on eUTxO model and blockchain architecture
 - Specialized in on-chain/off-chain dApp architecture and Plutus contract development
 
 ### **Senior Software Engineer & Migration Lead**
-**Deloitte US** • *San Francisco, CA* • `Sep 2016 - Nov 2019`
+**Deloitte US** • *San Francisco, CA* • <span class="date">Sep 2016 - Nov 2019</span>
 - Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8
 - Cut annual license costs by €6M for major German insurance company
 - Grew team from 3 → 20 engineers; promoted to lead architect within 24 months
 - Coordinated India on-site delivery and architected end-to-end testing approach
 
 ### **Senior Software Engineer**
-**Mobility Data Lab GmbH** • *Berlin, DE* • `Feb 2020 - Nov 2021`
+**Mobility Data Lab GmbH** • *Berlin, DE* • <span class="date">Feb 2020 - Nov 2021</span>
 - Delivered OTA fleet-update pipeline and WiFi audience-tracking system using Vert.x, Rust, and ELK stack
 - Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services
 - Built real-time ad pricing system by probing nearby devices for audience size measurement
 
 ### **Co-Founder & CTO**
-**CityXcape Inc.** • *San Francisco, CA* • `Feb 2015 - Sep 2016`
+**CityXcape Inc.** • *San Francisco, CA* • <span class="date">Feb 2015 - Sep 2016</span>
 - Co-founded social discovery platform for exploring cities through community-driven "secret spots"
 - Raised ~€150k in seed funding; built iOS native app and Django/Ruby on Rails web platform
 - Led technical development from concept to App Store launch
@@ -77,7 +77,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 ## SELECTED SIDE PROJECTS & CONSULTING
 
 ### **Dump it! – AI-Enhanced Note Taking App**
-*Mobile & Web Development* • `2023 - Present`
+*Mobile & Web Development* • <span class="date">2023 - Present</span>
 - Built native iOS (Swift), Android (Kotlin), and React web applications with end-to-end encryption
 - Implemented Diffie-Hellman key exchange + AES for secure note storage using Supabase backend
 - Self-hosted Whisper v3 for speech-to-text transcription, summaries, and translations
@@ -86,7 +86,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Successfully launched on web, App Store, and Google Play Store
 
 ### **Drip Dropz – NFT Marketplace**
-*Blockchain Development* • `2022 - 2024`
+*Blockchain Development* • <span class="date">2022 - 2024</span>
 - Built complete NFT trading platform from scratch using React/TypeScript with comprehensive testing
 - Implemented CIP-30 wallet standard and developed transaction construction libraries for Cardano
 - Created background web worker sync approach for event-driven wallet updates (later adopted by Lace team)
@@ -95,7 +95,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Established test-driven development practices and CI/CD pipeline for reliable deployments
 
 ### **Berlin Pool – Cardano Stakepool Operations**
-*Blockchain Infrastructure* • `2021 - 2024`
+*Blockchain Infrastructure* • <span class="date">2021 - 2024</span>
 - Operated Cardano consensus nodes producing 2k+ mainnet blocks and attracting 15M+ ADA delegation
 - Implemented automated deployment and scaling using Docker, Ansible, and Terraform
 - Managed cryptographic key security, backup systems, and high-availability infrastructure
@@ -107,7 +107,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 ## EDUCATION
 
 **Bachelor of Science in Computer Science**  
-*DHBW Stuttgart* • Stuttgart, DE • `Oct 2011 - Aug 2014`
+*DHBW Stuttgart* • Stuttgart, DE • <span class="date">Oct 2011 - Aug 2014</span>
 
 ---
 
