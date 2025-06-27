@@ -19,13 +19,15 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ## TECHNOLOGIES, LANGUAGES & TOOLING
 
-```
-TypeScript • Rust • Swift • Java/Kotlin • Python • Bash
-React/React Native • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)
-PostgreSQL • Supabase • ELK Stack • Redis
-Docker • Terraform • Ansible • GitHub Actions • AWS
-Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
-```
+**Languages:** TypeScript • Rust • Swift • Java/Kotlin • Python • Bash
+
+**Frameworks & Libraries:** React/React Native • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)
+
+**Data & Storage:** PostgreSQL • Supabase • ELK Stack • Redis
+
+**DevOps & Cloud:** Docker • Terraform • Ansible • GitHub Actions • AWS
+
+**Blockchain & Security:** Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 ---
 
 ## EXPERIENCE

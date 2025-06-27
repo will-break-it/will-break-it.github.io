@@ -61,23 +61,17 @@ h2 {
   margin: 2rem 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 0.5rem;
 }
 
 h3 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #000;
-  margin: 3rem 0 0.5rem 0 !important;
-  padding-top: 1.5rem !important;
-  border-top: 1px solid #f0f0f0;
+  margin: 2rem 0 0.5rem 0 !important;
 }
 
-// Remove border from first h3 in each section
+// First h3 in each section has less top margin
 h2 + h3 {
-  border-top: none !important;
-  padding-top: 0 !important;
   margin-top: 1.5rem !important;
 }
 
@@ -105,10 +99,9 @@ h1 + p {
   margin-bottom: 0.5rem;
 }
 
-// Additional spacing for side projects section
-h2#selected-side-projects--consulting + h3 {
-  margin-top: 2rem !important;
-  padding-top: 0.5rem !important;
+// Clean spacing for tech section
+p + p {
+  margin-top: 0.75rem;
 }
 
 // Code blocks for tech stack
