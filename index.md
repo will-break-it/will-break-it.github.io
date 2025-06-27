@@ -25,9 +25,10 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 **Data & Storage:** PostgreSQL • Supabase • ELK Stack • Redis
 
-**DevOps & Cloud:** Docker • Terraform • Ansible • GitHub Actions • AWS
+**DevOps & Cloud:** Docker • Terraform • Ansible • GitHub Actions • Hetzner • AWS
 
 **Blockchain & Security:** Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
+
 ---
 
 ## EXPERIENCE
