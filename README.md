@@ -1,5 +1,7 @@
 ### Hi, I'm Willi (prefer Will) 👋
 
+![Build Status](https://img.shields.io/badge/Build%20Status-Always%20Shipping-brightgreen?style=flat-square) ![Learning](https://img.shields.io/badge/Curiosity%20Level-100%25-blue?style=flat-square) ![Version](https://img.shields.io/badge/Version-Founder%20Edition-orange?style=flat-square) ![Deployment](https://img.shields.io/badge/Deployment-Continuous%20Learning-9C27B0?style=flat-square)
+
 **Building the future of blockchain infrastructure** 
 
 Currently leading R&D for **Ouroboros Leios** (high-throughput overlay for Cardano) with a team of 8 researchers & engineers. Previously architected **Lace Wallet** and led migration efforts at **Deloitte** (16M LoC → Java 8).
