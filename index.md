@@ -17,8 +17,6 @@ Berlin, DE | *Full contact details available on request*
 
 Curious, relentlessly-learning engineer & technical architect, with founder DNA and 10+ years building high-impact products from green-field prototype to production at scale. Passionate about blockchain infrastructure, secure systems, and delivering exceptional user experiences.
 
----
-
 ## TECHNOLOGIES, LANGUAGES & TOOLING
 
 ```
@@ -28,7 +26,6 @@ PostgreSQL • Supabase • ELK Stack • Redis
 Docker • Terraform • Ansible • GitHub Actions • AWS
 Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets
 ```
-
 ---
 
 ## EXPERIENCE
