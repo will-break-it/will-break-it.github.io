@@ -33,14 +33,14 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ## EXPERIENCE
 
-### **R&D Innovation Lead Technical Architect – Ouroboros Leios**
+### **R&D Innovation Lead Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
 **Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Present</span>
 - Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
-- Produced architecture, CIP draft and decision log guiding current implementation phase
+- Produced architecture, CIP and decision log guiding current implementation phase
 - Host monthly public demos & Q&A sessions (YouTube ~5k views average)
-- Organized week-long on-site workshop that reduced open research questions by >50%
+- Organized week-long on-site workshop that reduced open research questions
 
-### **Principal Architect – Lace Wallet**
+### **Principal Architect – [Lace Wallet](https://www.lace.io/)**
 **Input Output Global (IOG)** • *Remote* • <span class="date">Sep 2023 - Nov 2024</span>
 - Re-engineered wallet backend from poll-based to **event-driven** → sync latency ↓ 45%, infra cost ↓ >60%
 - Authored CIP and built first main-/test-net indexers (>2k tx/s ingest capacity)
@@ -78,7 +78,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ### **Dump it! – AI-Enhanced Note Taking App**
 *Mobile & Web Development* • <span class="date">2023 - Present</span>
-- Built native iOS (Swift), Android (Kotlin), and React web applications with end-to-end encryption
+- Built native [iOS](https://apps.apple.com/de/app/dump-it/id6448620477) (Swift), [Android](https://play.google.com/store/apps/details?id=app.dump.it) (Kotlin), and React [Web](https://dumpit.app) applications with end-to-end encryption
 - Implemented Diffie-Hellman key exchange + AES for secure note storage using Supabase backend
 - Self-hosted Whisper v3 for speech-to-text transcription, summaries, and translations
 - Designed offline-first architecture with persistent queue system for seamless cross-platform syncing
@@ -87,7 +87,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ### **Drip Dropz – NFT Marketplace**
 *Blockchain Development* • <span class="date">2022 - 2024</span>
-- Built complete NFT trading platform from scratch using React/TypeScript with comprehensive testing
+- Built complete [NFT trading platform](https://dripdropz.io/) from scratch using React/TypeScript with comprehensive testing
 - Implemented CIP-30 wallet standard and developed transaction construction libraries for Cardano
 - Created background web worker sync approach for event-driven wallet updates (later adopted by Lace team)
 - Developed smart contract integration for bidding, selling, swapping, and order management
