@@ -4,7 +4,7 @@
 
 **Building the future of blockchain infrastructure** 
 
-Currently leading R&D for **Ouroboros Leios** (high-throughput overlay for Cardano) with a team of 8 researchers & engineers. Previously architected **Lace Wallet** and led migration efforts at **Deloitte** (16M LoC → Java 8).
+Currently leading R&D for **[Ouroboros Leios](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md)** (high-throughput overlay for Cardano) with a team of 8 researchers & engineers. Previously architected **Lace Wallet** and led migration efforts at **Deloitte** (16M LoC → Java 8).
 
 Curious engineer with founder DNA – passionate about **TypeScript**, **Rust**, **Swift** & **Cryptography**. Love building from zero to production scale.
 
