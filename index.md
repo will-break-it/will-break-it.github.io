@@ -36,14 +36,14 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 ### **R&D Innovation Lead Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
 **Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Present</span>
 - Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
-- Produced architecture, CIP and decision log guiding current implementation phase
+- Produced architecture, [CIP-0164](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md) and decision log guiding current implementation phase
 - Host monthly public demos & Q&A sessions (YouTube ~5k views average)
 - Organized week-long on-site workshop that reduced open research questions
 
 ### **Principal Architect – [Lace Wallet](https://www.lace.io/)**
-**Input Output Global (IOG)** • *Remote* • <span class="date">Sep 2023 - Nov 2024</span>
+**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2022 - Nov 2024</span>
 - Re-engineered wallet backend from poll-based to **event-driven** → sync latency ↓ 45%, infra cost ↓ >60%
-- Authored CIP and built first main-/test-net indexers (>2k tx/s ingest capacity)
+- Authored [CIP](https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX) and built first main-/test-net indexers (>2k tx/s ingest capacity)
 - Led 7-person team delivering MetaDex swap feature using NestJS backend (first revenue stream for Lace)
 - Built custom chain indexer with bloom filters and credential indexing for wallet optimization
 
@@ -53,18 +53,18 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Conducted Cardano workshops for 100+ Amazon engineers on eUTxO model and blockchain architecture
 - Specialized in on-chain/off-chain dApp architecture and Plutus contract development
 
+### **Senior Software Engineer**
+**Mobility Data Lab GmbH** • *Berlin, DE* • <span class="date">Feb 2020 - Nov 2021</span>
+- Delivered OTA fleet-update pipeline and WiFi audience-tracking system using Vert.x, Rust, and ELK stack
+- Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services
+- Built real-time ad pricing system by probing nearby devices for audience size measurement
+
 ### **Senior Software Engineer & Migration Lead**
 **Deloitte US** • *San Francisco, CA* • <span class="date">Sep 2016 - Nov 2019</span>
 - Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8
 - Cut annual license costs by €6M for major German insurance company
 - Grew team from 3 → 20 engineers; promoted to lead architect within 24 months
 - Coordinated India on-site delivery and architected end-to-end testing approach
-
-### **Senior Software Engineer**
-**Mobility Data Lab GmbH** • *Berlin, DE* • <span class="date">Feb 2020 - Nov 2021</span>
-- Delivered OTA fleet-update pipeline and WiFi audience-tracking system using Vert.x, Rust, and ELK stack
-- Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services
-- Built real-time ad pricing system by probing nearby devices for audience size measurement
 
 ### **Co-Founder & CTO**
 **CityXcape Inc.** • *San Francisco, CA* • <span class="date">Feb 2015 - Sep 2016</span>
@@ -80,7 +80,8 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 *Mobile & Web Development* • <span class="date">2023 - Present</span>
 - Built native [iOS](https://apps.apple.com/de/app/dump-it/id6448620477) (Swift), [Android](https://play.google.com/store/apps/details?id=app.dump.it) (Kotlin), and React [Web](https://dumpit.app) applications with end-to-end encryption
 - Implemented Diffie-Hellman key exchange + AES for secure note storage using Supabase backend
-- Self-hosted Whisper v3 for speech-to-text transcription, summaries, and translations
+- Self-hosted Whisper v3 for speech-to-text • GPT-4 API integration for summaries/translations
+- Leveraged AI for code generation and review processes across React/TypeScript projects
 - Designed offline-first architecture with persistent queue system for seamless cross-platform syncing
 - Achieved 5k+ notes created and 200+ users with 70% weekly retention within first 2 months
 - Successfully launched on web, App Store, and Google Play Store
