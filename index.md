@@ -6,7 +6,7 @@ title: William Wolff - Software Engineer & Technical Architect
 # WILLIAM WOLFF
 **Software Engineer & Technical Architect**
 
-Berlin, DE | *Full contact details available on request*  
+Berlin, DE | German & English (fluent) | *Full contact details available on request*  
 [linkedin.com/in/wwolff](https://linkedin.com/in/wwolff) • [github.com/will-break-it](https://github.com/will-break-it)
 
 ![Experience](https://img.shields.io/badge/Experience-10%2B%20Years-2196F3?style=flat) ![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat) ![Focus](https://img.shields.io/badge/Focus-Blockchain%20%26%20R%26D-9C27B0?style=flat)
