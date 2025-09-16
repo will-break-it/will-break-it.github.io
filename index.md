@@ -107,6 +107,9 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ## EDUCATION
 
+**International Business**  
+*Hult International Business School* • San Francisco, CA • <span class="date">2014 - 2015</span>
+
 **Bachelor of Science in Computer Science**  
 *DHBW Stuttgart* • Stuttgart, DE • <span class="date">Oct 2011 - Aug 2014</span>
 
