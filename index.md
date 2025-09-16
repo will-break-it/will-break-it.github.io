@@ -40,7 +40,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Host monthly public demos & Q&A sessions (YouTube ~5k views average)
 - Organized week-long on-site workshop that reduced open research questions
 
-### **Principal Architect – [Lace Wallet](https://www.lace.io/)**
+### **Technical Architect – [Lace Wallet](https://www.lace.io/)**
 **Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2022 - Nov 2024</span>
 - Re-engineered wallet backend from poll-based to **event-driven** → sync latency ↓ 45%, infra cost ↓ >60%
 - Authored [CIP](https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX) and built first main-/test-net indexers (>2k tx/s ingest capacity)
