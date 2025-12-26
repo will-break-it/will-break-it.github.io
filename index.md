@@ -3,10 +3,14 @@ layout: default
 title: William Wolff - Software Engineer & Technical Architect
 ---
 
+<div class="resume-nav">
+📋 <strong>View as:</strong> <strong>Full CV</strong> • <a href="/product-engineer">Product Engineer</a> • <a href="/engineering">Engineer</a> • <a href="/architect">Architect</a> • <a href="/master-cv">Master (Detailed)</a>
+</div>
+
 # WILLIAM WOLFF
 **Software Engineer & Technical Architect**
 
-Berlin, DE | German & English (fluent) | *Full contact details available on request*  
+Berlin, DE | German & English (fluent) | *Full contact details available on request*
 [linkedin.com/in/wwolff](https://linkedin.com/in/wwolff) • [github.com/will-break-it](https://github.com/will-break-it)
 
 ![Experience](https://img.shields.io/badge/Experience-10%2B%20Years-2196F3?style=flat) ![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat) ![Focus](https://img.shields.io/badge/Focus-Blockchain%20%26%20R%26D-9C27B0?style=flat)
@@ -59,7 +63,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services
 - Built real-time ad pricing system by probing nearby devices for audience size measurement
 
-### **Senior Software Engineer & Migration Lead**
+### **Senior Software Engineer**
 **Deloitte US** • *San Francisco, CA* • <span class="date">Sep 2016 - Nov 2019</span>
 - Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8
 - Cut annual license costs by €6M for major German insurance company

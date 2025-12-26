@@ -6,6 +6,9 @@ url: "https://will-break-it.github.io"
 markdown: kramdown
 highlighter: rouge
 
+# Enable clean URLs (removes .html extension)
+permalink: pretty
+
 # Exclude files
 exclude:
   - README.md
