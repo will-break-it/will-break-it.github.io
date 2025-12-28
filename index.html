@@ -60,7 +60,7 @@
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: var(--spacing-xl) var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-md);
         }
 
         /* Header with Theme Toggle */
@@ -68,27 +68,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
         }
 
         .theme-toggle {
             background: none;
-            border: 2px solid var(--color-border);
+            border: none;
             color: var(--color-text);
             width: 44px;
             height: 44px;
-            border-radius: 50%;
             cursor: pointer;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            opacity: 0.7;
         }
 
         .theme-toggle:hover {
-            border-color: var(--color-accent);
-            transform: scale(1.05);
+            opacity: 1;
+            transform: scale(1.1);
         }
 
         .theme-toggle .theme-icon {
@@ -102,7 +102,7 @@
             gap: 0;
             flex-wrap: wrap;
             border-bottom: 2px solid var(--color-border);
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
         }
 
         nav button {
@@ -150,99 +150,94 @@
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
-            padding: var(--spacing-xl) 0;
+            padding: var(--spacing-md) 0;
         }
 
         .profile-image {
-            width: 180px;
-            height: 180px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin: 0 auto var(--spacing-lg);
+            margin: 0 auto var(--spacing-md);
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 2.5rem;
             color: white;
             font-weight: 600;
-            border: 4px solid var(--color-border);
+            border: 3px solid var(--color-border);
         }
 
         .intro-section h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--color-accent);
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
             letter-spacing: -0.025em;
         }
 
         .intro-section .tagline {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--color-text-light);
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
         }
 
         .intro-section .bio {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--color-text-light);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-lg);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
             text-align: left;
         }
 
         .intro-section .bio p {
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
         }
 
         /* Social Links */
         .social-links {
             display: flex;
-            gap: var(--spacing-md);
+            gap: var(--spacing-sm);
             justify-content: center;
-            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
         }
 
         .social-link {
             display: inline-flex;
             align-items: center;
-            gap: var(--spacing-xs);
-            padding: var(--spacing-sm) var(--spacing-md);
-            background: var(--color-bg-alt);
+            justify-content: center;
+            width: 40px;
+            height: 40px;
             border: 2px solid var(--color-border);
-            border-radius: 8px;
+            border-radius: 50%;
             color: var(--color-text);
             text-decoration: none;
-            font-weight: 500;
             transition: all 0.2s ease;
         }
 
         .social-link:hover {
             border-color: var(--color-accent);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        [data-theme="dark"] .social-link:hover {
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
 
         .social-link svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             fill: currentColor;
         }
 
         /* CV Navigation Prompt */
         .cv-prompt {
             text-align: center;
-            margin-top: var(--spacing-xl);
-            padding-top: var(--spacing-lg);
-            border-top: 2px solid var(--color-border);
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-border);
         }
 
         .cv-prompt p {
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-md);
+            color: var(--color-text-lighter);
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.9rem;
         }
 
         .cv-links {
@@ -253,12 +248,13 @@
         }
 
         .cv-link {
-            padding: var(--spacing-sm) var(--spacing-md);
+            padding: 8px 20px;
             background: var(--color-accent);
             color: var(--color-bg);
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.2s ease;
         }
 
@@ -457,9 +453,9 @@
             }
 
             .profile-image {
-                width: 140px;
-                height: 140px;
-                font-size: 3rem;
+                width: 100px;
+                height: 100px;
+                font-size: 2rem;
             }
 
             .intro-section h1 {
@@ -522,33 +518,30 @@
                 <h1>William Wolff</h1>
                 <p class="tagline">Software Engineer • Technical Architect • Builder</p>
 
+                <div class="social-links">
+                    <a href="https://github.com/will-break-it" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/wwolff/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/will_break_it" target="_blank" rel="noopener" class="social-link" title="X/Twitter">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+
                 <div class="bio">
                     <p>Hey! I'm Will, a curious engineer with 10+ years building products that people actually use. I love the intersection of exceptional engineering and great user experiences - where technical depth creates magical simplicity.</p>
 
                     <p>Currently leading R&D for <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, a high-throughput protocol for Cardano. Before that, I architected <a href="https://www.lace.io/" target="_blank">Lace Wallet</a> and built systems from blockchain infrastructure to AI-powered apps.</p>
 
                     <p>I'm passionate about distributed systems, cryptography, product thinking, and shipping side projects that solve real problems. When I'm not coding, you'll find me playing beach volleyball, freediving, or exploring new technologies.</p>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://github.com/will-break-it" target="_blank" rel="noopener" class="social-link">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
-                        GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/wwolff/" target="_blank" rel="noopener" class="social-link">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        LinkedIn
-                    </a>
-                    <a href="https://x.com/will_break_it" target="_blank" rel="noopener" class="social-link">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                        X/Twitter
-                    </a>
                 </div>
 
                 <div class="cv-prompt">
