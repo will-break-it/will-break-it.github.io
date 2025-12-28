@@ -819,6 +819,143 @@
             margin: 0;
         }
 
+        /* Projects Page */
+        .projects-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .projects-header {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .projects-header h1 {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .projects-intro {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin: 0;
+        }
+
+        .project-year {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .year-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-lighter);
+            margin: 0 0 var(--spacing-md) 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-card {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--color-text-lighter);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-header {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-title-row h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: var(--spacing-xs);
+        }
+
+        .project-link {
+            padding: 4px 12px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-color: var(--color-accent);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: var(--color-text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .coming-soon {
+            color: var(--color-text-lighter);
+            font-style: italic;
+            margin: var(--spacing-sm) 0 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-title-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-links {
+                width: 100%;
+            }
+
+            .project-link {
+                flex: 1;
+                text-align: center;
+            }
+        }
+
         /* Print Styles */
         @media print {
             header, .theme-toggle, .cv-prompt, .nav-tabs {
@@ -926,6 +1063,10 @@
                 <button class="nav-btn" data-target="cv">
                     <span lang="en">Resume</span>
                     <span lang="de">Lebenslauf</span>
+                </button>
+                <button class="nav-btn" data-target="projects-page">
+                    <span lang="en">Projects</span>
+                    <span lang="de">Projekte</span>
                 </button>
             </div>
 
@@ -1164,15 +1305,15 @@
                                     <span class="job-location">Remote</span> •
                                     <span class="job-date">Nov 2022 - Nov 2024</span>
                                 </div>
-                                <p class="job-summary">Led technical architecture for Lace, delivering 45% performance improvement and first revenue stream</p>
+                                <p class="job-summary">Led technical architecture for Lace with Event-Driven Architecture, delivering 45% performance improvement</p>
                             </div>
                             <div class="job-content">
                                 <div class="job-content-inner">
                                     <ul>
-                                        <li>Re-engineered wallet backend from poll-based to event-driven architecture → 45% latency reduction, >60% cost savings</li>
+                                        <li>Re-engineered wallet backend to <strong>event-driven architecture</strong> with <strong>CQRS</strong> pattern → 45% latency reduction, >60% cost savings</li>
                                         <li>Built custom chain indexer with bloom filters achieving >2,000 tx/s ingest capacity</li>
-                                        <li>Led 7-person cross-functional team delivering MetaDex swap feature (first revenue stream for Lace)</li>
-                                        <li>Authored CIP proposal for wallet indexing standards</li>
+                                        <li>Led 7-person cross-functional team delivering MetaDex swap feature integrating Plutus smart contracts (first revenue stream for Lace)</li>
+                                        <li>Authored CIP proposal for wallet indexing standards following <strong>DDD</strong> bounded context principles</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1301,7 +1442,7 @@
                                     <span class="job-company">Personal Project</span> •
                                     <span class="job-date">2023 - Present</span>
                                 </div>
-                                <p class="job-summary">Cross-platform app with AI processing, E2E encryption, and event-sourced architecture</p>
+                                <p class="job-summary">Cross-platform app with AI processing, E2E encryption, Event Sourcing, and CQRS architecture</p>
                             </div>
                             <div class="job-content">
                                 <div class="job-content-inner">
@@ -1309,7 +1450,8 @@
                                         <li>Built native <a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank">iOS (Swift)</a>, <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank">Android (Kotlin)</a>, and <a href="https://dumpit.app" target="_blank">web (React)</a> apps with feature parity</li>
                                         <li>Implemented two-phase LLM pipeline: Claude Haiku for intent classification, semantic conflict resolution</li>
                                         <li>Built vector search with sentence transformers (768-dim embeddings) and adaptive match quality analysis</li>
-                                        <li>Designed event-sourced architecture with async task pipeline (transcribe → ingest → extract → match → resolve → execute)</li>
+                                        <li>Designed <strong>Event Sourcing</strong> architecture with immutable event stream and <strong>CQRS</strong> pattern separating commands/queries</li>
+                                        <li>Applied <strong>Domain-Driven Design (DDD)</strong> with bounded contexts for notes, todos, and AI processing domains</li>
                                         <li>Implemented E2E encryption using Diffie-Hellman key exchange, AES-256-GCM, and iOS Secure Enclave</li>
                                         <li>Successfully monetized via subscription model with active user base</li>
                                     </ul>
@@ -1386,6 +1528,121 @@
                             <p class="education-meta">Hult International Business School • San Francisco, CA • 2014 - 2015</p>
                         </div>
                     </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects-page" class="page">
+            <div class="projects-container">
+                <div class="projects-header">
+                    <h1>Projects</h1>
+                    <p class="projects-intro">A chronological collection of projects I've built, contributed to, or operated. From AI-powered applications to blockchain infrastructure.</p>
+                </div>
+
+                <!-- 2023-2025 -->
+                <div class="project-year">
+                    <h2 class="year-header">2023 - Present</h2>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>Dump it! – AI-Enhanced Note Taking App</h3>
+                                <div class="project-links">
+                                    <a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank" class="project-link">iOS</a>
+                                    <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank" class="project-link">Android</a>
+                                    <a href="https://dumpit.app" target="_blank" class="project-link">Web</a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">NestJS</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Event Sourcing</span>
+                                <span class="tech-tag">CQRS</span>
+                                <span class="tech-tag">DDD</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Cross-platform note-taking app with AI-powered intent classification, semantic search, and end-to-end encryption. Features Event Sourcing architecture, two-phase LLM pipeline, and vector embeddings for intelligent note organization.</p>
+                    </div>
+                </div>
+
+                <!-- 2022-2024 -->
+                <div class="project-year">
+                    <h2 class="year-header">2022 - 2024</h2>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>Drip Dropz – NFT Marketplace</h3>
+                                <div class="project-links">
+                                    <a href="https://dripdropz.io/" target="_blank" class="project-link">Website</a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">Plutus</span>
+                                <span class="tech-tag">CIP-30</span>
+                                <span class="tech-tag">Web Workers</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Production NFT marketplace on Cardano with smart contract integration for trading, bidding, and swapping. Implemented wallet standards and event-driven sync patterns later adopted by IOG.</p>
+                    </div>
+                </div>
+
+                <!-- 2021-2024 -->
+                <div class="project-year">
+                    <h2 class="year-header">2021 - 2024</h2>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>Berlin Pool – Cardano Stakepool</h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Terraform</span>
+                                <span class="tech-tag">Ansible</span>
+                                <span class="tech-tag">Prometheus</span>
+                                <span class="tech-tag">Grafana</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Production Cardano consensus node infrastructure with automated deployment, monitoring, and cryptographic key management. Operated 2,000+ blocks with 99.9% uptime and managed 15M+ ADA delegation.</p>
+                    </div>
+                </div>
+
+                <!-- 2015-2016 -->
+                <div class="project-year">
+                    <h2 class="year-header">2015 - 2016</h2>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>CityXcape – Social Discovery Platform</h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">iOS</span>
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">Objective-C</span>
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">Ruby on Rails</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Co-founded social discovery platform for exploring cities through community recommendations. Raised €150k seed funding and built native iOS app and web platform from concept to App Store launch.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder for more projects -->
+                <div class="project-year">
+                    <h2 class="year-header">More projects coming soon...</h2>
+                    <p class="coming-soon">Additional projects will be added here.</p>
                 </div>
             </div>
         </div>
