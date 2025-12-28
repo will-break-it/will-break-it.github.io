@@ -86,6 +86,10 @@
             text-decoration: none;
             letter-spacing: -0.02em;
             transition: opacity 0.2s ease;
+            display: none;
+        }
+
+        header.with-nav .logo {
             display: inline-block;
         }
 
@@ -201,18 +205,11 @@
             border: 3px solid var(--color-border);
         }
 
-        .intro-section h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--color-accent);
-            margin-bottom: var(--spacing-xs);
-            letter-spacing: -0.025em;
-        }
-
         .intro-section .tagline {
-            font-size: 1rem;
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-sm);
+            font-size: 1.25rem;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-md);
+            font-weight: 500;
         }
 
         .intro-section .bio {
@@ -495,12 +492,8 @@
                 height: 100px;
             }
 
-            .intro-section h1 {
-                font-size: 2rem;
-            }
-
             .intro-section .tagline {
-                font-size: 1.05rem;
+                font-size: 1.1rem;
             }
 
             .social-links {
@@ -545,7 +538,6 @@
             <div class="intro-section">
                 <img src="assets/images/will.jpg" alt="William Wolff" class="profile-image">
 
-                <h1>William Wolff</h1>
                 <p class="tagline">Software Engineer • Technical Architect • Builder</p>
 
                 <div class="social-links">
@@ -567,11 +559,11 @@
                 </div>
 
                 <div class="bio">
-                    <p>Hey! I'm Will, a curious engineer with 10+ years building products that people actually use. I love the intersection of exceptional engineering and great user experiences - where technical depth creates magical simplicity.</p>
+                    <p>Hey! I'm Will, a versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware. I thrive on variety and adapting to new domains.</p>
 
-                    <p>Currently leading R&D for <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, a high-throughput protocol for Cardano. Before that, I architected <a href="https://www.lace.io/" target="_blank">Lace Wallet</a> and built systems from blockchain infrastructure to AI-powered apps.</p>
+                    <p>Currently leading R&D for <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, a high-throughput protocol for Cardano. Before that, I architected <a href="https://www.lace.io/" target="_blank">Lace Wallet</a>, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.</p>
 
-                    <p>I'm passionate about distributed systems, cryptography, product thinking, and shipping side projects that solve real problems. When I'm not coding, you'll find me playing beach volleyball, freediving, or exploring new technologies.</p>
+                    <p>What drives me is understanding problems from the user's perspective and finding the right solution - whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.</p>
                 </div>
 
                 <div class="cv-prompt">
@@ -585,7 +577,6 @@
 
         <!-- Chronological CV Page -->
         <div id="chronological" class="page">
-            <h1>WILLIAM WOLFF</h1>
             <p><strong>Software Engineer & Technical Architect</strong></p>
 
             <div class="contact">
@@ -687,19 +678,16 @@
 
         <!-- Placeholder for other CV versions -->
         <div id="product-engineer" class="page">
-            <h1>WILLIAM WOLFF</h1>
             <p><strong>Product Engineer</strong></p>
             <p><em>Content coming soon...</em></p>
         </div>
 
         <div id="engineer" class="page">
-            <h1>WILLIAM WOLFF</h1>
             <p><strong>Senior/Staff Software Engineer</strong></p>
             <p><em>Content coming soon...</em></p>
         </div>
 
         <div id="architect" class="page">
-            <h1>WILLIAM WOLFF</h1>
             <p><strong>Technical Architect & Solutions Architect</strong></p>
             <p><em>Content coming soon...</em></p>
         </div>

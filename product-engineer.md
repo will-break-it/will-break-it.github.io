@@ -213,7 +213,7 @@ I've consistently found the most fulfilling work at the intersection of engineer
 
 **At Drip Dropz:** Achieved revenue in 48 hours by understanding NFT market needs and building marketplace that serves both creators and collectors
 
-**Throughout career:** Proven ability to translate user needs into technical solutions, coordinate across disciplines, and ship products that people actually use and pay for.
+**Throughout career:** Proven ability to translate user needs into technical solutions, coordinate across disciplines, and adapt to diverse industries and platforms - from enterprise systems to blockchain infrastructure to consumer apps.
 
 I'm passionate about working on products with meaningful missions, where exceptional engineering creates exceptional user experiences, and where there's upside through equity in the company's success.
 
