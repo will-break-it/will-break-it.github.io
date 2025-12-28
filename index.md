@@ -4,11 +4,10 @@ title: William Wolff - Software Engineer & Technical Architect
 ---
 
 <nav class="resume-nav">
-  <span class="active">Full CV</span>
+  <span class="active">Chronological</span>
   <a href="/product-engineer">Product Engineer</a>
   <a href="/engineering">Engineer</a>
   <a href="/architect">Architect</a>
-  <a href="/master-cv">Master CV</a>
 </nav>
 
 # WILLIAM WOLFF

@@ -5,11 +5,10 @@ permalink: /architect/
 ---
 
 <nav class="resume-nav">
-  <a href="/">Full CV</a>
+  <a href="/">Chronological</a>
   <a href="/product-engineer">Product Engineer</a>
   <a href="/engineering">Engineer</a>
   <span class="active">Architect</span>
-  <a href="/master-cv">Master CV</a>
 </nav>
 
 # WILLIAM WOLFF
