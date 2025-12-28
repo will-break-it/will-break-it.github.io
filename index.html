@@ -853,8 +853,17 @@
             padding: 4px;
         }
 
+        .project-logo-img.with-bg.leios {
+            background: #180425;
+            padding: 6px;
+        }
+
         [data-theme="dark"] .project-logo-img.with-bg {
             background: #2a2a2a;
+        }
+
+        [data-theme="dark"] .project-logo-img.with-bg.leios {
+            background: #180425;
         }
 
         .project-logo-placeholder {
@@ -1199,12 +1208,30 @@
                 <!-- Sidebar Navigation (Desktop only) -->
                 <aside class="cv-sidebar">
                     <nav class="cv-nav">
-                        <div class="cv-nav-title">Contents</div>
-                        <a href="#profile" class="cv-nav-link">Profile</a>
-                        <a href="#technologies" class="cv-nav-link">Technologies</a>
-                        <a href="#experience" class="cv-nav-link">Experience</a>
-                        <a href="#projects" class="cv-nav-link">Projects</a>
-                        <a href="#education" class="cv-nav-link">Education</a>
+                        <div class="cv-nav-title">
+                            <span lang="en">Contents</span>
+                            <span lang="de">Inhalt</span>
+                        </div>
+                        <a href="#profile" class="cv-nav-link">
+                            <span lang="en">Profile</span>
+                            <span lang="de">Profil</span>
+                        </a>
+                        <a href="#technologies" class="cv-nav-link">
+                            <span lang="en">Technologies</span>
+                            <span lang="de">Technologien</span>
+                        </a>
+                        <a href="#experience" class="cv-nav-link">
+                            <span lang="en">Experience</span>
+                            <span lang="de">Erfahrung</span>
+                        </a>
+                        <a href="#projects" class="cv-nav-link">
+                            <span lang="en">Projects</span>
+                            <span lang="de">Projekte</span>
+                        </a>
+                        <a href="#education" class="cv-nav-link">
+                            <span lang="en">Education</span>
+                            <span lang="de">Bildung</span>
+                        </a>
                     </nav>
                 </aside>
 
@@ -1212,7 +1239,10 @@
                 <div class="cv-main">
                     <!-- Header -->
                     <div class="cv-header">
-                        <div class="cv-title">Software Engineer & Technical Architect</div>
+                        <div class="cv-title">
+                            <span lang="en">Software Engineer & Technical Architect</span>
+                            <span lang="de">Software Engineer & Technical Architect</span>
+                        </div>
                         <div class="cv-meta">
                             <span class="cv-meta-item">
                                 <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1637,7 +1667,7 @@
 
                     <div class="project-card">
                         <div class="project-logo">
-                            <img src="https://leios.cardano-scaling.org/img/logo.svg" alt="Ouroboros Leios logo" class="project-logo-img with-bg">
+                            <img src="https://leios.cardano-scaling.org/img/logo.svg" alt="Ouroboros Leios logo" class="project-logo-img with-bg leios">
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
@@ -1656,9 +1686,10 @@
                                 <span class="tech-tag">Documentation</span>
                                 <span class="tech-tag">Technical Writing</span>
                                 <span class="tech-tag">Web Development</span>
+                                <span class="tech-tag">Agda</span>
                             </div>
                         </div>
-                        <p class="project-description">Project website and comprehensive documentation for Ouroboros Leios high-throughput protocol. Features an interactive web-based protocol simulator alongside technical specifications, architecture diagrams, and research documentation for the Cardano blockchain scaling solution.</p>
+                        <p class="project-description">Project website and comprehensive documentation for Ouroboros Leios high-throughput protocol. Features an interactive web-based protocol simulator, formal specification rendered with custom <a href="https://github.com/will-break-it/agda-web-docs-lib" target="_blank">agda-web-docs-lib</a> (generates modern web docs from Agda HTML output), alongside technical specifications, architecture diagrams, and research documentation for the Cardano blockchain scaling solution.</p>
                     </div>
                 </div>
 
