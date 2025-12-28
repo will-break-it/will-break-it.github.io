@@ -359,7 +359,7 @@ Operated production Cardano consensus nodes, contributing to network decentraliz
 ## LANGUAGES
 
 **German** - Native
-**English** - Fluent (C2)
+**English** - Fluent
 
 ---
 

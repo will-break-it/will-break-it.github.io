@@ -86,10 +86,6 @@
             text-decoration: none;
             letter-spacing: -0.02em;
             transition: opacity 0.2s ease;
-            display: none;
-        }
-
-        header.with-nav .logo {
             display: inline-block;
         }
 
@@ -98,7 +94,14 @@
             border-bottom: none;
         }
 
-        .theme-toggle {
+        .header-controls {
+            display: flex;
+            gap: var(--spacing-xs);
+            margin-left: auto;
+        }
+
+        .theme-toggle,
+        .lang-toggle {
             background: none;
             border: none;
             color: var(--color-text-lighter);
@@ -110,11 +113,11 @@
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
-            margin-left: auto;
             margin-bottom: -2px;
         }
 
-        .theme-toggle:hover {
+        .theme-toggle:hover,
+        .lang-toggle:hover {
             color: var(--color-text);
             transform: scale(1.05);
         }
@@ -136,6 +139,19 @@
         [data-theme="dark"] .theme-toggle .moon-icon {
             display: block;
         }
+
+        .lang-toggle {
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: var(--font-sans);
+        }
+
+        /* Language switching */
+        [lang="en"]:not([data-lang="en"]) { display: none; }
+        [lang="de"]:not([data-lang="de"]) { display: none; }
+
+        [data-lang="en"] [lang="de"] { display: none; }
+        [data-lang="de"] [lang="en"] { display: none; }
 
         /* Navigation */
         .nav-tabs {
@@ -509,28 +525,46 @@
             <a href="#home" class="logo" onclick="goHome(); return false;">William Wolff</a>
 
             <div class="nav-tabs">
-                <button class="nav-btn" data-target="chronological">Chronological</button>
-                <button class="nav-btn" data-target="product-engineer">Product Engineer</button>
-                <button class="nav-btn" data-target="engineer">Engineer</button>
-                <button class="nav-btn" data-target="architect">Architect</button>
+                <button class="nav-btn" data-target="chronological">
+                    <span lang="en">Chronological</span>
+                    <span lang="de">Chronologisch</span>
+                </button>
+                <button class="nav-btn" data-target="product-engineer">
+                    <span lang="en">Product Engineer</span>
+                    <span lang="de">Product Engineer</span>
+                </button>
+                <button class="nav-btn" data-target="engineer">
+                    <span lang="en">Engineer</span>
+                    <span lang="de">Engineer</span>
+                </button>
+                <button class="nav-btn" data-target="architect">
+                    <span lang="en">Architect</span>
+                    <span lang="de">Architekt</span>
+                </button>
             </div>
 
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
+            <div class="header-controls">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+                    <span class="lang-label">DE</span>
+                </button>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
         </header>
 
         <!-- Home/Intro Page -->
@@ -538,7 +572,10 @@
             <div class="intro-section">
                 <img src="assets/images/will.jpg" alt="William Wolff" class="profile-image">
 
-                <p class="tagline">Software Engineer • Technical Architect • Builder</p>
+                <p class="tagline">
+                    <span lang="en">Software Engineer • Technical Architect • Builder</span>
+                    <span lang="de">Software Engineer • Technical Architect • Builder</span>
+                </p>
 
                 <div class="social-links">
                     <a href="https://github.com/will-break-it" target="_blank" rel="noopener" class="social-link" title="GitHub">
@@ -559,17 +596,24 @@
                 </div>
 
                 <div class="bio">
-                    <p>Hey! I'm Will, a versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware. I thrive on variety and adapting to new domains.</p>
+                    <p lang="en">Hey! I'm Will, a versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware. I thrive on variety and adapting to new domains.</p>
+                    <p lang="de">Hey! Ich bin Will, ein vielseitiger Engineer mit über 10 Jahren Erfahrung in verschiedensten Branchen, Plattformen und Unternehmensgrößen. Von Enterprise-Systemen (Deloitte - Rentensysteme und Versicherungen) bis zur Blockchain-Infrastruktur (IOG/Cardano), von Mobile über Web und Desktop bis zu Custom Hardware. Ich liebe Vielfalt und die Anpassung an neue Bereiche.</p>
 
-                    <p>Currently leading R&D for <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, a high-throughput protocol for Cardano. Before that, I architected <a href="https://www.lace.io/" target="_blank">Lace Wallet</a>, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.</p>
+                    <p lang="en">Currently leading R&D for <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, a high-throughput protocol for Cardano. Before that, I architected <a href="https://www.lace.io/" target="_blank">Lace Wallet</a>, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.</p>
+                    <p lang="de">Aktuell leite ich R&D für <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, ein Hochdurchsatz-Protokoll für Cardano. Davor habe ich die Architektur für <a href="https://www.lace.io/" target="_blank">Lace Wallet</a> entwickelt, IoT-Systeme gebaut, native Mobile Apps entwickelt und 16M Zeilen Legacy-Code migriert.</p>
 
-                    <p>What drives me is understanding problems from the user's perspective and finding the right solution - whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.</p>
+                    <p lang="en">What drives me is understanding problems from the user's perspective and finding the right solution - whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.</p>
+                    <p lang="de">Was mich antreibt ist es, Probleme aus der Perspektive der Nutzer zu verstehen und die richtige Lösung zu finden - ob das bedeutet, sich in verteilte Systeme, Kryptographie, neue Frameworks oder völlig neue Branchen einzuarbeiten. Ich scheue mich nicht, Neues auszuprobieren und unerwartete Wege zu gehen, wenn das Problem es erfordert.</p>
                 </div>
 
                 <div class="cv-prompt">
-                    <p>Looking for my resume?</p>
+                    <p lang="en">Looking for my resume?</p>
+                    <p lang="de">Auf der Suche nach meinem Lebenslauf?</p>
                     <div class="cv-links">
-                        <a href="#chronological" class="cv-link" onclick="document.querySelector('[data-target=chronological]').click(); return false;">View Resume</a>
+                        <a href="#chronological" class="cv-link" onclick="document.querySelector('[data-target=chronological]').click(); return false;">
+                            <span lang="en">View Resume</span>
+                            <span lang="de">Lebenslauf ansehen</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -722,6 +766,27 @@
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
             }
+        });
+
+        // Language Toggle
+        const langToggle = document.getElementById('lang-toggle');
+        const langLabel = document.querySelector('.lang-label');
+
+        // Detect browser language or use saved preference
+        function getBrowserLanguage() {
+            const lang = navigator.language || navigator.userLanguage;
+            return lang.startsWith('de') ? 'de' : 'en';
+        }
+
+        const currentLang = localStorage.getItem('lang') || getBrowserLanguage();
+        html.setAttribute('data-lang', currentLang);
+        langLabel.textContent = currentLang === 'en' ? 'DE' : 'EN';
+
+        langToggle.addEventListener('click', function() {
+            const lang = html.getAttribute('data-lang') === 'en' ? 'de' : 'en';
+            html.setAttribute('data-lang', lang);
+            localStorage.setItem('lang', lang);
+            langLabel.textContent = lang === 'en' ? 'DE' : 'EN';
         });
 
         // Navigation
