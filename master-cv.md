@@ -206,7 +206,7 @@ Co-founded and led technical development of social discovery platform for explor
 ### **Dump it! – AI-Enhanced Note Taking App**
 *Mobile & Web Development* • <span class="date">2023 - Present</span>
 
-Built and launched cross-platform note-taking app with AI features and end-to-end encryption, achieving strong user retention and organic growth.
+Built and launched cross-platform note-taking app with sophisticated AI processing pipeline and end-to-end encryption, achieving strong user retention and organic growth.
 
 **Full-Stack Product Development:**
 - Native [iOS app](https://apps.apple.com/de/app/dump-it/id6448620477) built in **Swift** with SwiftUI
@@ -214,32 +214,64 @@ Built and launched cross-platform note-taking app with AI features and end-to-en
 - [Web application](https://dumpit.app) built with **React** and TypeScript
 - Successfully launched on all three platforms with feature parity
 
+**Event-Sourced Architecture:**
+- Task-based async processing pipeline with specialized stages (transcribe → ingest → extract → match → resolve → execute)
+- Server-Sent Events (SSE) for real-time progress streaming to client
+- Immutable event stream for complete audit trail, enables undo and conflict replay
+- Transactional execution with all entity operations in single database transaction
+- Non-blocking client experience - immediate response with `dumpId`, processing happens in background
+
+**Two-Phase LLM Processing Pipeline:**
+- **Phase 1 - Semantic Extraction & Intent Classification:**
+  - Claude Haiku analyzes user input, separates semantic units, classifies intents (create/update/delete/toggle)
+  - Advanced prompt engineering with cached static sections (role, rules, examples) and dynamic context (7 recent entities, timezone)
+  - Automatic time extraction: "Call mom tonight at 8pm" → todo with `remindAt` field, time stripped from text
+  - Structured JSON output with validation
+  - Timezone-aware date/time conversion in prompts
+- **Phase 2 - Conflict Resolution:**
+  - LLM resolves ambiguous cases when vector search finds multiple matches
+  - Analyzes statistical context (match scores, gap analysis, reasoning) to decide execution vs. clarification
+  - Semantic intent understanding: is "add milk" creating new todo or updating existing grocery list?
+  - Routes to direct execution, LLM resolution, or user clarification based on match quality
+
+**Vector Search & Adaptive Matching:**
+- Sentence transformers for 768-dimensional embeddings of all notes and todos
+- PostgreSQL pgvector extension with cosine similarity search (topK=8)
+- **Adaptive match quality analysis** with dynamic thresholds:
+  - Dynamic quality floor: `max(0.1, min(0.4, mean - stddev * 0.8))`
+  - Clear winner threshold: `stddev * multiplier` (1.2 base, 1.8 for DELETE safety)
+  - Gap analysis between top matches for ambiguity detection
+- **Intelligent filtering**: Excludes completed todos and reminders overdue >48h
+- **Recency bias**: +0.1 similarity boost for entities updated within 24 hours (balances semantic similarity with temporal relevance)
+- **Routing logic**: CREATE with matches → LLM resolution, UPDATE/DELETE with clear match → direct execution, ambiguous → user clarification
+
 **Security & Cryptography:**
-- Implemented **end-to-end encryption** using **Diffie-Hellman key exchange** and **AES encryption**
+- Implemented **end-to-end encryption** using **Diffie-Hellman key exchange** and **AES-256-GCM encryption**
 - Utilized iOS **Secure Enclave** for cryptographic key storage and operations
-- Built secure key derivation and rotation system
-- Designed architecture ensuring backend cannot access decrypted user data
+- Built secure key derivation and rotation system using PBKDF2
+- Zero-knowledge architecture - backend cannot access decrypted user data
 
 **AI Integration:**
 - Self-hosted **Whisper v3** model for speech-to-text transcription
 - Integrated **GPT-4 API** for note summaries, translations, and content enhancement
-- Leveraged AI tools (Cursor, Claude) for code generation and review across projects
-- Built intelligent note organization using embeddings and similarity search
+- Leveraged AI tools (Cursor, Claude) for code generation and review across projects - **10x development velocity**
+- Built intelligent note organization using embeddings and semantic similarity search
 
 **Technical Architecture:**
-- Designed **offline-first architecture** with local SQLite storage
+- Designed **offline-first architecture** with local SQLite (mobile) and IndexedDB (web) storage
 - Implemented persistent queue system for reliable cross-platform syncing
-- Built conflict resolution for multi-device scenarios
-- Created real-time sync using WebSocket for instant updates across devices
-- Used **Supabase** for backend (PostgreSQL, Auth, Storage, Realtime)
+- Built conflict resolution for multi-device concurrent edit scenarios
+- Created real-time sync using Server-Sent Events for instant updates across devices
+- NestJS backend with task queue for background processing
+- PostgreSQL with pgvector extension for embeddings
 
 **Product Success:**
 - **5,000+ notes created** and **200+ users** within first 2 months
 - Achieved **70% weekly retention rate** demonstrating product-market fit
 - Organic growth through word-of-mouth and App Store optimization
-- Successfully monetized through subscription model
+- Successfully monetized through subscription model with healthy conversion rate
 
-**Technologies:** Swift • Kotlin • React • TypeScript • Supabase • PostgreSQL • End-to-end encryption • Whisper • GPT-4 • WebSocket • Offline-first
+**Technologies:** Swift • Kotlin • React • TypeScript • NestJS • PostgreSQL • pgvector • Claude Haiku • Sentence Transformers • End-to-end encryption • Whisper • GPT-4 • Event-sourcing • SSE • Offline-first
 
 ---
 

@@ -135,25 +135,44 @@ Built production [NFT marketplace](https://dripdropz.io/) on Cardano from scratc
 ### **Native Mobile Development – Dump it!**
 **Side Project** • <span class="date">2023 - Present</span>
 
-Built cross-platform note-taking app with AI features and end-to-end encryption.
+Built cross-platform note-taking app with sophisticated AI pipeline and end-to-end encryption. [iOS](https://apps.apple.com/de/app/dump-it/id6448620477) • [Android](https://play.google.com/store/apps/details?id=app.dump.it) • [Web](https://dumpit.app)
+
+**Two-Phase LLM Processing Pipeline:**
+- **Phase 1 (Intent Classification)**: Claude Haiku analyzes user input, separates semantic units, classifies intents (create/update/delete)
+- **Phase 2 (Conflict Resolution)**: LLM resolves ambiguous cases when vector search finds multiple matches
+- **Prompt engineering**: Cached static sections, timezone-aware date conversion, structured JSON output with validation
+- **Context-aware prompts**: Includes 7 most recent entities for better intent understanding
+- Automatic time extraction: "Call mom tonight at 8pm" → todo with `remindAt` field populated, time stripped from text
+
+**Vector Search & Semantic Matching:**
+- **Sentence transformers** for 768-dimensional embeddings of notes/todos
+- **Adaptive match quality analysis**: Dynamic thresholds based on statistical distribution (mean, stddev, gap analysis)
+- **Recency bias**: +0.1 similarity boost for entities updated within 24h (encourages updating recent items)
+- **Smart filtering**: Excludes completed todos and reminders overdue >48h from search results
+- PostgreSQL pgvector with cosine similarity search (topK=8)
+
+**Event-Sourced Architecture:**
+- Task-based async pipeline with Server-Sent Events (SSE) for real-time progress streaming
+- Immutable event stream enables features: undo, audit history, conflict resolution replay
+- Non-blocking: client receives `dumpId` immediately, processing happens in background
+- Transactional execution: all entity operations in single DB transaction for atomicity
 
 **iOS Development (Swift):**
 - Native iOS app using **SwiftUI** for modern declarative UI
 - **Secure Enclave** integration for cryptographic key storage
 - Local SQLite database with FTS5 full-text search
 - Background sync using iOS background tasks
-- Speech-to-text using Apple Speech framework
-- Published to [App Store](https://apps.apple.com/de/app/dump-it/id6448620477) with 4.8★ rating
+- Published to App Store with 4.8★ rating
 
 **Android Development (Kotlin):**
 - Native Android app using **Jetpack Compose**
 - Room database for local persistence
 - WorkManager for background sync
 - Keystore for secure key storage
-- Published to [Google Play](https://play.google.com/store/apps/details?id=app.dump.it)
+- Published to Google Play
 
 **End-to-End Encryption:**
-- Implemented **Diffie-Hellman key exchange** for secure key establishment
+- **Diffie-Hellman key exchange** for secure key establishment
 - **AES-256-GCM** encryption for note content
 - Secure key derivation using PBKDF2
 - Zero-knowledge architecture - backend cannot decrypt user data
@@ -164,19 +183,13 @@ Built cross-platform note-taking app with AI features and end-to-end encryption.
 - Web Crypto API for encryption
 - Published to [dumpit.app](https://dumpit.app)
 
-**Backend (Supabase):**
-- PostgreSQL with Row Level Security policies
-- Real-time subscriptions for multi-device sync
-- Serverless functions for AI integration (Whisper, GPT-4)
+**Backend (NestJS + Supabase):**
+- PostgreSQL with pgvector extension for embeddings
+- Real-time subscriptions (SSE) for multi-device sync
+- Task queue for background processing
 - Self-hosted Whisper v3 for speech-to-text transcription
 
-**Offline-First Architecture:**
-- Local-first data model with eventual consistency
-- Persistent queue for reliable sync
-- Conflict resolution for concurrent edits
-- Works seamlessly offline with background sync when connected
-
-**Technologies:** Swift • Kotlin • React • TypeScript • Supabase • PostgreSQL • Cryptography • Secure Enclave • AI/ML
+**Technologies:** Swift • Kotlin • React • TypeScript • NestJS • PostgreSQL • pgvector • Claude Haiku • Sentence Transformers • Cryptography • Secure Enclave • Event-sourcing
 
 ---
 

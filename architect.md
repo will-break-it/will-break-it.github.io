@@ -193,24 +193,58 @@ Architected large-scale migration toolchain transforming 16M LoC legacy system, 
 
 ### **Dump it! – Cross-Platform Application Architecture** • <span class="date">2023 - Present</span>
 
-Designed unified architecture across iOS (Swift), Android (Kotlin), and Web (React) platforms.
+Designed unified architecture across iOS (Swift), Android (Kotlin), and Web (React) platforms with sophisticated AI processing pipeline.
 
-**System Architecture:**
-- **Offline-First Design:** Local-first data model with eventual consistency
-  - SQLite (mobile) and IndexedDB (web) for local storage
-  - Persistent queue for reliable sync
-  - Conflict resolution for concurrent edits
-- **End-to-End Encryption:** Zero-knowledge architecture
-  - Diffie-Hellman key exchange for secure key establishment
-  - AES-256-GCM encryption for data at rest
-  - Backend cannot decrypt user data (privacy by design)
-- **Cross-Platform Consistency:** Unified data model and API contracts across platforms
-- **AI Integration:** Microservices architecture for AI features
-  - Self-hosted Whisper v3 for speech-to-text
-  - GPT-4 API integration for summaries
-  - Fallback strategies for service availability
+**Event-Sourced Processing Architecture:**
+- **Design Pattern:** Event sourcing with immutable event stream for complete audit trail
+- **Task-Based Pipeline:** Async processing with specialized tasks (transcribe → ingest → extract → match → resolve → execute)
+- **Real-Time Streaming:** Server-Sent Events (SSE) for non-blocking client experience
+- **Transactional Guarantees:** All entity operations in single DB transaction for atomicity
+- **Architectural Benefits:** Enables undo, conflict replay, debugging via event stream
 
-**Technologies:** Swift • Kotlin • React • TypeScript • Supabase • PostgreSQL • Cryptography
+**Two-Phase LLM Pipeline Design:**
+- **Phase 1 - Intent Classification:**
+  - Claude Haiku for semantic separation and intent detection
+  - Prompt engineering: Cached static sections (role, rules, examples), dynamic context (recent entities, timezone)
+  - Structured JSON output with validation
+  - Cost optimization: Haiku for speed/cost, prompt caching reduces token usage
+- **Phase 2 - Conflict Resolution:**
+  - LLM analyzes ambiguous cases with statistical context (match scores, gap analysis, reasoning)
+  - Decides: execute directly vs. request user clarification
+  - Handles semantic intent (is "add milk" creating new todo or updating existing grocery list?)
+
+**Adaptive Vector Search Architecture:**
+- **Embedding Strategy:** Sentence transformers (768-dim) for semantic similarity
+- **Match Quality Analysis:** Statistical decision-making
+  - Dynamic quality floor: `max(0.1, min(0.4, mean - stddev * 0.8))`
+  - Clear winner threshold: `stddev * multiplier` (1.2 base, 1.8 for DELETE safety)
+  - Gap analysis between top matches for ambiguity detection
+- **Intelligent Filtering:** Excludes completed todos, past reminders (>48h grace period)
+- **Recency Bias:** +0.1 boost for entities updated <24h (balances semantic similarity with temporal relevance)
+
+**Routing & Decision Framework:**
+- **CREATE intents** with matches → LLM decides CREATE vs UPDATE
+- **UPDATE/DELETE** with single clear match → Direct execution
+- **Ambiguous matches** (gap ≤ threshold) → User clarification
+- **DELETE** requires higher confidence (1.5x threshold) for safety
+
+**Offline-First Design:**
+- Local-first data model with eventual consistency
+- SQLite (mobile) and IndexedDB (web) for local storage
+- Persistent queue for reliable sync
+- Conflict resolution for concurrent edits
+
+**End-to-End Encryption:**
+- Zero-knowledge architecture - backend cannot decrypt user data
+- Diffie-Hellman key exchange for secure key establishment
+- AES-256-GCM encryption for data at rest
+
+**Cross-Platform Consistency:**
+- Unified data model and API contracts across iOS, Android, Web
+- Shared business logic via backend API
+- Platform-specific UX with consistent functionality
+
+**Technologies:** Swift • Kotlin • React • TypeScript • NestJS • PostgreSQL • pgvector • Claude Haiku • Sentence Transformers • Event-sourcing • Cryptography
 
 ---
 

@@ -122,19 +122,26 @@ Co-founded social discovery platform, led technical development, and raised seed
 - Organic growth through word-of-mouth, no paid marketing
 - Successfully **monetized via subscription model** with healthy conversion rate
 
+**Intelligent UX Through AI Architecture:**
+- **Non-blocking processing** - users get instant feedback, AI processes in background with real-time updates
+- **Two-phase LLM pipeline** automatically understands intent: "Call mom tonight" → creates todo with reminder, no manual fields
+- **Semantic search** finds relevant notes/todos by meaning, not just keywords ("almond milk" matches "get milk from store")
+- **Smart conflict resolution** - system detects ambiguity and asks for clarification only when needed, not for every action
+- Speech-to-text (Whisper) and AI summaries (GPT-4) that users actually use daily
+
 **Product Development:**
 - Shipped on **3 platforms simultaneously** (iOS, Android, Web) with feature parity
 - Used AI tools (Cursor, Claude) to **10x development velocity** - solo shipped in 3 months
 - Designed offline-first architecture so app works seamlessly without connectivity
-- Built speech-to-text (Whisper) and AI summaries (GPT-4) that users actually use daily
+- Event-sourced backend enables features like undo, audit history, and reliable sync
 
 **User-Centric Engineering:**
 - Implemented end-to-end encryption because privacy is core user need, not checkbox feature
 - Created sync system that "just works" across devices without user configuration
-- Iterated on UI/UX based on user feedback and support requests
+- Natural language input eliminates form-filling - just dump thoughts and AI structures them
 - A/B tested onboarding flows to improve activation rates
 
-**Why this matters:** Demonstrates ability to ship complete product solo, achieve product-market fit metrics, and make technical decisions (encryption, offline-first, AI integration) that directly serve user needs.
+**Why this matters:** Demonstrates ability to ship complete product solo, achieve product-market fit metrics, and make sophisticated technical decisions (LLM pipeline, semantic search, event-sourcing) that create magical user experiences without exposing complexity.
 
 ---
 
