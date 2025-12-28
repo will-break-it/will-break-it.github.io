@@ -643,12 +643,6 @@
         /* Collapsible Sections */
         .job {
             margin-bottom: var(--spacing-lg);
-            padding-bottom: var(--spacing-md);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .job:last-child {
-            border-bottom: none;
         }
 
         .job-header {
@@ -1039,6 +1033,7 @@
                         <a href="#profile" class="cv-nav-link">Profile</a>
                         <a href="#technologies" class="cv-nav-link">Technologies</a>
                         <a href="#experience" class="cv-nav-link">Experience</a>
+                        <a href="#projects" class="cv-nav-link">Projects</a>
                         <a href="#education" class="cv-nav-link">Education</a>
                     </nav>
                 </aside>
@@ -1284,6 +1279,95 @@
                                         <li>Co-founded social discovery platform for exploring cities through community recommendations</li>
                                         <li>Raised ~€150k in seed funding from angel investors</li>
                                         <li>Built iOS native app (Swift) and Django/Ruby on Rails backend from concept to App Store launch</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section id="projects">
+                        <h2>Selected Projects</h2>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Dump it! – AI-Enhanced Note Taking App</h3>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Personal Project</span> •
+                                    <span class="job-date">2023 - Present</span>
+                                </div>
+                                <p class="job-summary">Cross-platform app with AI processing, E2E encryption, and event-sourced architecture</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Built native <a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank">iOS (Swift)</a>, <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank">Android (Kotlin)</a>, and <a href="https://dumpit.app" target="_blank">web (React)</a> apps with feature parity</li>
+                                        <li>Implemented two-phase LLM pipeline: Claude Haiku for intent classification, semantic conflict resolution</li>
+                                        <li>Built vector search with sentence transformers (768-dim embeddings) and adaptive match quality analysis</li>
+                                        <li>Designed event-sourced architecture with async task pipeline (transcribe → ingest → extract → match → resolve → execute)</li>
+                                        <li>Implemented E2E encryption using Diffie-Hellman key exchange, AES-256-GCM, and iOS Secure Enclave</li>
+                                        <li>Successfully monetized via subscription model with active user base</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Drip Dropz – NFT Marketplace</h3>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Consulting Project</span> •
+                                    <span class="job-date">2022 - 2024</span>
+                                </div>
+                                <p class="job-summary">Production NFT trading platform on Cardano, achieving revenue within 48 hours</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Built complete <a href="https://dripdropz.io/" target="_blank">NFT marketplace</a> from scratch using React and TypeScript</li>
+                                        <li>Implemented CIP-30 wallet standard for browser wallet integration</li>
+                                        <li>Developed transaction construction libraries for Cardano NFT transfers and complex multi-asset scenarios</li>
+                                        <li>Created background web worker sync approach for event-driven wallet updates (pattern later adopted by IOG Lace team)</li>
+                                        <li>Integrated Plutus smart contracts for bidding, selling, swapping, and order management</li>
+                                        <li>Launched with 10,000+ NFT listings and achieved first revenue within 48 hours</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Berlin Pool – Cardano Stakepool Operations</h3>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Infrastructure Project</span> •
+                                    <span class="job-date">2021 - 2024</span>
+                                </div>
+                                <p class="job-summary">Operated production Cardano consensus nodes with 99.9% uptime and 15M+ ADA delegation</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Operated consensus nodes producing 2,000+ mainnet blocks with 99.9% uptime</li>
+                                        <li>Managed 15M+ ADA delegation (~$7M+ value at peak) from community members</li>
+                                        <li>Implemented automated deployment using Docker, Ansible, and Terraform (infrastructure as code)</li>
+                                        <li>Built monitoring stack using Prometheus and Grafana with alerting for node health and performance</li>
+                                        <li>Managed cryptographic key security with air-gapped cold key storage for operational security</li>
+                                        <li>Created automated scaling based on network conditions and backup/disaster recovery procedures</li>
                                     </ul>
                                 </div>
                             </div>
