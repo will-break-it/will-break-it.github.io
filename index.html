@@ -66,6 +66,17 @@
         /* Header */
         header {
             margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0;
+            transition: border-color 0.3s ease;
+        }
+
+        header.with-nav {
+            border-bottom-color: var(--color-border);
+            margin-bottom: var(--spacing-md);
         }
 
         .logo {
@@ -123,22 +134,17 @@
         }
 
         /* Navigation */
-        nav {
-            display: flex;
-            gap: 0;
-            flex-wrap: wrap;
-            align-items: center;
-            border-bottom: 2px solid var(--color-border);
-            margin-bottom: var(--spacing-md);
-        }
-
         .nav-tabs {
-            display: flex;
+            display: none;
             gap: 0;
             flex: 1;
         }
 
-        nav button {
+        header.with-nav .nav-tabs {
+            display: flex;
+        }
+
+        .nav-tabs button {
             background: none;
             border: none;
             color: var(--color-text-lighter);
@@ -152,12 +158,12 @@
             transition: all 0.2s ease;
         }
 
-        nav button:hover {
+        .nav-tabs button:hover {
             color: var(--color-text);
             border-bottom-color: var(--color-text-lighter);
         }
 
-        nav button.active {
+        .nav-tabs button.active {
             color: var(--color-accent);
             border-bottom-color: var(--color-accent);
             font-weight: 600;
@@ -408,7 +414,7 @@
 
         /* Print Styles */
         @media print {
-            header, nav, .theme-toggle, .cv-prompt {
+            header, .theme-toggle, .cv-prompt, .nav-tabs {
                 display: none;
             }
 
@@ -466,6 +472,11 @@
                 padding: var(--spacing-md) var(--spacing-sm);
             }
 
+            header {
+                flex-wrap: wrap;
+                gap: var(--spacing-xs);
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -474,7 +485,7 @@
                 font-size: 1.1rem;
             }
 
-            nav button {
+            .nav-tabs button {
                 font-size: 0.85rem;
                 padding: var(--spacing-xs) var(--spacing-sm);
             }
@@ -482,7 +493,6 @@
             .profile-image {
                 width: 100px;
                 height: 100px;
-                font-size: 2rem;
             }
 
             .intro-section h1 {
@@ -494,11 +504,7 @@
             }
 
             .social-links {
-                flex-direction: column;
-            }
-
-            .social-link {
-                justify-content: center;
+                gap: var(--spacing-xs);
             }
         }
     </style>
@@ -506,18 +512,16 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <header>
-            <a href="#home" class="logo" onclick="document.querySelector('[data-target=home]').click(); return false;">William Wolff</a>
-        </header>
+        <header id="header">
+            <a href="#home" class="logo" onclick="goHome(); return false;">William Wolff</a>
 
-        <!-- Navigation with Theme Toggle -->
-        <nav>
             <div class="nav-tabs">
                 <button class="nav-btn" data-target="chronological">Chronological</button>
                 <button class="nav-btn" data-target="product-engineer">Product Engineer</button>
                 <button class="nav-btn" data-target="engineer">Engineer</button>
                 <button class="nav-btn" data-target="architect">Architect</button>
             </div>
+
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                 <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -534,7 +538,7 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
-        </nav>
+        </header>
 
         <!-- Home/Intro Page -->
         <div id="home" class="page active">
@@ -573,7 +577,7 @@
                 <div class="cv-prompt">
                     <p>Looking for my resume?</p>
                     <div class="cv-links">
-                        <a href="#chronological" class="cv-link" onclick="document.querySelector('[data-target=chronological]').click()">View Resume</a>
+                        <a href="#chronological" class="cv-link" onclick="document.querySelector('[data-target=chronological]').click(); return false;">View Resume</a>
                     </div>
                 </div>
             </div>
@@ -735,6 +739,25 @@
         // Navigation
         const navButtons = document.querySelectorAll('.nav-btn');
         const pages = document.querySelectorAll('.page');
+        const header = document.getElementById('header');
+
+        function goHome() {
+            // Remove active from all nav buttons
+            navButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Show home page
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById('home').classList.add('active');
+
+            // Hide navigation in header
+            header.classList.remove('with-nav');
+
+            // Update URL
+            history.replaceState(null, null, '#home');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         navButtons.forEach(button => {
             button.addEventListener('click', function() {
@@ -747,6 +770,9 @@
                 // Update active page
                 pages.forEach(page => page.classList.remove('active'));
                 document.getElementById(target).classList.add('active');
+
+                // Show navigation in header
+                header.classList.add('with-nav');
 
                 // Update URL hash without scrolling
                 history.replaceState(null, null, '#' + target);
