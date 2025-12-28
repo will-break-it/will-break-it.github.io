@@ -839,6 +839,32 @@
             margin: 0;
         }
 
+        .project-logo {
+            float: left;
+            margin-right: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .project-logo-placeholder {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
         .project-year {
             margin-bottom: var(--spacing-xl);
         }
@@ -1237,6 +1263,7 @@
                                     <span class="tech-item">Node.js / NestJS</span>
                                     <span class="tech-item">SwiftUI</span>
                                     <span class="tech-item">Jetpack Compose</span>
+                                    <span class="tech-item">Flutter</span>
                                 </div>
                             </div>
                             <div class="tech-category">
@@ -1268,7 +1295,7 @@
                         <div class="job">
                             <div class="job-header">
                                 <div class="job-title">
-                                    <h3>R&D Innovation Lead & Technical Architect</h3>
+                                    <h3>R&D Innovation Lead & Technical Architect – <a href="http://leios.cardano-scaling.org/" target="_blank">Ouroboros Leios</a></h3>
                                     <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
@@ -1287,6 +1314,7 @@
                                         <li>Authored comprehensive <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> specification and architecture documentation</li>
                                         <li>Host monthly public demos on YouTube (~5k average views) and Q&A sessions</li>
                                         <li>Organized week-long workshop in Edinburgh that significantly reduced open research questions</li>
+                                        <li>Maintain project website and documentation at <a href="http://leios.cardano-scaling.org/" target="_blank">leios.cardano-scaling.org</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1545,6 +1573,9 @@
                     <h2 class="year-header">2023 - Present</h2>
 
                     <div class="project-card">
+                        <div class="project-logo">
+                            <img src="https://dumpit.app/favicon.ico" alt="Dump it! logo" class="project-logo-img">
+                        </div>
                         <div class="project-header">
                             <div class="project-title-row">
                                 <h3>Dump it! – Voice-First Note Taking App</h3>
@@ -1571,11 +1602,61 @@
                     </div>
                 </div>
 
+                <!-- 2024 -->
+                <div class="project-year">
+                    <h2 class="year-header">2024</h2>
+
+                    <div class="project-card">
+                        <div class="project-logo">
+                            <img src="https://underwater.journeys.cy/logo.png" alt="Underwater Journeys logo" class="project-logo-img">
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>Underwater Journeys – Dive Center Website & Booking System</h3>
+                                <div class="project-links">
+                                    <a href="https://underwater.journeys.cy/" target="_blank" class="project-link">Website</a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Modern website and booking system for a dive center in Cyprus. Built during Christmas and New Year's Eve 2024 with focus on user experience, mobile-first design, and easy booking management.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">L</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>Ouroboros Leios – Protocol Website & Documentation</h3>
+                                <div class="project-links">
+                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-link">Website</a>
+                                    <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank" class="project-link">CIP-0164</a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Documentation</span>
+                                <span class="tech-tag">Technical Writing</span>
+                                <span class="tech-tag">Web Development</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Project website and comprehensive documentation for Ouroboros Leios high-throughput protocol. Includes technical specifications, architecture diagrams, and research documentation for the Cardano blockchain scaling solution.</p>
+                    </div>
+                </div>
+
                 <!-- 2022-2024 -->
                 <div class="project-year">
                     <h2 class="year-header">2022 - 2024</h2>
 
                     <div class="project-card">
+                        <div class="project-logo">
+                            <img src="https://dripdropz.io/favicon.ico" alt="Drip Dropz logo" class="project-logo-img">
+                        </div>
                         <div class="project-header">
                             <div class="project-title-row">
                                 <h3>Drip Dropz – NFT Marketplace</h3>
@@ -1601,6 +1682,9 @@
                     <h2 class="year-header">2021 - 2024</h2>
 
                     <div class="project-card">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">BP</div>
+                        </div>
                         <div class="project-header">
                             <div class="project-title-row">
                                 <h3>Berlin Pool – Cardano Stakepool</h3>
@@ -1623,6 +1707,9 @@
                     <h2 class="year-header">2015 - 2016</h2>
 
                     <div class="project-card">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">CX</div>
+                        </div>
                         <div class="project-header">
                             <div class="project-title-row">
                                 <h3>CityXcape – Social Discovery Platform</h3>
@@ -1638,12 +1725,6 @@
                         </div>
                         <p class="project-description">Co-founded social discovery platform for exploring cities through community recommendations. Raised €150k seed funding and built native iOS app and web platform from concept to App Store launch.</p>
                     </div>
-                </div>
-
-                <!-- Placeholder for more projects -->
-                <div class="project-year">
-                    <h2 class="year-header">More projects coming soon...</h2>
-                    <p class="coming-soon">Additional projects will be added here.</p>
                 </div>
             </div>
         </div>
