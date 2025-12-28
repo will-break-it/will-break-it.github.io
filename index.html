@@ -652,14 +652,16 @@
         }
 
         .job-header {
-            padding: var(--spacing-sm) 0;
+            padding: var(--spacing-sm);
+            margin: 0 calc(-1 * var(--spacing-sm));
             cursor: pointer;
             user-select: none;
-            transition: opacity 0.2s ease;
+            transition: background-color 0.2s ease;
+            border-radius: 6px;
         }
 
         .job-header:hover {
-            opacity: 0.8;
+            background-color: var(--color-bg-alt);
         }
 
         .job-title {
@@ -678,9 +680,11 @@
         }
 
         .job-toggle {
-            font-size: 1.2rem;
+            width: 20px;
+            height: 20px;
             color: var(--color-text-lighter);
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .job.expanded .job-toggle {
@@ -1129,7 +1133,9 @@
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>R&D Innovation Lead & Technical Architect</h3>
-                                    <span class="job-toggle">⌄</span>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
                                 <div class="job-meta">
                                     <span class="job-company">Input Output Global (IOG)</span> •
@@ -1154,7 +1160,9 @@
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>Technical Architect</h3>
-                                    <span class="job-toggle">⌄</span>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
                                 <div class="job-meta">
                                     <span class="job-company">Input Output Global (IOG) - Lace Wallet</span> •
@@ -1179,7 +1187,9 @@
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>Solutions Architect</h3>
-                                    <span class="job-toggle">⌄</span>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
                                 <div class="job-meta">
                                     <span class="job-company">Input Output Global (IOG)</span> •
@@ -1203,7 +1213,9 @@
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>Senior Software Engineer</h3>
-                                    <span class="job-toggle">⌄</span>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
                                 <div class="job-meta">
                                     <span class="job-company">Mobility Data Lab GmbH</span> •
@@ -1228,7 +1240,9 @@
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>Senior Software Engineer & Migration Lead</h3>
-                                    <span class="job-toggle">⌄</span>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
                                 <div class="job-meta">
                                     <span class="job-company">Deloitte US</span> •
@@ -1253,7 +1267,9 @@
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>Co-Founder & CTO</h3>
-                                    <span class="job-toggle">⌄</span>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
                                 </div>
                                 <div class="job-meta">
                                     <span class="job-company">CityXcape Inc.</span> •
