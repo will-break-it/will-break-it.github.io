@@ -521,6 +521,10 @@
         }
 
         @media (min-width: 1024px) {
+            .cv-layout {
+                flex-direction: row-reverse;
+            }
+
             .cv-sidebar {
                 display: block;
                 width: 200px;
@@ -530,6 +534,7 @@
                 align-self: flex-start;
                 max-height: calc(100vh - var(--spacing-lg));
                 overflow-y: auto;
+                padding-left: var(--spacing-lg);
             }
         }
 
@@ -583,22 +588,31 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--color-text-lighter);
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .cv-nav-link {
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-            text-decoration: none;
-            padding: var(--spacing-xs) 0;
-            transition: color 0.2s ease;
-            border-left: 2px solid transparent;
+            margin-bottom: var(--spacing-md);
             padding-left: var(--spacing-sm);
         }
 
+        .cv-nav-link {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--color-text-lighter);
+            text-decoration: none;
+            padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-sm);
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            opacity: 0.5;
+        }
+
         .cv-nav-link:hover {
+            opacity: 0.8;
+            color: var(--color-text);
+        }
+
+        .cv-nav-link.active {
             color: var(--color-accent);
             border-left-color: var(--color-accent);
+            opacity: 1;
+            font-weight: 500;
         }
 
         /* Collapsible Sections */
@@ -1746,6 +1760,62 @@
                 job.classList.add('expanded');
             });
         }
+
+        // Sidebar navigation scroll tracking
+        function initSidebarTracking() {
+            const navLinks = document.querySelectorAll('.cv-nav-link');
+            const sections = document.querySelectorAll('.cv-main section');
+
+            if (sections.length === 0 || navLinks.length === 0) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+
+            // Handle click navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').slice(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
+
+        // Initialize sidebar tracking when CV page is active
+        if (document.getElementById('cv').classList.contains('active')) {
+            initSidebarTracking();
+        }
+
+        // Re-initialize when navigating to CV page
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.dataset.target === 'cv') {
+                    setTimeout(initSidebarTracking, 100);
+                }
+            });
+        });
     </script>
 </body>
 </html>
