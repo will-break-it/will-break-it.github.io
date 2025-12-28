@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="William Wolff - Software Engineer & Technical Architect">
+    <title>William Wolff - Software Engineer & Technical Architect</title>
+    <style>
+        /* Modern CSS Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CSS Variables for theming */
+        :root {
+            --color-text: #1a1a1a;
+            --color-text-light: #4a4a4a;
+            --color-text-lighter: #6a6a6a;
+            --color-border: #e5e5e5;
+            --color-accent: #000;
+            --color-bg: #fff;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+            --max-width: 900px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 3.5rem;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-bg);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        /* Navigation */
+        .nav-wrapper {
+            position: sticky;
+            top: 0;
+            background: var(--color-bg);
+            z-index: 100;
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        nav {
+            display: flex;
+            gap: 0;
+            flex-wrap: wrap;
+            margin-bottom: -2px;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: var(--color-text-lighter);
+            padding: var(--spacing-sm) var(--spacing-md);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-family: var(--font-sans);
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s ease;
+        }
+
+        nav button:hover {
+            color: var(--color-text);
+            border-bottom-color: var(--color-text-lighter);
+        }
+
+        nav button.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* Resume Content */
+        .resume-version {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .resume-version.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: -0.025em;
+        }
+
+        h1 + p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--spacing-xs);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin: var(--spacing-md) 0 var(--spacing-xs) 0;
+        }
+
+        h2 + h3 {
+            margin-top: var(--spacing-md);
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        /* Links */
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* Contact Info */
+        .contact {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            gap: var(--spacing-xs);
+            flex-wrap: wrap;
+            margin: var(--spacing-md) 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--color-text);
+        }
+
+        /* Job Entry */
+        .job {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .job-meta {
+            color: var(--color-text-lighter);
+            font-style: italic;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .job ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .job li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-light);
+        }
+
+        .job li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-text-lighter);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .skills strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-wrapper {
+                display: none;
+            }
+
+            .container {
+                max-width: none;
+                padding: 0;
+            }
+
+            body {
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+
+            h1 {
+                font-size: 18pt;
+            }
+
+            h2 {
+                font-size: 14pt;
+                page-break-after: avoid;
+            }
+
+            h3 {
+                font-size: 12pt;
+                page-break-after: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+            }
+
+            a {
+                border-bottom: none;
+                color: var(--color-text);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            nav button {
+                font-size: 0.85rem;
+                padding: var(--spacing-xs) var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav-wrapper">
+            <nav>
+                <button class="nav-btn active" data-target="chronological">Chronological</button>
+                <button class="nav-btn" data-target="product-engineer">Product Engineer</button>
+                <button class="nav-btn" data-target="engineer">Engineer</button>
+                <button class="nav-btn" data-target="architect">Architect</button>
+            </nav>
+        </div>
+
+        <!-- Chronological Version -->
+        <div id="chronological" class="resume-version active">
+            <h1>WILLIAM WOLFF</h1>
+            <p><strong>Software Engineer & Technical Architect</strong></p>
+
+            <div class="contact">
+                Berlin, DE | German & English (fluent) | <em>Full contact details available on request</em><br>
+                <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
+                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
+            </div>
+
+            <div class="badges">
+                <span class="badge">10+ Years Experience</span>
+                <span class="badge">Berlin, DE</span>
+                <span class="badge">Blockchain & R&D</span>
+            </div>
+
+            <h2>PROFILE</h2>
+            <p>Curious, relentlessly-learning engineer & technical architect, with founder DNA and 10+ years building high-impact products from green-field prototype to production at scale. Passionate about blockchain infrastructure, secure systems, and delivering exceptional user experiences.</p>
+
+            <h2>TECHNOLOGIES, LANGUAGES & TOOLING</h2>
+            <div class="skills">
+                <p><strong>Languages:</strong> TypeScript • Rust • Swift • Java/Kotlin • Python • Bash</p>
+                <p><strong>Frameworks & Libraries:</strong> React/React Native • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)</p>
+                <p><strong>Data & Storage:</strong> PostgreSQL • Supabase • ELK Stack • Redis</p>
+                <p><strong>DevOps & Cloud:</strong> Docker • Terraform • Ansible • GitHub Actions • Hetzner • AWS</p>
+                <p><strong>Blockchain & Security:</strong> Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets</p>
+            </div>
+
+            <h2>EXPERIENCE</h2>
+
+            <div class="job">
+                <h3>R&D Innovation Lead & Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Present</p>
+                <ul>
+                    <li>Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach</li>
+                    <li>Produced architecture, <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> and decision log guiding current implementation phase</li>
+                    <li>Host monthly public demos & Q&A sessions (YouTube ~5k views average)</li>
+                    <li>Organized week-long on-site workshop that reduced open research questions</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
+                <ul>
+                    <li>Re-engineered wallet backend from poll-based to event-driven → sync latency ↓ 45%, infra cost ↓ >60%</li>
+                    <li>Authored <a href="https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX" target="_blank">CIP</a> and built first main-/test-net indexers (>2k tx/s ingest capacity)</li>
+                    <li>Led 7-person team delivering MetaDex swap feature using NestJS backend (first revenue stream for Lace)</li>
+                    <li>Built custom chain indexer with bloom filters and credential indexing for wallet optimization</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Solutions Architect</h3>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2021 - Nov 2022</p>
+                <ul>
+                    <li>Designed Plutus smart-contract stack for collateralized debt position platform</li>
+                    <li>Conducted Cardano workshops for 100+ Amazon engineers on eUTxO model and blockchain architecture</li>
+                    <li>Specialized in on-chain/off-chain dApp architecture and Plutus contract development</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Senior Software Engineer</h3>
+                <p class="job-meta">Mobility Data Lab GmbH • Berlin, DE • Feb 2020 - Nov 2021</p>
+                <ul>
+                    <li>Delivered OTA fleet-update pipeline and WiFi audience-tracking system using Vert.x, Rust, and ELK stack</li>
+                    <li>Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services</li>
+                    <li>Built real-time ad pricing system by probing nearby devices for audience size measurement</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Senior Software Engineer</h3>
+                <p class="job-meta">Deloitte US • San Francisco, CA • Sep 2016 - Nov 2019</p>
+                <ul>
+                    <li>Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8</li>
+                    <li>Cut annual license costs by €6M for major German insurance company</li>
+                    <li>Grew team from 3 → 20 engineers; promoted to lead architect within 24 months</li>
+                    <li>Coordinated India on-site delivery and architected end-to-end testing approach</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Co-Founder & CTO</h3>
+                <p class="job-meta">CityXcape Inc. • San Francisco, CA • Feb 2015 - Sep 2016</p>
+                <ul>
+                    <li>Co-founded social discovery platform for exploring cities through community-driven "secret spots"</li>
+                    <li>Raised ~€150k in seed funding; built iOS native app and Django/Ruby on Rails web platform</li>
+                    <li>Led technical development from concept to App Store launch</li>
+                </ul>
+            </div>
+
+            <h2>EDUCATION</h2>
+            <p><strong>International Business</strong><br>
+            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
+
+            <p><strong>Bachelor of Science in Computer Science</strong><br>
+            DHBW Stuttgart • Stuttgart, DE • Oct 2011 - Aug 2014</p>
+        </div>
+
+        <!-- Product Engineer Version -->
+        <div id="product-engineer" class="resume-version">
+            <h1>WILLIAM WOLFF</h1>
+            <p><strong>Product Engineer</strong></p>
+
+            <div class="contact">
+                Berlin, DE | <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
+                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
+            </div>
+
+            <div class="badges">
+                <span class="badge">10+ Years Experience</span>
+                <span class="badge">Product + Engineering</span>
+            </div>
+
+            <h2>PROFILE</h2>
+            <p>Product-minded engineer with 10+ years shipping user-focused products from zero to production. Strong technical foundation combined with deep product sense - I understand how exceptional engineering creates exceptional user experiences. Track record of building products that drive revenue, achieve high retention, and solve real user problems.</p>
+
+            <p><strong>Key strengths:</strong> Revenue generation • User retention • Cross-functional collaboration • 0→1 product development • Technical-to-business translation • Rapid prototyping • Data-driven optimization</p>
+
+            <h2>EXPERIENCE HIGHLIGHTS</h2>
+
+            <div class="job">
+                <h3>Product-Focused Technical Leadership – Lace Wallet</h3>
+                <p class="job-meta">Input Output Global (IOG) • Nov 2022 - Nov 2024</p>
+                <p><strong>Revenue-Generating Product Development:</strong></p>
+                <ul>
+                    <li>Led 7-person team delivering MetaDex swap feature - Lace's <strong>first revenue stream</strong></li>
+                    <li>Coordinated with external partners for API integration and go-to-market strategy</li>
+                    <li>Balanced technical complexity with shipping velocity - delivered in 3-month timeline</li>
+                </ul>
+                <p><strong>User Experience & Performance:</strong></p>
+                <ul>
+                    <li>Re-architected wallet backend → <strong>45% faster sync times</strong> (direct user impact)</li>
+                    <li>Reduced infrastructure costs by >60% while improving reliability</li>
+                    <li>Turned technical achievement into measurable UX improvement</li>
+                </ul>
+            </div>
+
+            <p><em>[Additional product-focused content continues...]</em></p>
+        </div>
+
+        <!-- Engineer Version -->
+        <div id="engineer" class="resume-version">
+            <h1>WILLIAM WOLFF</h1>
+            <p><strong>Senior/Staff Software Engineer</strong></p>
+
+            <div class="contact">
+                Berlin, DE | <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
+                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
+            </div>
+
+            <div class="badges">
+                <span class="badge">10+ Years Experience</span>
+                <span class="badge">Systems & Infrastructure</span>
+            </div>
+
+            <h2>PROFILE</h2>
+            <p>Hands-on systems engineer with 10+ years building high-performance, distributed systems from the ground up. Deep expertise in TypeScript, Rust, and Swift across backend infrastructure, blockchain protocols, and native mobile development. Passionate about solving hard technical problems - from protocol design to performance optimization to cryptographic security.</p>
+
+            <p><strong>Core focus:</strong> Distributed systems • Performance optimization • Blockchain infrastructure • Cryptography • Native mobile • Systems programming</p>
+
+            <p><em>[Additional engineering-focused content continues...]</em></p>
+        </div>
+
+        <!-- Architect Version -->
+        <div id="architect" class="resume-version">
+            <h1>WILLIAM WOLFF</h1>
+            <p><strong>Technical Architect & Solutions Architect</strong></p>
+
+            <div class="contact">
+                Berlin, DE | <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
+                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
+            </div>
+
+            <div class="badges">
+                <span class="badge">10+ Years Experience</span>
+                <span class="badge">Architecture & Strategy</span>
+            </div>
+
+            <h2>PROFILE</h2>
+            <p>Technical architect with 10+ years designing and implementing large-scale distributed systems, blockchain infrastructure, and high-performance applications. Expert at translating complex technical challenges into elegant architectural solutions that deliver measurable business value - 45% latency reduction, 60%+ cost savings, €6M annual savings.</p>
+
+            <p><strong>Core strengths:</strong> System design • Technical strategy • Architecture documentation • Cross-team coordination • Performance optimization • Technology evaluation • Risk assessment • Team mentorship</p>
+
+            <p><em>[Additional architect-focused content continues...]</em></p>
+        </div>
+    </div>
+
+    <!-- JavaScript for tab switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const resumeVersions = document.querySelectorAll('.resume-version');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const target = this.dataset.target;
+
+                    // Update active button
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update active resume version
+                    resumeVersions.forEach(version => version.classList.remove('active'));
+                    document.getElementById(target).classList.add('active');
+
+                    // Update URL hash without scrolling
+                    history.replaceState(null, null, '#' + target);
+                });
+            });
+
+            // Handle initial hash on page load
+            const initialHash = window.location.hash.slice(1);
+            if (initialHash) {
+                const targetButton = document.querySelector(`[data-target="${initialHash}"]`);
+                if (targetButton) {
+                    targetButton.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
