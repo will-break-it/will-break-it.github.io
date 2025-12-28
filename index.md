@@ -3,9 +3,13 @@ layout: default
 title: William Wolff - Software Engineer & Technical Architect
 ---
 
-<div class="resume-nav">
-📋 <strong>View as:</strong> <strong>Full CV</strong> • <a href="/product-engineer">Product Engineer</a> • <a href="/engineering">Engineer</a> • <a href="/architect">Architect</a> • <a href="/master-cv">Master (Detailed)</a>
-</div>
+<nav class="resume-nav">
+  <span class="active">Full CV</span>
+  <a href="/product-engineer">Product Engineer</a>
+  <a href="/engineering">Engineer</a>
+  <a href="/architect">Architect</a>
+  <a href="/master-cv">Master CV</a>
+</nav>
 
 # WILLIAM WOLFF
 **Software Engineer & Technical Architect**

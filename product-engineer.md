@@ -4,9 +4,13 @@ title: William Wolff - Product Engineer
 permalink: /product-engineer/
 ---
 
-<div class="resume-nav">
-📋 <strong>View as:</strong> <a href="/">Full CV</a> • <strong>Product Engineer</strong> • <a href="/engineering">Engineer</a> • <a href="/architect">Architect</a> • <a href="/master-cv">Master (Detailed)</a>
-</div>
+<nav class="resume-nav">
+  <a href="/">Full CV</a>
+  <span class="active">Product Engineer</span>
+  <a href="/engineering">Engineer</a>
+  <a href="/architect">Architect</a>
+  <a href="/master-cv">Master CV</a>
+</nav>
 
 # WILLIAM WOLFF
 **Product Engineer**

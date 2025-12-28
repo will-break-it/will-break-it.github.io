@@ -4,9 +4,13 @@ title: William Wolff - Senior/Staff Engineer
 permalink: /engineering/
 ---
 
-<div class="resume-nav">
-📋 <strong>View as:</strong> <a href="/">Full CV</a> • <a href="/product-engineer">Product Engineer</a> • <strong>Engineer</strong> • <a href="/architect">Architect</a> • <a href="/master-cv">Master (Detailed)</a>
-</div>
+<nav class="resume-nav">
+  <a href="/">Full CV</a>
+  <a href="/product-engineer">Product Engineer</a>
+  <span class="active">Engineer</span>
+  <a href="/architect">Architect</a>
+  <a href="/master-cv">Master CV</a>
+</nav>
 
 # WILLIAM WOLFF
 **Senior/Staff Software Engineer**

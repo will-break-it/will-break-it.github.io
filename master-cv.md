@@ -4,9 +4,13 @@ title: William Wolff - Complete CV (Master)
 permalink: /master-cv/
 ---
 
-<div class="resume-nav">
-📋 <strong>View as:</strong> <a href="/">Full CV</a> • <a href="/product-engineer">Product Engineer</a> • <a href="/engineering">Engineer</a> • <a href="/architect">Architect</a> • <strong>Master (Detailed)</strong>
-</div>
+<nav class="resume-nav">
+  <a href="/">Full CV</a>
+  <a href="/product-engineer">Product Engineer</a>
+  <a href="/engineering">Engineer</a>
+  <a href="/architect">Architect</a>
+  <span class="active">Master CV</span>
+</nav>
 
 # WILLIAM WOLFF
 **Software Engineer • Technical Architect • Product Thinker**

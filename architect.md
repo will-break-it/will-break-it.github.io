@@ -4,9 +4,13 @@ title: William Wolff - Technical Architect
 permalink: /architect/
 ---
 
-<div class="resume-nav">
-📋 <strong>View as:</strong> <a href="/">Full CV</a> • <a href="/product-engineer">Product Engineer</a> • <a href="/engineering">Engineer</a> • <strong>Architect</strong> • <a href="/master-cv">Master (Detailed)</a>
-</div>
+<nav class="resume-nav">
+  <a href="/">Full CV</a>
+  <a href="/product-engineer">Product Engineer</a>
+  <a href="/engineering">Engineer</a>
+  <span class="active">Architect</span>
+  <a href="/master-cv">Master CV</a>
+</nav>
 
 # WILLIAM WOLFF
 **Technical Architect & Solutions Architect**
