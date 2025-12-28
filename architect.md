@@ -1,6 +1,7 @@
 ---
 layout: default
 title: William Wolff - Technical Architect
+permalink: /architect/
 ---
 
 <div class="resume-nav">

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: William Wolff - Complete CV (Master)
+permalink: /master-cv/
 ---
 
 <div class="resume-nav">

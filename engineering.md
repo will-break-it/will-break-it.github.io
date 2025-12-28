@@ -1,6 +1,7 @@
 ---
 layout: default
 title: William Wolff - Senior/Staff Engineer
+permalink: /engineering/
 ---
 
 <div class="resume-nav">

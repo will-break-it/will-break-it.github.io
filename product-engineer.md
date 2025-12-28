@@ -1,6 +1,7 @@
 ---
 layout: default
 title: William Wolff - Product Engineer
+permalink: /product-engineer/
 ---
 
 <div class="resume-nav">
