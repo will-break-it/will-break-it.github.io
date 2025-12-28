@@ -147,11 +147,8 @@
         }
 
         /* Language switching */
-        [lang="en"]:not([data-lang="en"]) { display: none; }
-        [lang="de"]:not([data-lang="de"]) { display: none; }
-
-        [data-lang="en"] [lang="de"] { display: none; }
-        [data-lang="de"] [lang="en"] { display: none; }
+        [data-lang="de"] [lang="en"] { display: none !important; }
+        [data-lang="en"] [lang="de"] { display: none !important; }
 
         /* Navigation */
         .nav-tabs {
@@ -276,13 +273,12 @@
             border-radius: 50%;
             color: var(--color-text);
             text-decoration: none;
-            transition: all 0.2s ease;
-            opacity: 0.7;
+            transition: opacity 0.2s ease;
+            opacity: 0.6;
         }
 
         .social-link:hover {
             opacity: 1;
-            transform: translateY(-2px);
         }
 
         .social-link svg {
