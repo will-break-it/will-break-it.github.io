@@ -2177,13 +2177,6 @@
             }
         });
 
-        // Expand all sections by default on desktop
-        if (window.innerWidth >= 1024) {
-            document.querySelectorAll('.job').forEach(job => {
-                job.classList.add('expanded');
-            });
-        }
-
         // Sidebar navigation scroll tracking
         function initSidebarTracking() {
             const navLinks = document.querySelectorAll('.cv-nav-link');
