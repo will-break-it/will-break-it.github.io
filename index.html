@@ -912,29 +912,26 @@
             margin: 0;
             font-size: 1.25rem;
             font-weight: 600;
+        }
+
+        .project-title-link {
             color: var(--color-accent);
-        }
-
-        .project-links {
-            display: flex;
-            gap: var(--spacing-xs);
-        }
-
-        .project-link {
-            padding: 4px 12px;
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: var(--color-text);
             text-decoration: none;
-            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            transition: opacity 0.2s ease;
         }
 
-        .project-link:hover {
-            background: var(--color-accent);
-            color: var(--color-bg);
-            border-color: var(--color-accent);
+        .project-title-link:hover {
+            opacity: 0.7;
+        }
+
+        .external-link-icon {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            opacity: 0.6;
         }
 
         .project-tech {
@@ -945,13 +942,14 @@
 
         .tech-tag {
             display: inline-block;
-            padding: 4px 10px;
-            background: var(--color-bg);
+            padding: 3px 8px;
+            background: transparent;
             border: 1px solid var(--color-border);
-            border-radius: 4px;
-            font-size: 0.8rem;
-            color: var(--color-text-light);
-            font-weight: 500;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: var(--color-text-lighter);
+            font-weight: 400;
+            opacity: 0.7;
         }
 
         .project-description {
@@ -1578,12 +1576,16 @@
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
-                                <h3>Dump it! – Voice-First Note Taking App</h3>
-                                <div class="project-links">
-                                    <a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank" class="project-link">iOS</a>
-                                    <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank" class="project-link">Android</a>
-                                    <a href="https://dumpit.app" target="_blank" class="project-link">Web</a>
-                                </div>
+                                <h3>
+                                    <a href="https://dumpit.app" target="_blank" class="project-title-link">
+                                        Dump it! – Voice-First Note Taking App
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Swift</span>
@@ -1612,10 +1614,16 @@
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
-                                <h3>Underwater Journeys – Dive Center Website & Booking System</h3>
-                                <div class="project-links">
-                                    <a href="https://underwater.journeys.cy/" target="_blank" class="project-link">Website</a>
-                                </div>
+                                <h3>
+                                    <a href="https://underwater.journeys.cy/" target="_blank" class="project-title-link">
+                                        Underwater Journeys – Dive Center Website & Booking System
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Next.js</span>
@@ -1633,11 +1641,16 @@
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
-                                <h3>Ouroboros Leios – Protocol Website & Documentation</h3>
-                                <div class="project-links">
-                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-link">Website</a>
-                                    <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank" class="project-link">CIP-0164</a>
-                                </div>
+                                <h3>
+                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-title-link">
+                                        Ouroboros Leios – Protocol Website & Documentation
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Documentation</span>
@@ -1659,10 +1672,16 @@
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
-                                <h3>Drip Dropz – NFT Marketplace</h3>
-                                <div class="project-links">
-                                    <a href="https://dripdropz.io/" target="_blank" class="project-link">Website</a>
-                                </div>
+                                <h3>
+                                    <a href="https://dripdropz.io/" target="_blank" class="project-title-link">
+                                        Drip Dropz – NFT Marketplace
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">React</span>
