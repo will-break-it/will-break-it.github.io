@@ -8,7 +8,7 @@ I thrive on variety and adapting to new domains. Over 10+ years, I've worked eve
 
 Currently leading R&D for **[Ouroboros Leios](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md)** - a high-throughput protocol for Cardano. Before that, I architected **[Lace Wallet](https://www.lace.io/)**, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.
 
-**What drives me** is understanding problems from the user's perspective and finding the right solution - whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.
+**What drives me** is understanding problems from the user's perspective and finding the right solution - regardless of whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.
 
 **Core tech:** TypeScript • Rust • Swift • Kotlin • Blockchain • Cryptography • Mobile • Systems Programming
 
