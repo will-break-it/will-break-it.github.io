@@ -3,8 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="William Wolff - Software Engineer, Technical Architect, Builder">
-    <title>William Wolff</title>
+
+    <!-- Primary Meta Tags -->
+    <title>William Wolff - Software Engineer & Technical Architect</title>
+    <meta name="title" content="William Wolff - Software Engineer & Technical Architect">
+    <meta name="description" content="Versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. From enterprise (Deloitte) to blockchain infrastructure (IOG/Cardano). Expert in TypeScript, Rust, Swift, distributed systems, and cryptography.">
+    <meta name="keywords" content="Software Engineer, Technical Architect, Blockchain, TypeScript, Rust, Swift, Cardano, Distributed Systems, Full-Stack Developer, Mobile Development, Berlin">
+    <meta name="author" content="William Wolff">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="English, German">
+    <link rel="canonical" href="https://will-break-it.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://will-break-it.github.io/">
+    <meta property="og:title" content="William Wolff - Software Engineer & Technical Architect">
+    <meta property="og:description" content="Versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. Expert in distributed systems, blockchain, and mobile development.">
+    <meta property="og:image" content="https://will-break-it.github.io/assets/images/will.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://will-break-it.github.io/">
+    <meta property="twitter:title" content="William Wolff - Software Engineer & Technical Architect">
+    <meta property="twitter:description" content="Versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. Expert in distributed systems, blockchain, and mobile development.">
+    <meta property="twitter:image" content="https://will-break-it.github.io/assets/images/will.jpg">
+    <meta property="twitter:creator" content="@will_break_it">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#09090b">
+    <meta name="color-scheme" content="dark light">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "William Wolff",
+      "url": "https://will-break-it.github.io/",
+      "image": "https://will-break-it.github.io/assets/images/will.jpg",
+      "sameAs": [
+        "https://linkedin.com/in/wwolff",
+        "https://github.com/will-break-it",
+        "https://x.com/will_break_it"
+      ],
+      "jobTitle": "Software Engineer & Technical Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Input Output Global"
+      },
+      "knowsAbout": [
+        "Software Engineering",
+        "Blockchain Development",
+        "Distributed Systems",
+        "TypeScript",
+        "Rust",
+        "Swift",
+        "System Architecture",
+        "Mobile Development",
+        "Cryptography"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "German",
+          "alternateName": "de"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      }
+    }
+    </script>
     <style>
         /* CSS Variables for Light/Dark Themes */
         :root {
@@ -209,11 +287,21 @@
         }
 
         /* Home/Intro Page */
+        #home.active {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 80px);
+        }
+
         .intro-section {
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
             padding: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .profile-image {
@@ -277,15 +365,17 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            border-radius: 50%;
             color: var(--color-text);
             text-decoration: none;
             transition: opacity 0.2s ease;
             opacity: 0.6;
+            border: none;
+            border-bottom: none;
         }
 
         .social-link:hover {
             opacity: 1;
+            border-bottom: none;
         }
 
         .social-link svg {
@@ -297,8 +387,9 @@
         /* CV Navigation Prompt */
         .cv-prompt {
             text-align: center;
-            margin-top: var(--spacing-sm);
-            padding-top: var(--spacing-sm);
+            margin-top: auto;
+            padding-top: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
             border-top: 1px solid var(--color-border);
         }
 
@@ -351,14 +442,17 @@
         }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--color-accent);
-            margin: var(--spacing-lg) 0 var(--spacing-md) 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: var(--spacing-xs);
+            margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        section:first-of-type h2 {
+            margin-top: 0;
         }
 
         h3 {
@@ -505,20 +599,23 @@
         /* Collapsible Sections */
         .job {
             margin-bottom: var(--spacing-lg);
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            overflow: hidden;
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .job:last-child {
+            border-bottom: none;
         }
 
         .job-header {
-            padding: var(--spacing-md);
+            padding: var(--spacing-sm) 0;
             cursor: pointer;
             user-select: none;
-            transition: background-color 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .job-header:hover {
-            background-color: var(--color-bg-alt);
+            opacity: 0.8;
         }
 
         .job-title {
@@ -587,10 +684,87 @@
             font-weight: bold;
         }
 
-        /* Skills Section */
-        .skills strong {
-            color: var(--color-accent);
+        /* CV Header Styling */
+        .cv-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin: var(--spacing-xs) 0;
+        }
+
+        .cv-meta-item {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        /* Technology Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .tech-category h3 {
+            font-size: 0.9rem;
             font-weight: 600;
+            color: var(--color-text);
+            margin: 0 0 var(--spacing-xs) 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .tech-item {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            white-space: nowrap;
+        }
+
+        /* Job Summary (visible when collapsed) */
+        .job-summary {
+            margin: var(--spacing-xs) 0 0 0;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .job-location,
+        .job-date {
+            color: var(--color-text-lighter);
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .education-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin: 0 0 var(--spacing-xs) 0;
+        }
+
+        .education-meta {
+            color: var(--color-text-lighter);
+            font-size: 0.9rem;
+            margin: 0;
         }
 
         /* Print Styles */
@@ -642,7 +816,7 @@
                 display: block !important;
             }
 
-            .page:not(#chronological) {
+            .page:not(#cv) {
                 display: none !important;
             }
         }
@@ -779,105 +953,257 @@
             </div>
         </div>
 
-        <!-- Chronological CV Page -->
-        <div id="chronological" class="page">
-            <p><strong>Software Engineer & Technical Architect</strong></p>
+        <!-- CV Page -->
+        <div id="cv" class="page">
+            <div class="cv-layout">
+                <!-- Sidebar Navigation (Desktop only) -->
+                <aside class="cv-sidebar">
+                    <nav class="cv-nav">
+                        <div class="cv-nav-title">Contents</div>
+                        <a href="#profile" class="cv-nav-link">Profile</a>
+                        <a href="#technologies" class="cv-nav-link">Technologies</a>
+                        <a href="#experience" class="cv-nav-link">Experience</a>
+                        <a href="#education" class="cv-nav-link">Education</a>
+                    </nav>
+                </aside>
 
-            <div class="contact">
-                Berlin, DE | German & English (fluent) | <em>Full contact details available on request</em><br>
-                <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
-                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
+                <!-- Main CV Content -->
+                <div class="cv-main">
+                    <!-- Header -->
+                    <div class="cv-header">
+                        <div class="cv-title">Software Engineer & Technical Architect</div>
+                        <div class="cv-meta">
+                            <span class="cv-meta-item">📍 Berlin, DE</span>
+                            <span class="cv-meta-item">💬 German & English (fluent)</span>
+                            <span class="cv-meta-item">📧 Contact available on request</span>
+                        </div>
+                        <div class="cv-contact">
+                            <a href="https://linkedin.com/in/wwolff" target="_blank">LinkedIn</a> •
+                            <a href="https://github.com/will-break-it" target="_blank">GitHub</a> •
+                            <a href="https://x.com/will_break_it" target="_blank">X/Twitter</a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <section id="profile">
+                        <h2>Profile</h2>
+                        <p>Curious, relentlessly-learning engineer with 10+ years building high-impact products from green-field prototype to production at scale. Deep expertise in blockchain infrastructure, distributed systems, and secure application development. Founder DNA with proven ability to ship products that generate revenue and drive user engagement.</p>
+                    </section>
+
+                    <!-- Technologies Section -->
+                    <section id="technologies">
+                        <h2>Technologies</h2>
+                        <div class="tech-grid">
+                            <div class="tech-category">
+                                <h3>Languages</h3>
+                                <div class="tech-items">
+                                    <span class="tech-item">TypeScript</span>
+                                    <span class="tech-item">Rust</span>
+                                    <span class="tech-item">Swift</span>
+                                    <span class="tech-item">Kotlin</span>
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">Java</span>
+                                    <span class="tech-item">Haskell</span>
+                                </div>
+                            </div>
+                            <div class="tech-category">
+                                <h3>Frameworks & Tools</h3>
+                                <div class="tech-items">
+                                    <span class="tech-item">React / React Native</span>
+                                    <span class="tech-item">Node.js / NestJS</span>
+                                    <span class="tech-item">SwiftUI</span>
+                                    <span class="tech-item">Jetpack Compose</span>
+                                </div>
+                            </div>
+                            <div class="tech-category">
+                                <h3>Infrastructure & Data</h3>
+                                <div class="tech-items">
+                                    <span class="tech-item">PostgreSQL</span>
+                                    <span class="tech-item">Redis</span>
+                                    <span class="tech-item">Docker</span>
+                                    <span class="tech-item">Terraform</span>
+                                    <span class="tech-item">GitHub Actions</span>
+                                </div>
+                            </div>
+                            <div class="tech-category">
+                                <h3>Blockchain & Cryptography</h3>
+                                <div class="tech-items">
+                                    <span class="tech-item">Cardano / eUTxO</span>
+                                    <span class="tech-item">Plutus Smart Contracts</span>
+                                    <span class="tech-item">End-to-End Encryption</span>
+                                    <span class="tech-item">Secure Enclave</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Experience Section -->
+                    <section id="experience">
+                        <h2>Experience</h2>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>R&D Innovation Lead & Technical Architect</h3>
+                                    <span class="job-toggle">⌄</span>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Input Output Global (IOG)</span> •
+                                    <span class="job-location">Remote</span> •
+                                    <span class="job-date">Nov 2024 - Present</span>
+                                </div>
+                                <p class="job-summary">Leading R&D for Ouroboros Leios, a high-throughput protocol for Cardano blockchain</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Direct team of 8 researchers & engineers exploring high-throughput overlay protocol</li>
+                                        <li>Authored comprehensive <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> specification and architecture documentation</li>
+                                        <li>Host monthly public demos on YouTube (~5k average views) and Q&A sessions</li>
+                                        <li>Organized week-long workshop in Edinburgh that significantly reduced open research questions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Technical Architect</h3>
+                                    <span class="job-toggle">⌄</span>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Input Output Global (IOG) - Lace Wallet</span> •
+                                    <span class="job-location">Remote</span> •
+                                    <span class="job-date">Nov 2022 - Nov 2024</span>
+                                </div>
+                                <p class="job-summary">Led technical architecture for Lace, delivering 45% performance improvement and first revenue stream</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Re-engineered wallet backend from poll-based to event-driven architecture → 45% latency reduction, >60% cost savings</li>
+                                        <li>Built custom chain indexer with bloom filters achieving >2,000 tx/s ingest capacity</li>
+                                        <li>Led 7-person cross-functional team delivering MetaDex swap feature (first revenue stream for Lace)</li>
+                                        <li>Authored CIP proposal for wallet indexing standards</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Solutions Architect</h3>
+                                    <span class="job-toggle">⌄</span>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Input Output Global (IOG)</span> •
+                                    <span class="job-location">Remote</span> •
+                                    <span class="job-date">Nov 2021 - Nov 2022</span>
+                                </div>
+                                <p class="job-summary">Designed blockchain solutions and educated enterprise partners on Cardano architecture</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Designed complete Plutus smart-contract stack for collateralized debt position (CDP) platform</li>
+                                        <li>Conducted technical workshops for 100+ Amazon engineers on Cardano architecture and eUTxO model</li>
+                                        <li>Created reusable architecture patterns for eUTxO-based dApps</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Senior Software Engineer</h3>
+                                    <span class="job-toggle">⌄</span>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Mobility Data Lab GmbH</span> •
+                                    <span class="job-location">Berlin, DE</span> •
+                                    <span class="job-date">Feb 2020 - Nov 2021</span>
+                                </div>
+                                <p class="job-summary">Built IoT and data processing systems for connected vehicle platform</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Delivered complete over-the-air (OTA) fleet-update pipeline for connected vehicle hardware</li>
+                                        <li>Built WiFi audience-tracking system using embedded devices (Rust) in vehicles</li>
+                                        <li>Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services</li>
+                                        <li>Developed real-time ad pricing based on audience measurement (Vert.x, ELK stack)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Senior Software Engineer & Migration Lead</h3>
+                                    <span class="job-toggle">⌄</span>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">Deloitte US</span> •
+                                    <span class="job-location">San Francisco, CA</span> •
+                                    <span class="job-date">Sep 2016 - Nov 2019</span>
+                                </div>
+                                <p class="job-summary">Led migration of 16M lines of code, saving €6M annually in licensing costs</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Architected 3-stage migration toolchain (parser → converter → runtime) for 16M LoC transformation</li>
+                                        <li>Cut annual license costs by €6M for major German insurance company</li>
+                                        <li>Grew team from 3 → 20 engineers; promoted to lead architect within 24 months</li>
+                                        <li>Achieved >99.9% compatibility through differential testing framework</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>Co-Founder & CTO</h3>
+                                    <span class="job-toggle">⌄</span>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-company">CityXcape Inc.</span> •
+                                    <span class="job-location">San Francisco, CA</span> •
+                                    <span class="job-date">Feb 2015 - Sep 2016</span>
+                                </div>
+                                <p class="job-summary">Co-founded social discovery platform, raised €150k seed funding</p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>Co-founded social discovery platform for exploring cities through community recommendations</li>
+                                        <li>Raised ~€150k in seed funding from angel investors</li>
+                                        <li>Built iOS native app (Swift) and Django/Ruby on Rails backend from concept to App Store launch</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Education Section -->
+                    <section id="education">
+                        <h2>Education</h2>
+                        <div class="education-item">
+                            <h3>Bachelor of Science in Computer Science</h3>
+                            <p class="education-meta">DHBW Stuttgart • Germany • 2011 - 2014</p>
+                        </div>
+                        <div class="education-item">
+                            <h3>International Business</h3>
+                            <p class="education-meta">Hult International Business School • San Francisco, CA • 2014 - 2015</p>
+                        </div>
+                    </section>
+                </div>
             </div>
-
-            <div class="badges">
-                <span class="badge">10+ Years Experience</span>
-                <span class="badge">Berlin, DE</span>
-                <span class="badge">Blockchain & R&D</span>
-            </div>
-
-            <h2>PROFILE</h2>
-            <p>Curious, relentlessly-learning engineer & technical architect, with founder DNA and 10+ years building high-impact products from green-field prototype to production at scale. Passionate about blockchain infrastructure, secure systems, and delivering exceptional user experiences.</p>
-
-            <h2>TECHNOLOGIES, LANGUAGES & TOOLING</h2>
-            <div class="skills">
-                <p><strong>Languages:</strong> TypeScript • Rust • Swift • Java/Kotlin • Python • Bash</p>
-                <p><strong>Frameworks & Libraries:</strong> React/React Native • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)</p>
-                <p><strong>Data & Storage:</strong> PostgreSQL • Supabase • ELK Stack • Redis</p>
-                <p><strong>DevOps & Cloud:</strong> Docker • Terraform • Ansible • GitHub Actions • Hetzner • AWS</p>
-                <p><strong>Blockchain & Security:</strong> Cardano (eUTxO) • Ouroboros Leios • Secure Enclave/TEE • Mobile Wallets</p>
-            </div>
-
-            <h2>EXPERIENCE</h2>
-
-            <div class="job">
-                <h3>R&D Innovation Lead & Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Present</p>
-                <ul>
-                    <li>Direct 8 researchers & engineers exploring high-throughput overlay for Cardano through simulation-driven approach</li>
-                    <li>Produced architecture, <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> and decision log guiding current implementation phase</li>
-                    <li>Host monthly public demos & Q&A sessions (YouTube ~5k views average)</li>
-                    <li>Organized week-long on-site workshop that reduced open research questions</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
-                <ul>
-                    <li>Re-engineered wallet backend from poll-based to event-driven → sync latency ↓ 45%, infra cost ↓ >60%</li>
-                    <li>Authored CIP and built first main-/test-net indexers (>2k tx/s ingest capacity)</li>
-                    <li>Led 7-person team delivering MetaDex swap feature using NestJS backend (first revenue stream for Lace)</li>
-                    <li>Built custom chain indexer with bloom filters and credential indexing for wallet optimization</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Solutions Architect</h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2021 - Nov 2022</p>
-                <ul>
-                    <li>Designed Plutus smart-contract stack for collateralized debt position platform</li>
-                    <li>Conducted Cardano workshops for 100+ Amazon engineers on eUTxO model and blockchain architecture</li>
-                    <li>Specialized in on-chain/off-chain dApp architecture and Plutus contract development</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Senior Software Engineer</h3>
-                <p class="job-meta">Mobility Data Lab GmbH • Berlin, DE • Feb 2020 - Nov 2021</p>
-                <ul>
-                    <li>Delivered OTA fleet-update pipeline and WiFi audience-tracking system using Vert.x, Rust, and ELK stack</li>
-                    <li>Launched pilot with 20+ vehicles for Miles and Share Now car-sharing services</li>
-                    <li>Built real-time ad pricing system by probing nearby devices for audience size measurement</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Senior Software Engineer</h3>
-                <p class="job-meta">Deloitte US • San Francisco, CA • Sep 2016 - Nov 2019</p>
-                <ul>
-                    <li>Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8</li>
-                    <li>Cut annual license costs by €6M for major German insurance company</li>
-                    <li>Grew team from 3 → 20 engineers; promoted to lead architect within 24 months</li>
-                    <li>Coordinated India on-site delivery and architected end-to-end testing approach</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Co-Founder & CTO</h3>
-                <p class="job-meta">CityXcape Inc. • San Francisco, CA • Feb 2015 - Sep 2016</p>
-                <ul>
-                    <li>Co-founded social discovery platform for exploring cities through community-driven "secret spots"</li>
-                    <li>Raised ~€150k in seed funding; built iOS native app and Django/Ruby on Rails web platform</li>
-                    <li>Led technical development from concept to App Store launch</li>
-                </ul>
-            </div>
-
-            <h2>EDUCATION</h2>
-            <p><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
-
-            <p><strong>Bachelor of Science in Computer Science</strong><br>
-            DHBW Stuttgart • Stuttgart, DE • Oct 2011 - Aug 2014</p>
         </div>
 
         <!-- Product Engineer CV Page -->
