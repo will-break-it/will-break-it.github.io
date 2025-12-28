@@ -1,0 +1,36 @@
+# William Wolff - Software Engineer & Technical Architect
+
+> Portfolio and CV for William Wolff, a software engineer with 10+ years of experience in blockchain infrastructure, distributed systems, and product development.
+
+## About
+
+This is the personal portfolio and CV website for William Wolff, showcasing:
+
+- **Professional Experience**: R&D Innovation Lead at Input Output Global (IOG) working on Ouroboros Leios high-throughput protocol for Cardano blockchain
+- **Technical Expertise**: Blockchain infrastructure, distributed systems, event-driven architecture, smart contracts, cryptography
+- **Projects**: Voice-first apps, NFT marketplaces, chain indexers, DEX integration libraries, stake pool operations
+- **Open Source Contributions**: Dolos (chain indexer), Lucid (transaction library), Scrolls (multi-DEX indexing), DEX order serialization library
+
+## Site Structure
+
+- `/` - Home page with portfolio overview
+- `/#cv` - Full curriculum vitae with detailed work history
+- `/#projects-page` - Comprehensive project showcase
+
+## Content
+
+The site includes:
+- Detailed work experience from 2015-present
+- Technical projects across blockchain, mobile, and web development
+- Technology stack: TypeScript, Rust, Swift, Kotlin, Python, Java, Haskell
+- Focus areas: Cardano blockchain, eUTxO model, Plutus smart contracts, distributed systems
+
+## Contact
+
+Contact information available on request through the website.
+
+## Languages
+
+Content available in:
+- English (default)
+- German (Deutsch)
