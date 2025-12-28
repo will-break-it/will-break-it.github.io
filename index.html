@@ -209,35 +209,54 @@
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
-            padding: var(--spacing-md) 0;
+            padding: 0;
         }
 
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            margin: 0 auto var(--spacing-md);
+            margin: 0 auto var(--spacing-sm);
             object-fit: cover;
             border: 3px solid var(--color-border);
         }
 
         .intro-section .tagline {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--color-text);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
             font-weight: 500;
         }
 
         .intro-section .bio {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--color-text-light);
-            line-height: 1.7;
-            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
             text-align: left;
         }
 
         .intro-section .bio p {
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Desktop optimization - fit on one screen */
+        @media (min-width: 1024px) {
+            .intro-section {
+                padding: var(--spacing-sm) 0;
+            }
+
+            .container {
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+
+            header {
+                margin-bottom: var(--spacing-xs);
+            }
+
+            header.with-nav {
+                margin-bottom: var(--spacing-sm);
+            }
         }
 
         /* Social Links */
@@ -245,7 +264,7 @@
             display: flex;
             gap: var(--spacing-sm);
             justify-content: center;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
         }
 
         .social-link {
@@ -275,14 +294,14 @@
         /* CV Navigation Prompt */
         .cv-prompt {
             text-align: center;
-            margin-top: var(--spacing-md);
-            padding-top: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-sm);
             border-top: 1px solid var(--color-border);
         }
 
         .cv-prompt p {
             color: var(--color-text-lighter);
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
             font-size: 0.9rem;
         }
 
@@ -504,12 +523,16 @@
             }
 
             .profile-image {
-                width: 100px;
-                height: 100px;
+                width: 90px;
+                height: 90px;
             }
 
             .intro-section .tagline {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+
+            .intro-section .bio {
+                font-size: 0.9rem;
             }
 
             .social-links {
