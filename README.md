@@ -1,8 +1,8 @@
 # Hi, I'm Will 👋
 
-[![GitHub](https://img.shields.io/badge/GitHub-will--break--it-181717?style=flat&logo=github)](https://github.com/will-break-it)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-wwolff-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/wwolff)
-[![X/Twitter](https://img.shields.io/badge/X-@will__break__it-000000?style=flat&logo=x)](https://x.com/will_break_it)
+[![GitHub](https://img.shields.io/badge/GitHub-will--break--it-181717?style=flat&logo=github&logoColor=white)](https://github.com/will-break-it)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-wwolff-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/wwolff)
+[![X](https://img.shields.io/badge/@will__break__it-000000?style=flat&logo=x&logoColor=white)](https://x.com/will_break_it)
 [![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat&logo=googlemaps&logoColor=white)](https://will-break-it.github.io)
 
 **Versatile engineer building across industries, platforms, and company sizes**
