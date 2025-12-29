@@ -1,19 +1,30 @@
-### Hi, I'm Will
+# Hi, I'm Will 👋
 
-![Build Status](https://img.shields.io/badge/Build%20Status-Always%20Shipping-brightgreen?style=flat) ![Learning](https://img.shields.io/badge/Curiosity%20Level-100%25-blue?style=flat) ![Experience](https://img.shields.io/badge/Experience-10%2B%20Years-2196F3?style=flat) ![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat)
+[![GitHub](https://img.shields.io/badge/GitHub-will--break--it-181717?style=flat&logo=github)](https://github.com/will-break-it)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-wwolff-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/wwolff)
+[![X/Twitter](https://img.shields.io/badge/X-@will__break__it-000000?style=flat&logo=x)](https://x.com/will_break_it)
+[![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat&logo=googlemaps&logoColor=white)](https://will-break-it.github.io)
 
 **Versatile engineer building across industries, platforms, and company sizes**
 
 I thrive on variety and adapting to new domains. Over 10+ years, I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware.
 
-Currently leading R&D for **[Ouroboros Leios](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md)** - a high-throughput protocol for Cardano. Before that, I architected **[Lace Wallet](https://www.lace.io/)**, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.
+Currently leading R&D for **[Ouroboros Leios](https://leios.cardano-scaling.org)** - a high-throughput protocol for Cardano. Before that, I architected **[Lace Wallet](https://www.lace.io/)**, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.
 
 **What drives me** is understanding problems from the user's perspective and finding the right solution - regardless of whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.
 
-**Core tech:** TypeScript • Rust • Swift • Kotlin • Blockchain • Cryptography • Mobile • Systems Programming
+## Tech Stack
 
-**Beyond coding:** Beach volleyball • Freediving • Fitness • Reading (economics, blockchain, sci-fi)
+**Languages:** TypeScript • Rust • Swift • Kotlin • Python • Haskell • Java
+
+**Specializations:** Blockchain Infrastructure • Distributed Systems • Cryptography • Mobile Development • Event-Driven Architecture
+
+**Recent Work:** Cardano • eUTxO Model • Plutus Smart Contracts • High-Throughput Consensus Protocols
+
+## Beyond Coding
+
+🏐 Beach Volleyball • 🏊 Freediving • 💪 Fitness • 📚 Reading (Economics, Blockchain, Sci-Fi)
 
 ---
 
-[Full CV](https://will-break-it.github.io) • [LinkedIn](https://linkedin.com/in/wwolff) • [X/Twitter](https://x.com/will_break_it)
+📄 **[View Full CV & Portfolio](https://will-break-it.github.io)**
