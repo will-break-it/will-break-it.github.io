@@ -12,4 +12,7 @@ vendor/
 .DS_Store
 
 # Local development
-.env 
+.env
+
+# Private resumes (role-specific, not for public)
+private/ 

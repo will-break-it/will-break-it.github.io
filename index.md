@@ -3,20 +3,13 @@ layout: default
 title: William Wolff - Software Engineer & Technical Architect
 ---
 
-<nav class="resume-nav">
-  <span class="active">Chronological</span>
-  <a href="/product-engineer">Product Engineer</a>
-  <a href="/engineering">Engineer</a>
-  <a href="/architect">Architect</a>
-</nav>
-
 # WILLIAM WOLFF
 **Software Engineer & Technical Architect**
 
 Berlin, DE | German & English (fluent) | *Full contact details available on request*
 [linkedin.com/in/wwolff](https://linkedin.com/in/wwolff) • [github.com/will-break-it](https://github.com/will-break-it)
 
-![Experience](https://img.shields.io/badge/Experience-10%2B%20Years-2196F3?style=flat) ![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat) ![Focus](https://img.shields.io/badge/Focus-Blockchain%20%26%20R%26D-9C27B0?style=flat)
+![Experience](https://img.shields.io/badge/Experience-10%2B%20Years-2196F3?style=flat) ![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat) [![PDF](https://img.shields.io/badge/Download-PDF-0d9488?style=flat)](https://github.com/will-break-it/will-break-it/raw/main/master-cv.pdf)
 
 ---
 
@@ -83,14 +76,13 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ## SELECTED SIDE PROJECTS & CONSULTING
 
-### **Dump it! – AI-Enhanced Note Taking App**
+### **Dump it! – Voice first note taking**
 *Mobile & Web Development* • <span class="date">2023 - Present</span>
 - Built native [iOS](https://apps.apple.com/de/app/dump-it/id6448620477) (Swift), [Android](https://play.google.com/store/apps/details?id=app.dump.it) (Kotlin), and React [Web](https://dumpit.app) applications with end-to-end encryption
 - Implemented Diffie-Hellman key exchange + AES for secure note storage using Supabase backend
 - Self-hosted Whisper v3 for speech-to-text • GPT-4 API integration for summaries/translations
-- Leveraged AI for code generation and review processes across React/TypeScript projects
 - Designed offline-first architecture with persistent queue system for seamless cross-platform syncing
-- Achieved 5k+ notes created and 200+ users with 70% weekly retention within first 2 months
+- 5k+ notes created and 200+ users with 70% weekly retention within first 2 months
 - Successfully launched on web, App Store, and Google Play Store
 
 ### **Drip Dropz – NFT Marketplace**

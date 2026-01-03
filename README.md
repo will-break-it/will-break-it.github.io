@@ -2,28 +2,24 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-wwolff-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/wwolff)
 [![X](https://img.shields.io/badge/@will__break__it-000000?style=flat&logo=x&logoColor=white)](https://x.com/will_break_it)
-[![Location](https://img.shields.io/badge/Location-Berlin%2C%20DE-4CAF50?style=flat&logo=googlemaps&logoColor=white)](https://will-break-it.github.io)
+[![Location](https://img.shields.io/badge/Berlin-4CAF50?style=flat&logo=googlemaps&logoColor=white)](https://will-break-it.github.io)
 
-**Versatile engineer building across industries, platforms, and company sizes**
+Software engineer who enjoys jumping between domains. Over the past decade I've worked on pension systems at Deloitte, blockchain protocols at IOG, IoT platforms, mobile apps, and a few side projects in between.
 
-I thrive on variety and adapting to new domains. Over 10+ years, I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware.
+Currently leading R&D for **[Ouroboros Leios](https://leios.cardano-scaling.org)** — figuring out how to make Cardano faster. Before that I architected **[Lace Wallet](https://www.lace.io/)** and somehow convinced 100+ Amazon engineers to sit through my blockchain workshops.
 
-Currently leading R&D for **[Ouroboros Leios](https://leios.cardano-scaling.org)** - a high-throughput protocol for Cardano. Before that, I architected **[Lace Wallet](https://www.lace.io/)**, built IoT systems, native mobile apps, and migrated 16M lines of legacy code.
+When I'm not coding, you'll find me on the beach volleyball court, underwater freediving, or reading something about economics or sci-fi.
 
-**What drives me** is understanding problems from the user's perspective and finding the right solution - regardless of whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.
+## What I work with
 
-## Tech Stack
+**Day-to-day:** TypeScript, Rust, Swift, Kotlin, Python
 
-**Languages:** TypeScript • Rust • Swift • Kotlin • Python • Haskell • Java
+**Areas:** Distributed systems, blockchain infrastructure, cryptography, mobile, event-driven architecture
 
-**Specializations:** Blockchain Infrastructure • Distributed Systems • Cryptography • Mobile Development • Event-Driven Architecture
+## Links
 
-**Recent Work:** Cardano • eUTxO Model • Plutus Smart Contracts • High-Throughput Consensus Protocols
-
-## Beyond Coding
-
-🏐 Beach Volleyball • 🏊 Freediving • 💪 Fitness • 📚 Reading (Economics, Blockchain, Sci-Fi)
+📄 **[Full CV (PDF)](https://github.com/will-break-it/will-break-it/raw/main/master-cv.pdf)** · **[Portfolio](https://will-break-it.github.io)**
 
 ---
 
-📄 **[View Full CV & Portfolio](https://will-break-it.github.io)**
+Always happy to chat — feel free to reach out.
