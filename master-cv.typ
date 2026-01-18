@@ -104,10 +104,9 @@ Passionate about working on technically challenging problems that contribute to 
 #exp("Senior Software Engineer & Migration Lead", "Sep 2016 – Nov 2019", "Deloitte, San Francisco")[
   Led large-scale legacy system migration for major German insurance company.
   #v(2pt)
-  #b[*Migration Toolchain:* Architected 3-stage pipeline (parser → transformer → generator) converting 16M LoC from proprietary DSL to Java 8]
+  #b[*Migration Toolchain:* Redesigned Cobol-to-Java architecture for functional language (ISA); 3-stage pipeline: parser → AST → Java codegen, plus runtime emulation layer preserving original ISA/IDM behavior]
   #b[*Business Impact:* Saved client €6M annually in licensing costs]
   #b[*Team Growth:* Scaled team from 3 to 20 engineers over 24 months; promoted to lead architect]
-  #b[*Quality Assurance:* Built differential testing framework achieving 99.9% compatibility rate]
   #b[*Global Coordination:* Coordinated with offshore teams in India; established testing standards adopted organization-wide]
 ]
 
@@ -121,7 +120,15 @@ Passionate about working on technically challenging problems that contribute to 
 
 #section("Projects")
 
-#exp("Dump it! – AI-Enhanced Note Taking", "2023 – Present", "iOS, Android, Web")[
+#exp("Ouroboros Leios – Protocol Architecture", "2024 – Present", "Cardano Research")[
+  Co-authored protocol specification and architecture for Cardano's next-generation throughput layer.
+  #v(2pt)
+  #b[*CIP Authorship:* Principal author of #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]]—the canonical architecture design document guiding implementation teams]
+  #b[*Protocol Specification:* Translated academic research into implementable specification with concrete parameters and trade-offs]
+  #b[*Technical Documentation:* Created comprehensive #link("https://leios.cardano-scaling.org")[#text(fill: accent)[documentation site]] covering protocol mechanics, simulation results, and design rationale]
+]
+
+#exp("Dump it! – AI-Enhanced Note Taking", "2023 – 2025", "iOS, Android, Web")[
   Cross-platform application with end-to-end encryption and sophisticated AI processing pipeline.
   #v(2pt)
   #b[*Full-Stack:* Native iOS (Swift/SwiftUI), Android (Kotlin/Compose), and React web app with feature parity]
