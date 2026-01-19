@@ -881,8 +881,46 @@
             font-size: 1.2rem;
         }
 
-        .project-year {
-            margin-bottom: var(--spacing-xl);
+        /* Project Filters */
+        .project-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--color-text-lighter);
+            color: var(--color-text);
+        }
+
+        .filter-btn.active {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        /* Project Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .project-card.hidden {
+            display: none;
         }
 
         .year-header {
@@ -1877,14 +1915,21 @@
             <div class="projects-container">
                 <div class="projects-header">
                     <h1>Projects</h1>
-                    <p class="projects-intro">A chronological collection of projects I've built, contributed to, or operated. From AI-powered applications to blockchain infrastructure.</p>
+                    <p class="projects-intro">A collection of projects I've built, contributed to, or operated. Filter by category to find relevant work.</p>
                 </div>
 
-                <!-- 2023-2025 -->
-                <div class="project-year">
-                    <h2 class="year-header">2023 - Present</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="ai">AI/ML</button>
+                    <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+                    <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+                    <button class="filter-btn" data-filter="architecture">Architecture</button>
+                </div>
 
-                    <div class="project-card">
+                <div class="projects-grid">
+                    <div class="project-card" data-tags="web,mobile,ai,architecture">
                         <div class="project-logo">
                             <img src="dumpit-logo.png" alt="Dump it! logo" class="project-logo-img">
                         </div>
@@ -1905,19 +1950,40 @@
                                 <span class="tech-tag">PostgreSQL</span>
                                 <span class="tech-tag">Whisper</span>
                                 <span class="tech-tag">Event Sourcing</span>
-                                <span class="tech-tag">CQRS</span>
-                                <span class="tech-tag">DDD</span>
                             </div>
                         </div>
                         <p class="project-description">Voice-native cross-platform app with AI-powered intent classification, semantic search, and end-to-end encryption. Features Whisper speech-to-text, Event Sourcing architecture, two-phase LLM pipeline, and vector embeddings for intelligent note organization.</p>
                     </div>
-                </div>
 
-                <!-- 2025 -->
-                <div class="project-year">
-                    <h2 class="year-header">2025</h2>
+                    <div class="project-card" data-tags="blockchain,architecture">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">L</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-title-link">
+                                        Ouroboros Leios – Protocol Architecture & CIP
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Protocol Design</span>
+                                <span class="tech-tag">CIP Authorship</span>
+                                <span class="tech-tag">Technical Writing</span>
+                                <span class="tech-tag">Agda</span>
+                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Principal author of <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>, the canonical architecture design document for Cardano's high-throughput protocol. Built interactive web-based simulator and documentation site with formal specification rendered via custom <a href="https://github.com/will-break-it/agda-web-docs-lib" target="_blank">agda-web-docs-lib</a>.</p>
+                    </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="web">
                         <div class="project-logo">
                             <img src="https://underwater.journeys.cy/logo.png" alt="Underwater Journeys logo" class="project-logo-img">
                         </div>
@@ -1925,7 +1991,7 @@
                             <div class="project-title-row">
                                 <h3>
                                     <a href="https://underwater.journeys.cy/" target="_blank" class="project-title-link">
-                                        Underwater Journeys – Dive Center Website & Booking System
+                                        Underwater Journeys – Dive Center Website
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -1941,18 +2007,18 @@
                                 <span class="tech-tag">Tailwind CSS</span>
                             </div>
                         </div>
-                        <p class="project-description">Modern website and booking system for a dive center in Cyprus. Built during Christmas and New Year's Eve 2024 with focus on user experience, mobile-first design, and easy booking management.</p>
+                        <p class="project-description">Modern website and booking system for a dive center in Cyprus. Mobile-first design with focus on user experience and easy booking management.</p>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="web">
                         <div class="project-logo">
-                            <div class="project-logo-placeholder">L</div>
+                            <div class="project-logo-placeholder">UGC</div>
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
                                 <h3>
-                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-title-link">
-                                        Ouroboros Leios – Protocol Website & Documentation
+                                    <a href="https://ugc.astridmunkwitz.de" target="_blank" class="project-title-link">
+                                        UGC Creator Portfolio
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -1962,22 +2028,13 @@
                                 </h3>
                             </div>
                             <div class="project-tech">
-                                <span class="tech-tag">Documentation</span>
-                                <span class="tech-tag">Technical Writing</span>
-                                <span class="tech-tag">Web Development</span>
-                                <span class="tech-tag">Agda</span>
-                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
+                                <span class="tech-tag">Web</span>
                             </div>
                         </div>
-                        <p class="project-description">Project website and comprehensive documentation for Ouroboros Leios high-throughput protocol. Features an interactive web-based protocol simulator, formal specification rendered with custom <a href="https://github.com/will-break-it/agda-web-docs-lib" target="_blank">agda-web-docs-lib</a> (generates modern web docs from Agda HTML output), alongside technical specifications, architecture diagrams, and research documentation for the Cardano blockchain scaling solution.</p>
+                        <p class="project-description">Portfolio website for a UGC content creator.</p>
                     </div>
-                </div>
 
-                <!-- 2022-2024 -->
-                <div class="project-year">
-                    <h2 class="year-header">2022 - 2024</h2>
-
-                    <div class="project-card">
+                    <div class="project-card" data-tags="web,blockchain">
                         <div class="project-logo">
                             <img src="https://dripdropz.io/favicon.ico" alt="Drip Dropz logo" class="project-logo-img">
                         </div>
@@ -2000,13 +2057,12 @@
                                 <span class="tech-tag">Cardano</span>
                                 <span class="tech-tag">Plutus</span>
                                 <span class="tech-tag">CIP-30</span>
-                                <span class="tech-tag">Web Workers</span>
                             </div>
                         </div>
                         <p class="project-description">Production NFT marketplace on Cardano with smart contract integration for trading, bidding, and swapping. Implemented wallet standards and event-driven sync patterns later adopted by IOG.</p>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="blockchain,infrastructure">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">D</div>
                         </div>
@@ -2014,7 +2070,7 @@
                             <div class="project-title-row">
                                 <h3>
                                     <a href="https://github.com/will-break-it/dolos" target="_blank" class="project-title-link">
-                                        Dolos – Chain Indexer Extension for DEX Support
+                                        Dolos – Chain Indexer Extension
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -2027,14 +2083,13 @@
                                 <span class="tech-tag">Rust</span>
                                 <span class="tech-tag">Cardano</span>
                                 <span class="tech-tag">Blockchain Indexing</span>
-                                <span class="tech-tag">DEX Integration</span>
                                 <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
                             </div>
                         </div>
-                        <p class="project-description">Extended <a href="https://docs.txpipe.io/dolos" target="_blank">Dolos</a>, an open-source Cardano chain indexer, to support indexing main decentralized exchange script addresses for Lace wallet's swap feature. Custom fork enabling efficient DEX data retrieval and aggregation for multi-DEX integration.</p>
+                        <p class="project-description">Extended <a href="https://docs.txpipe.io/dolos" target="_blank">Dolos</a> chain indexer to support DEX script addresses for Lace wallet's swap feature. Custom fork enabling efficient DEX data retrieval and aggregation.</p>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="blockchain">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">L</div>
                         </div>
@@ -2042,7 +2097,7 @@
                             <div class="project-title-row">
                                 <h3>
                                     <a href="https://github.com/will-break-it/lucid" target="_blank" class="project-title-link">
-                                        Lucid – Transaction Library with UTXO Chaining
+                                        Lucid – UTXO Chaining Extension
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -2055,14 +2110,13 @@
                                 <span class="tech-tag">TypeScript</span>
                                 <span class="tech-tag">Cardano</span>
                                 <span class="tech-tag">UTXO Model</span>
-                                <span class="tech-tag">Transaction Building</span>
                                 <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
                             </div>
                         </div>
-                        <p class="project-description">Extended open-source Cardano transaction library with UTXO chaining capability. Enables building complex multi-transaction workflows where transactions depend on outputs from previous transactions, essential for advanced DApp interactions and atomic operation sequences.</p>
+                        <p class="project-description">Extended Cardano transaction library with UTXO chaining capability for complex multi-transaction workflows and atomic operation sequences.</p>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="blockchain,infrastructure">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">S</div>
                         </div>
@@ -2070,7 +2124,7 @@
                             <div class="project-title-row">
                                 <h3>
                                     <a href="https://github.com/will-break-it/scrolls" target="_blank" class="project-title-link">
-                                        Scrolls – Multi-DEX Contract Indexing
+                                        Scrolls – Multi-DEX Indexing
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -2082,15 +2136,14 @@
                             <div class="project-tech">
                                 <span class="tech-tag">Rust</span>
                                 <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">Blockchain Indexing</span>
                                 <span class="tech-tag">DEX Protocols</span>
                                 <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
                             </div>
                         </div>
-                        <p class="project-description">Extended open-source Cardano indexing tool with merged contributions for indexing smart contracts across major DEXes (SundaeSwap, Minswap, WingRiders, MuesliSwap). Handled diverse architectures and contract patterns unique to each protocol, enabling comprehensive DeFi data aggregation.</p>
+                        <p class="project-description">Extended Cardano indexing tool for smart contracts across major DEXes (SundaeSwap, Minswap, WingRiders, MuesliSwap). Comprehensive DeFi data aggregation.</p>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="blockchain">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">DS</div>
                         </div>
@@ -2098,7 +2151,7 @@
                             <div class="project-title-row">
                                 <h3>
                                     <a href="https://github.com/will-break-it/dex-order-serialization-lib" target="_blank" class="project-title-link">
-                                        DEX Order Serialization Library – Published npm Package
+                                        DEX Order Serialization Library
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -2111,19 +2164,13 @@
                                 <span class="tech-tag">TypeScript</span>
                                 <span class="tech-tag">npm Package</span>
                                 <span class="tech-tag">DEX Integration</span>
-                                <span class="tech-tag">Serialization</span>
                                 <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
                             </div>
                         </div>
-                        <p class="project-description">Published npm package simplifying swap transaction construction and serialization across multiple Cardano DEXes. Unified interface abstracting protocol-specific implementations for SundaeSwap, Minswap, WingRiders, and MuesliSwap. Served as the foundation for Lace wallet's swap feature.</p>
+                        <p class="project-description">Published npm package for swap transaction construction across multiple Cardano DEXes. Foundation for Lace wallet's swap feature.</p>
                     </div>
-                </div>
 
-                <!-- 2021-2024 -->
-                <div class="project-year">
-                    <h2 class="year-header">2021 - 2024</h2>
-
-                    <div class="project-card">
+                    <div class="project-card" data-tags="blockchain,infrastructure">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">BP</div>
                         </div>
@@ -2137,13 +2184,12 @@
                                 <span class="tech-tag">Terraform</span>
                                 <span class="tech-tag">Ansible</span>
                                 <span class="tech-tag">Prometheus</span>
-                                <span class="tech-tag">Grafana</span>
                             </div>
                         </div>
-                        <p class="project-description">Production Cardano consensus node infrastructure with automated deployment, monitoring, and cryptographic key management. Operated 2,000+ blocks with 99.9% uptime and managed 15M+ ADA delegation.</p>
+                        <p class="project-description">Production Cardano consensus node infrastructure. Operated 2,000+ blocks with 99.9% uptime and managed 15M+ ADA delegation.</p>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-tags="blockchain">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">VX</div>
                         </div>
@@ -2151,7 +2197,7 @@
                             <div class="project-title-row">
                                 <h3>
                                     <a href="https://github.com/will-break-it/vertx-pow-blockchain" target="_blank" class="project-title-link">
-                                        Vert.x PoW Blockchain – Educational Implementation
+                                        Vert.x PoW Blockchain
                                         <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                             <polyline points="15 3 21 3 21 9"></polyline>
@@ -2164,18 +2210,12 @@
                                 <span class="tech-tag">Java</span>
                                 <span class="tech-tag">Vert.x</span>
                                 <span class="tech-tag">Proof of Work</span>
-                                <span class="tech-tag">Blockchain</span>
                             </div>
                         </div>
-                        <p class="project-description">First blockchain implementation from scratch using reactive Vert.x framework. Built proof-of-work consensus, block validation, and peer-to-peer networking to understand blockchain fundamentals. Fun educational project exploring distributed systems and cryptographic primitives.</p>
+                        <p class="project-description">Educational blockchain implementation from scratch. Built proof-of-work consensus, block validation, and peer-to-peer networking.</p>
                     </div>
-                </div>
 
-                <!-- 2015-2016 -->
-                <div class="project-year">
-                    <h2 class="year-header">2015 - 2016</h2>
-
-                    <div class="project-card">
+                    <div class="project-card" data-tags="mobile,web">
                         <div class="project-logo">
                             <div class="project-logo-placeholder">CX</div>
                         </div>
@@ -2186,13 +2226,12 @@
                             <div class="project-tech">
                                 <span class="tech-tag">iOS</span>
                                 <span class="tech-tag">Swift</span>
-                                <span class="tech-tag">Objective-C</span>
                                 <span class="tech-tag">Django</span>
                                 <span class="tech-tag">Ruby on Rails</span>
                                 <span class="tech-tag">PostgreSQL</span>
                             </div>
                         </div>
-                        <p class="project-description">Co-founded social discovery platform for exploring cities through community recommendations. Raised €150k seed funding and built native iOS app and web platform from concept to App Store launch.</p>
+                        <p class="project-description">Co-founded social discovery platform. Raised €150k seed funding and built native iOS app from concept to App Store launch.</p>
                     </div>
                 </div>
             </div>
@@ -2789,6 +2828,34 @@
                 if (this.dataset.target === 'cv') {
                     setTimeout(initSidebarTracking, 100);
                 }
+            });
+        });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.projects-grid .project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+
+                // Update active button
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+                        if (tags.includes(filter)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
             });
         });
     </script>
