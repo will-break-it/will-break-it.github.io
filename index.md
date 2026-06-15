@@ -34,27 +34,27 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 ## EXPERIENCE
 
 ### **Technical Architect – Byzantine-Resistant PubSub Network**
-**Input Output Global (IOG)** • *Remote* • <span class="date">Feb 2026 - Present</span>
+**[Input Output Global (IOG)](https://www.iog.io/)** • *Remote* • <span class="date">Feb 2026 - Present</span>
 - Lead a team of 4 engineers & researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network
 - Formally verifying a research proposal and building a working prototype
 - Reevaluating peer-sampling protocols that come with specific security properties
 
 ### **Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
-**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Feb 2026</span>
+**[Input Output Global (IOG)](https://www.iog.io/)** • *Remote* • <span class="date">Nov 2024 - Feb 2026</span>
 - Directed 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
 - Produced architecture, [CIP-0164](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md) and decision log guiding current implementation phase
 - Host monthly public demos & Q&A sessions (YouTube ~5k views average)
 - Organized week-long on-site workshop that reduced open research questions
 
 ### **Technical Architect – [Lace Wallet](https://www.lace.io/)**
-**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2022 - Nov 2024</span>
+**[Input Output Global (IOG)](https://www.iog.io/)** • *Remote* • <span class="date">Nov 2022 - Nov 2024</span>
 - Re-engineered wallet backend from poll-based to **event-driven** → sync latency ↓ 45%, infra cost ↓ >60%
 - Authored [CIP](https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX) and built first main-/test-net indexers (>2k tx/s ingest capacity)
 - Led 7-person team delivering MetaDex swap feature using NestJS backend (first revenue stream for Lace)
 - Built custom chain indexer with bloom filters and credential indexing for wallet optimization
 
 ### **Solutions Architect**
-**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2021 - Nov 2022</span>
+**[Input Output Global (IOG)](https://www.iog.io/)** • *Remote* • <span class="date">Nov 2021 - Nov 2022</span>
 - Designed Plutus smart-contract stack for collateralized debt position platform
 - Conducted Cardano workshops for 100+ Amazon engineers on eUTxO model and blockchain architecture
 - Specialized in on-chain/off-chain dApp architecture and Plutus contract development
@@ -66,7 +66,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Built real-time ad pricing system by probing nearby devices for audience size measurement
 
 ### **Senior Software Engineer**
-**Deloitte US** • *San Francisco, CA* • <span class="date">Sep 2016 - Nov 2019</span>
+**[Deloitte US](https://www.deloitte.com/global/en/services/consulting/services/systems-delivery-modernization.html)** • *San Francisco, CA* • <span class="date">Sep 2016 - Nov 2019</span>
 - Built 3-stage migration toolchain (parser → converter → runtime) that moved 16M LoC from legacy DSL to Java 8
 - Cut annual license costs by €6M for major German insurance company
 - Grew team from 3 → 20 engineers; promoted to lead architect within 24 months

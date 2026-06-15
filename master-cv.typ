@@ -62,7 +62,7 @@ Passionate about working on technically challenging problems that contribute to 
 
 #section("Experience")
 
-#exp("Technical Architect – Byzantine-Resistant PubSub Network", "Feb 2026 – Present", "Input Output Global (IOG)")[
+#exp("Technical Architect – Byzantine-Resistant PubSub Network", "Feb 2026 – Present", link("https://www.iog.io/")[Input Output Global (IOG)])[
   Leading research and development of a Byzantine-resistant publish/subscribe network, formally verifying a research proposal and building a prototype.
   #v(2pt)
   #b[*Technical Leadership:* Lead a team of 4 engineers and researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network]
@@ -70,7 +70,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
 ]
 
-#exp("Technical Architect", "Nov 2024 – Feb 2026", "Input Output Global (IOG)")[
+#exp("Technical Architect", "Nov 2024 – Feb 2026", link("https://www.iog.io/")[Input Output Global (IOG)])[
   Led research and development of Ouroboros Leios, a high-throughput overlay protocol for Cardano blockchain, coordinating cross-functional team and driving toward mainnet implementation.
   #v(2pt)
   #b[*Technical Leadership & Team Coordination:* Direct team of 8 researchers and engineers across formal methods, protocol design, and prototype development]
@@ -81,7 +81,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Workshop Facilitation:* Organized week-long on-site workshop that reduced open research questions and aligned team on implementation strategy]
 ]
 
-#exp("Technical Architect – Lace Wallet", "Nov 2022 – Nov 2024", "Input Output Global (IOG)")[
+#exp("Technical Architect – Lace Wallet", "Nov 2022 – Nov 2024", link("https://www.iog.io/")[Input Output Global (IOG)])[
   Led technical architecture and backend infrastructure for Lace, a next-generation Cardano wallet, delivering significant performance improvements and new revenue-generating features.
   #v(2pt)
   #b[*Backend Re-Architecture:* Re-engineered from poll-based to event-driven architecture—45% latency reduction, 60%+ infrastructure cost savings]
@@ -92,7 +92,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Technical Innovation:* Developed background web worker sync approach later adopted by team as standard pattern]
 ]
 
-#exp("Solutions Architect", "Nov 2021 – Nov 2022", "Input Output Global (IOG)")[
+#exp("Solutions Architect", "Nov 2021 – Nov 2022", link("https://www.iog.io/")[Input Output Global (IOG)])[
   Designed blockchain solutions and educated enterprise partners on Cardano's technical architecture.
   #v(2pt)
   #b[*Smart Contract Architecture:* Designed complete Plutus stack for collateralized debt position (CDP) platform]
@@ -109,7 +109,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Pilot Launch:* Successfully launched with 20+ vehicles]
 ]
 
-#exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", "Deloitte, San Francisco")[
+#exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", link("https://www.deloitte.com/global/en/services/consulting/services/systems-delivery-modernization.html")[Deloitte, San Francisco])[
   Joined as Software Engineer and was promoted to lead a large-scale legacy system migration for a major German insurance company.
   #v(2pt)
   #b[*Migration Toolchain:* Redesigned Cobol-to-Java architecture for functional language (ISA); 3-stage pipeline: parser → AST → Java codegen, plus runtime emulation layer preserving original ISA/IDM behavior]
