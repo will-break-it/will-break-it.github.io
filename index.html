@@ -674,6 +674,11 @@
             flex: 1;
         }
 
+        .job-title h2 {
+            margin: 0;
+            flex: 1;
+        }
+
         .job-toggle {
             width: 20px;
             height: 20px;
@@ -2129,18 +2134,29 @@
                     </section>
 
                     <!-- Education Section -->
-                    <section id="education">
-                        <h2>
-                            <span lang="en">Education</span>
-                            <span lang="de">Bildung</span>
-                        </h2>
-                        <div class="education-item">
-                            <h3>Bachelor of Science in Computer Science</h3>
-                            <p class="education-meta">DHBW Stuttgart • Germany • 2011 - 2014</p>
+                    <section id="education" class="job">
+                        <div class="job-header">
+                            <div class="job-title">
+                                <h2>
+                                    <span lang="en">Education</span>
+                                    <span lang="de">Bildung</span>
+                                </h2>
+                                <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
                         </div>
-                        <div class="education-item">
-                            <h3>International Business</h3>
-                            <p class="education-meta">Hult International Business School • San Francisco, CA • 2014 - 2015</p>
+                        <div class="job-content">
+                            <div class="job-content-inner">
+                                <div class="education-item">
+                                    <h3>Bachelor of Science in Computer Science</h3>
+                                    <p class="education-meta">DHBW Stuttgart • Germany • 2011 - 2014</p>
+                                </div>
+                                <div class="education-item">
+                                    <h3>International Business</h3>
+                                    <p class="education-meta">Hult International Business School • San Francisco, CA • 2014 - 2015</p>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
