@@ -1436,14 +1436,12 @@
                 </div>
 
                 <div class="bio">
-                    <p lang="en">Hey! I'm Will, a versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware. I thrive on variety and adapting to new domains.</p>
-                    <p lang="de">Hey! Ich bin Will, ein vielseitiger Engineer mit über 10 Jahren Erfahrung in verschiedensten Branchen, Plattformen und Unternehmensgrößen. Von Enterprise-Systemen (Deloitte - Rentensysteme und Versicherungen) bis zur Blockchain-Infrastruktur (IOG/Cardano), von Mobile über Web und Desktop bis zu Custom Hardware. Ich liebe Vielfalt und die Anpassung an neue Bereiche.</p>
+                    <p lang="en">Hey! I'm Will, a software engineer with 10+ years building across diverse industries, platforms, and company sizes. I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware. I go deep wherever the problem lives — curious by default, focused when it counts.</p>
+                    <p lang="de">Hey! Ich bin Will, ein Software Engineer mit über 10 Jahren Erfahrung in verschiedensten Branchen, Plattformen und Unternehmensgrößen. Von Enterprise-Systemen (Deloitte – Rentensysteme und Versicherungen) bis zur Blockchain-Infrastruktur (IOG/Cardano), von Mobile über Web und Desktop bis zu Custom Hardware. Ich gehe in die Tiefe, wo das Problem liegt — neugierig von Natur aus, fokussiert wenn es zählt.</p>
 
                     <p lang="en">Currently technical architect for a Byzantine-resistant pub/sub network at IOG. Before that I led R&D for <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, architected <a href="https://www.lace.io/" target="_blank">Lace Wallet</a>, built IoT systems and native mobile apps, and migrated 16M lines of legacy code.</p>
                     <p lang="de">Aktuell technischer Architekt für ein Byzantine-resistentes Pub/Sub-Netzwerk bei IOG. Davor leitete ich R&D für <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">Ouroboros Leios</a>, entwickelte die Architektur für <a href="https://www.lace.io/" target="_blank">Lace Wallet</a>, baute IoT-Systeme und native Mobile Apps und migrierte 16M Zeilen Legacy-Code.</p>
 
-                    <p lang="en">What drives me is understanding problems from the user's perspective and finding the right solution - whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.</p>
-                    <p lang="de">Was mich antreibt ist es, Probleme aus der Perspektive der Nutzer zu verstehen und die richtige Lösung zu finden - unabhängig davon, ob das bedeutet, sich in verteilte Systeme, Kryptographie, neue Frameworks oder völlig neue Branchen einzuarbeiten. Ich scheue mich nicht, Neues auszuprobieren und unerwartete Wege zu gehen, wenn das Problem es erfordert.</p>
                 </div>
             </div>
         </div>
@@ -1493,8 +1491,8 @@
                             <span lang="en">Profile</span>
                             <span lang="de">Profil</span>
                         </h2>
-                        <p lang="en">Curious, relentlessly-learning engineer with 10+ years building high-impact products from green-field prototype to production at scale. Deep expertise in blockchain infrastructure, distributed systems, and secure application development. Founder DNA with proven ability to ship products that generate revenue and drive user engagement.</p>
-                        <p lang="de">Neugieriger, lernbegieriger Engineer mit über 10 Jahren Erfahrung im Aufbau wirkungsvoller Produkte vom Prototyp bis zur Produktion im großen Maßstab. Tiefe Expertise in Blockchain-Infrastruktur, verteilten Systemen und sicherer Anwendungsentwicklung. Gründer-DNA mit nachweislicher Fähigkeit, Produkte zu liefern, die Umsatz generieren und User Engagement fördern.</p>
+                        <p lang="en">Founder DNA and deep expertise in blockchain infrastructure, distributed systems, and secure application development — shipping products from prototype to production at scale that generate revenue and drive engagement.</p>
+                        <p lang="de">Gründer-DNA und tiefe Expertise in Blockchain-Infrastruktur, verteilten Systemen und sicherer Anwendungsentwicklung — Produkte vom Prototyp bis zur Produktion im großen Maßstab, die Umsatz generieren und Nutzer binden.</p>
                     </section>
 
                     <!-- Technologies Section -->
@@ -2397,32 +2395,38 @@
 
         // Sidebar navigation scroll tracking
         function initSidebarTracking() {
-            const navLinks = document.querySelectorAll('.cv-nav-link');
-            const sections = document.querySelectorAll('.cv-main section');
+            const navLinks = Array.from(document.querySelectorAll('.cv-nav-link'));
+            const sections = Array.from(document.querySelectorAll('.cv-main section'));
 
             if (sections.length === 0 || navLinks.length === 0) return;
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -70% 0px',
-                threshold: 0
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
+            function setActive(id) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                 });
-            }, observerOptions);
+            }
 
-            sections.forEach(section => observer.observe(section));
+            function updateActive() {
+                const offset = 140; // distance from top that counts as "current"
+                let currentId = sections[0].id;
+                for (const section of sections) {
+                    if (section.getBoundingClientRect().top - offset <= 0) {
+                        currentId = section.id;
+                    }
+                }
+                // At (or near) the bottom of the page, force the last section active
+                // so short trailing sections like Education always highlight.
+                const scrolledToBottom =
+                    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+                if (scrolledToBottom) {
+                    currentId = sections[sections.length - 1].id;
+                }
+                setActive(currentId);
+            }
+
+            window.addEventListener('scroll', updateActive, { passive: true });
+            window.addEventListener('resize', updateActive, { passive: true });
+            updateActive();
 
             // Handle click navigation
             navLinks.forEach(link => {
