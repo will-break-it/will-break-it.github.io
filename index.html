@@ -1033,6 +1033,41 @@
             display: none;
         }
 
+        /* Collapsed projects: hide extra cards until expanded */
+        .projects-grid:not(.show-all) .project-card.extra {
+            display: none;
+        }
+
+        .show-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .show-more-btn:hover {
+            border-color: var(--color-text-lighter);
+        }
+
+        .show-more-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .show-more-btn.expanded .show-more-icon {
+            transform: rotate(180deg);
+        }
+
         .year-header {
             font-size: 1.25rem;
             font-weight: 600;
@@ -1277,18 +1312,8 @@
     <div class="container">
         <!-- Header -->
         <header id="header">
-            <a href="#home" class="logo" onclick="goHome(); return false;">William Wolff</a>
+            <a href="#home" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">William Wolff</a>
 
-            <div class="nav-tabs">
-                <button class="nav-btn" data-target="cv">
-                    <span lang="en">Resume</span>
-                    <span lang="de">Lebenslauf</span>
-                </button>
-                <button class="nav-btn" data-target="projects-page">
-                    <span lang="en">Projects</span>
-                    <span lang="de">Projekte</span>
-                </button>
-            </div>
 
             <div class="header-controls">
                 <div class="header-social-links">
@@ -1333,7 +1358,7 @@
         </header>
 
         <!-- Home/Intro Page -->
-        <div id="home" class="page active">
+        <div id="home">
             <div class="intro-section">
                 <img src="assets/images/will.jpg" alt="William Wolff" class="profile-image">
 
@@ -1370,29 +1395,18 @@
                     <p lang="en">What drives me is understanding problems from the user's perspective and finding the right solution - whether that means diving into distributed systems, cryptography, new frameworks, or entirely new industries. I'm not afraid to try new things and go in unexpected directions when that's what the problem calls for.</p>
                     <p lang="de">Was mich antreibt ist es, Probleme aus der Perspektive der Nutzer zu verstehen und die richtige Lösung zu finden - unabhängig davon, ob das bedeutet, sich in verteilte Systeme, Kryptographie, neue Frameworks oder völlig neue Branchen einzuarbeiten. Ich scheue mich nicht, Neues auszuprobieren und unerwartete Wege zu gehen, wenn das Problem es erfordert.</p>
                 </div>
-
-                <div class="cv-prompt">
-                    <p lang="en">Looking for my resume?</p>
-                    <p lang="de">Auf der Suche nach meinem Lebenslauf?</p>
-                    <div class="cv-links">
-                        <a href="#cv" class="cv-link" onclick="document.querySelector('[data-target=cv]').click(); return false;">
-                            <span lang="en">View Resume</span>
-                            <span lang="de">Lebenslauf ansehen</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
 
         <!-- CV Page -->
-        <div id="cv" class="page">
+        <div id="cv">
             <div class="cv-layout">
                 <!-- Sidebar Navigation (Desktop only) -->
                 <aside class="cv-sidebar">
                     <nav class="cv-nav">
                         <div class="cv-nav-title">
-                            <span lang="en">Contents</span>
-                            <span lang="de">Inhalt</span>
+                            <span lang="en">Outline</span>
+                            <span lang="de">Übersicht</span>
                         </div>
                         <a href="#profile" class="cv-nav-link">
                             <span lang="en">Profile</span>
@@ -1936,201 +1950,331 @@
                     <!-- Projects Section -->
                     <section id="projects">
                         <h2>
-                            <span lang="en">Selected Projects</span>
-                            <span lang="de">Ausgewählte Projekte</span>
+                            <span lang="en">Projects</span>
+                            <span lang="de">Projekte</span>
                         </h2>
-
-                        <div class="job">
-                            <div class="job-header">
-                                <div class="job-title">
-                                    <h3>
-                                        <span lang="en">Dump it! – Voice-First Note Taking App</span>
-                                        <span lang="de">Dump it! – Voice-First Notiz-App</span>
-                                    </h3>
-                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="job-meta">
-                                    <span class="job-company">
-                                        <span lang="en">Personal Project</span>
-                                        <span lang="de">Persönliches Projekt</span>
-                                    </span> •
-                                    <span class="job-date">2023 - Present</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">~2 years</span>
-                                        <span lang="de">~2 Jahre</span>
-                                    </span>
-                                </div>
-                                <p class="job-summary">
-                                    <span lang="en">Voice-native cross-platform app with AI processing, E2E encryption, Event Sourcing, and CQRS</span>
-                                    <span lang="de">Voice-native Cross-Platform-App mit KI-Verarbeitung, E2E-Verschlüsselung, Event Sourcing und CQRS</span>
-                                </p>
+                        <div class="projects-grid" id="projects-grid">
+                        <div class="project-card" data-tags="blockchain,architecture">
+                        <div class="project-logo">
+                            <img src="leios-social-preview.jpg" alt="Ouroboros Leios" class="project-logo-img cover">
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-title-link">
+                                        Ouroboros Leios – Protocol Architecture & CIP
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
                             </div>
-                            <div class="job-content">
-                                <div class="job-content-inner">
-                                    <ul>
-                                        <li>
-                                            <span lang="en">Built native iOS (Swift), Android (Kotlin), and web (React) apps with feature parity</span>
-                                            <span lang="de">Entwickelte native iOS (Swift), Android (Kotlin) und Web (React) Apps mit Feature-Parität</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Implemented two-phase LLM pipeline: Claude Haiku for intent classification, semantic conflict resolution</span>
-                                            <span lang="de">Implementierte zweiphasige LLM-Pipeline: Claude Haiku für Intent-Klassifikation, semantische Konfliktauflösung</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Built vector search with sentence transformers (768-dim embeddings) and adaptive match quality analysis</span>
-                                            <span lang="de">Entwickelte Vektorsuche mit Sentence Transformers (768-dim Embeddings) und adaptiver Match-Quality-Analyse</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Designed <strong>Event Sourcing</strong> architecture with immutable event stream and <strong>CQRS</strong> pattern separating commands/queries</span>
-                                            <span lang="de">Entwarf <strong>Event Sourcing</strong> Architektur mit unveränderlichem Event Stream und <strong>CQRS</strong> Pattern zur Trennung von Commands/Queries</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Applied <strong>Domain-Driven Design (DDD)</strong> with bounded contexts for notes, todos, and AI processing domains</span>
-                                            <span lang="de">Wendete <strong>Domain-Driven Design (DDD)</strong> mit Bounded Contexts für Notizen, Todos und KI-Verarbeitungsdomänen an</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Implemented E2E encryption using Diffie-Hellman key exchange, AES-256-GCM, and iOS Secure Enclave</span>
-                                            <span lang="de">Implementierte E2E-Verschlüsselung mit Diffie-Hellman-Schlüsselaustausch, AES-256-GCM und iOS Secure Enclave</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Built on <strong>Supabase</strong> (PostgreSQL) with Row Level Security, Edge Functions, and real-time subscriptions</span>
-                                            <span lang="de">Aufgebaut auf <strong>Supabase</strong> (PostgreSQL) mit Row Level Security, Edge Functions und Echtzeit-Subscriptions</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Successfully monetized via subscription model with active user base</span>
-                                            <span lang="de">Erfolgreich monetarisiert via Subscription-Modell mit aktiver Nutzerbasis</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Protocol Design</span>
+                                <span class="tech-tag">CIP Authorship</span>
+                                <span class="tech-tag">Technical Writing</span>
+                                <span class="tech-tag">Agda</span>
+                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
                             </div>
                         </div>
+                        <p class="project-description">Principal author of <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>, the canonical architecture design document for Cardano's high-throughput protocol. Built interactive web-based simulator and documentation site with formal specification rendered via custom <a href="https://github.com/will-break-it/agda-web-docs-lib" target="_blank">agda-web-docs-lib</a>.</p>
+                    </div>
 
-                        <div class="job">
-                            <div class="job-header">
-                                <div class="job-title">
-                                    <h3>
-                                        <span lang="en">Drip Dropz – NFT Marketplace</span>
-                                        <span lang="de">Drip Dropz – NFT Marketplace</span>
-                                    </h3>
-                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="job-meta">
-                                    <span class="job-company">
-                                        <span lang="en">Consulting Project</span>
-                                        <span lang="de">Beratungsprojekt</span>
-                                    </span> •
-                                    <span class="job-date">2022 - 2024</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">~2 years</span>
-                                        <span lang="de">~2 Jahre</span>
-                                    </span>
-                                </div>
-                                <p class="job-summary">
-                                    <span lang="en">Production NFT trading platform on Cardano, achieving revenue within 48 hours</span>
-                                    <span lang="de">Produktions-NFT-Handelsplattform auf Cardano, erreichte Umsatz innerhalb von 48 Stunden</span>
-                                </p>
+                        <div class="project-card" data-tags="web,mobile,ai,architecture">
+                        <div class="project-logo">
+                            <img src="dumpit-logo.png" alt="Dump it! logo" class="project-logo-img">
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3 class="project-title-link">
+                                    Dump it! – Voice-First Note Taking App
+                                </h3>
                             </div>
-                            <div class="job-content">
-                                <div class="job-content-inner">
-                                    <ul>
-                                        <li>
-                                            <span lang="en">Built complete <a href="https://dripdropz.io/" target="_blank">NFT marketplace</a> from scratch using React and TypeScript</span>
-                                            <span lang="de">Entwickelte vollständigen <a href="https://dripdropz.io/" target="_blank">NFT Marketplace</a> von Grund auf mit React und TypeScript</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Implemented CIP-30 wallet standard for browser wallet integration</span>
-                                            <span lang="de">Implementierte CIP-30 Wallet-Standard für Browser-Wallet-Integration</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Developed transaction construction libraries for Cardano NFT transfers and complex multi-asset scenarios</span>
-                                            <span lang="de">Entwickelte Transaction-Construction-Libraries für Cardano NFT-Transfers und komplexe Multi-Asset-Szenarien</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Created background web worker sync approach for event-driven wallet updates (pattern later adopted by IOG Lace team)</span>
-                                            <span lang="de">Entwickelte Background Web Worker Sync-Ansatz für event-driven Wallet-Updates (Pattern später vom IOG Lace Team übernommen)</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Integrated Plutus smart contracts for bidding, selling, swapping, and order management</span>
-                                            <span lang="de">Integrierte Plutus Smart Contracts für Bieten, Verkaufen, Tauschen und Order-Management</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Launched with 10,000+ NFT listings and achieved first revenue within 48 hours</span>
-                                            <span lang="de">Launch mit 10.000+ NFT-Listings und erzielte ersten Umsatz innerhalb von 48 Stunden</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Supabase</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Whisper</span>
+                                <span class="tech-tag">Event Sourcing</span>
                             </div>
                         </div>
+                        <p class="project-description">Voice-native cross-platform app built on Supabase (PostgreSQL) with AI-powered intent classification, semantic search, and end-to-end encryption. Features Row Level Security, Edge Functions, real-time sync, Event Sourcing architecture, and vector embeddings.</p>
+                    </div>
 
-                        <div class="job">
-                            <div class="job-header">
-                                <div class="job-title">
-                                    <h3>
-                                        <span lang="en">Berlin Pool – Cardano Stakepool Operations</span>
-                                        <span lang="de">Berlin Pool – Cardano Stakepool Betrieb</span>
-                                    </h3>
-                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="job-meta">
-                                    <span class="job-company">
-                                        <span lang="en">Infrastructure Project</span>
-                                        <span lang="de">Infrastruktur-Projekt</span>
-                                    </span> •
-                                    <span class="job-date">2021 - 2024</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">~3 years</span>
-                                        <span lang="de">~3 Jahre</span>
-                                    </span>
-                                </div>
-                                <p class="job-summary">
-                                    <span lang="en">Operated production Cardano consensus nodes with 99.9% uptime and 15M+ ADA delegation</span>
-                                    <span lang="de">Betrieb von Produktions-Cardano-Konsensknoten mit 99,9% Uptime und 15M+ ADA Delegation</span>
-                                </p>
+                        <div class="project-card" data-tags="web,architecture,consulting">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">P</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://pagebase.dev" target="_blank" class="project-title-link">
+                                        Pagebase – Freelance Development Agency
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
                             </div>
-                            <div class="job-content">
-                                <div class="job-content-inner">
-                                    <ul>
-                                        <li>
-                                            <span lang="en">Operated consensus nodes producing 2,000+ mainnet blocks with 99.9% uptime</span>
-                                            <span lang="de">Betrieb von Konsensknoten mit 2.000+ Mainnet-Blöcken und 99,9% Uptime</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Managed 15M+ ADA delegation (~$10M+ value at peak) from community members</span>
-                                            <span lang="de">Verwaltete 15M+ ADA Delegation (~$10M+ Wert zu Spitzenzeiten) von Community-Mitgliedern</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Implemented automated deployment using Docker, Ansible, and Terraform (infrastructure as code)</span>
-                                            <span lang="de">Implementierte automatisiertes Deployment mit Docker, Ansible und Terraform (Infrastructure as Code)</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Built monitoring stack using Prometheus and Grafana with alerting for node health and performance</span>
-                                            <span lang="de">Entwickelte Monitoring-Stack mit Prometheus und Grafana inkl. Alerting für Node-Health und Performance</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Managed cryptographic key security with air-gapped cold key storage for operational security</span>
-                                            <span lang="de">Verwaltete kryptografische Schlüsselsicherheit mit air-gapped Cold-Key-Storage für operative Sicherheit</span>
-                                        </li>
-                                        <li>
-                                            <span lang="en">Created automated scaling based on network conditions and backup/disaster recovery procedures</span>
-                                            <span lang="de">Entwickelte automatische Skalierung basierend auf Netzwerkbedingungen und Backup/Disaster-Recovery-Prozeduren</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Supabase</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Consulting</span>
                             </div>
                         </div>
+                        <p class="project-description">Berlin-based freelance agency specializing in Supabase and PostgreSQL backends, web/mobile apps, and AI automation. Open-source first approach with focus on clean architecture and avoiding vendor lock-in.</p>
+                    </div>
 
-                        <div style="text-align: center; margin-top: var(--spacing-lg); padding-top: var(--spacing-md);">
-                            <a href="#projects-page" onclick="document.querySelector('[data-target=projects-page]').click(); return false;" style="display: inline-block; padding: var(--spacing-sm) var(--spacing-md); background: var(--color-accent); color: var(--color-bg); border-radius: 6px; text-decoration: none; font-weight: 600; transition: opacity 0.2s ease;">
-                                <span lang="en">Show More →</span>
-                                <span lang="de">Mehr anzeigen →</span>
-                            </a>
+                        <div class="project-card extra" data-tags="web">
+                        <div class="project-logo">
+                            <img src="https://underwater.journeys.cy/logo.png" alt="Underwater Journeys logo" class="project-logo-img">
                         </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://underwater.journeys.cy/" target="_blank" class="project-title-link">
+                                        Underwater Journeys – Dive Center Website
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Modern website and booking system for a dive center in Cyprus. Mobile-first design with focus on user experience and easy booking management.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain,infrastructure">
+                        <div class="project-logo">
+                            <img src="leios-thumbnail.jpg" alt="Leios Mempool Simulation" class="project-logo-img cover">
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://leios.cardano-scaling.org/mempool-viz/" target="_blank" class="project-title-link">
+                                        Leios Mempool Simulation
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">Leios</span>
+                                <span class="tech-tag">Simulation</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Interactive mempool visualization tool for the Leios protocol. Explores front-running opportunities and attack vectors to build educational resources for community understanding of protocol security.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="web,blockchain">
+                        <div class="project-logo">
+                            <img src="https://dripdropz.io/favicon.ico" alt="Drip Dropz logo" class="project-logo-img">
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://dripdropz.io/" target="_blank" class="project-title-link">
+                                        Drip Dropz – NFT Marketplace
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">Plutus</span>
+                                <span class="tech-tag">CIP-30</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Production NFT marketplace on Cardano with smart contract integration for trading, bidding, and swapping. Implemented wallet standards and event-driven sync patterns later adopted by IOG.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain,infrastructure,architecture">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">D</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://github.com/will-break-it/dolos" target="_blank" class="project-title-link">
+                                        Dolos – Chain Indexer Extension
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">Blockchain Indexing</span>
+                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Extended <a href="https://docs.txpipe.io/dolos" target="_blank">Dolos</a> chain indexer to support DEX script addresses for Lace wallet's swap feature. Custom fork enabling efficient DEX data retrieval and aggregation.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">L</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://github.com/will-break-it/lucid" target="_blank" class="project-title-link">
+                                        Lucid – UTXO Chaining Extension
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">UTXO Model</span>
+                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Extended Cardano transaction library with UTXO chaining capability for complex multi-transaction workflows and atomic operation sequences.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain,infrastructure,architecture">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">S</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://github.com/will-break-it/scrolls" target="_blank" class="project-title-link">
+                                        Scrolls – Multi-DEX Indexing
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">DEX Protocols</span>
+                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Extended Cardano indexing tool for smart contracts across major DEXes (SundaeSwap, Minswap, WingRiders, MuesliSwap). Comprehensive DeFi data aggregation.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain,architecture">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">DS</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://github.com/will-break-it/dex-order-serialization-lib" target="_blank" class="project-title-link">
+                                        DEX Order Serialization Library
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">npm Package</span>
+                                <span class="tech-tag">DEX Integration</span>
+                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Published npm package for swap transaction construction across multiple Cardano DEXes. Foundation for Lace wallet's swap feature.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain,infrastructure">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">BP</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>Berlin Pool – Cardano Stakepool</h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Cardano</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Terraform</span>
+                                <span class="tech-tag">Ansible</span>
+                                <span class="tech-tag">Prometheus</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Production Cardano consensus node infrastructure. Operated 2,000+ blocks with 99.9% uptime and managed 15M+ ADA delegation.</p>
+                    </div>
+
+                        <div class="project-card extra" data-tags="blockchain">
+                        <div class="project-logo">
+                            <div class="project-logo-placeholder">VX</div>
+                        </div>
+                        <div class="project-header">
+                            <div class="project-title-row">
+                                <h3>
+                                    <a href="https://github.com/will-break-it/vertx-pow-blockchain" target="_blank" class="project-title-link">
+                                        Vert.x PoW Blockchain
+                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Vert.x</span>
+                                <span class="tech-tag">Proof of Work</span>
+                            </div>
+                        </div>
+                        <p class="project-description">Educational blockchain implementation from scratch. Built proof-of-work consensus, block validation, and peer-to-peer networking.</p>
+                    </div>
+                        </div>
+                        <button class="show-more-btn" id="show-more-projects" aria-expanded="false">
+                            <span lang="en">Show more</span>
+                            <span lang="de">Mehr anzeigen</span>
+                            <svg class="show-more-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
                     </section>
 
                     <!-- Education Section -->
@@ -2161,821 +2305,6 @@
                     </section>
                 </div>
             </div>
-        </div>
-
-        <!-- Projects Page -->
-        <div id="projects-page" class="page">
-            <div class="projects-container">
-                <div class="projects-header">
-                    <h1>Projects</h1>
-                    <p class="projects-intro">A collection of projects I've built, contributed to, or operated. Filter by category to find relevant work.</p>
-                </div>
-
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
-                    <button class="filter-btn" data-filter="ai">AI/ML</button>
-                    <button class="filter-btn" data-filter="blockchain">Blockchain</button>
-                    <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
-                    <button class="filter-btn" data-filter="architecture">Architecture</button>
-                </div>
-
-                <div class="projects-grid">
-                    <div class="project-card" data-tags="blockchain,architecture">
-                        <div class="project-logo">
-                            <img src="leios-social-preview.jpg" alt="Ouroboros Leios" class="project-logo-img cover">
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="http://leios.cardano-scaling.org/" target="_blank" class="project-title-link">
-                                        Ouroboros Leios – Protocol Architecture & CIP
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Protocol Design</span>
-                                <span class="tech-tag">CIP Authorship</span>
-                                <span class="tech-tag">Technical Writing</span>
-                                <span class="tech-tag">Agda</span>
-                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Principal author of <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>, the canonical architecture design document for Cardano's high-throughput protocol. Built interactive web-based simulator and documentation site with formal specification rendered via custom <a href="https://github.com/will-break-it/agda-web-docs-lib" target="_blank">agda-web-docs-lib</a>.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="web,mobile,ai,architecture">
-                        <div class="project-logo">
-                            <img src="dumpit-logo.png" alt="Dump it! logo" class="project-logo-img">
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3 class="project-title-link">
-                                    Dump it! – Voice-First Note Taking App
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Swift</span>
-                                <span class="tech-tag">Kotlin</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Supabase</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">Whisper</span>
-                                <span class="tech-tag">Event Sourcing</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Voice-native cross-platform app built on Supabase (PostgreSQL) with AI-powered intent classification, semantic search, and end-to-end encryption. Features Row Level Security, Edge Functions, real-time sync, Event Sourcing architecture, and vector embeddings.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="web,architecture,consulting">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">P</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://pagebase.dev" target="_blank" class="project-title-link">
-                                        Pagebase – Freelance Development Agency
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Supabase</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Consulting</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Berlin-based freelance agency specializing in Supabase and PostgreSQL backends, web/mobile apps, and AI automation. Open-source first approach with focus on clean architecture and avoiding vendor lock-in.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="web">
-                        <div class="project-logo">
-                            <img src="https://underwater.journeys.cy/logo.png" alt="Underwater Journeys logo" class="project-logo-img">
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://underwater.journeys.cy/" target="_blank" class="project-title-link">
-                                        Underwater Journeys – Dive Center Website
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Tailwind CSS</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Modern website and booking system for a dive center in Cyprus. Mobile-first design with focus on user experience and easy booking management.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain,infrastructure">
-                        <div class="project-logo">
-                            <img src="leios-thumbnail.jpg" alt="Leios Mempool Simulation" class="project-logo-img cover">
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://leios.cardano-scaling.org/mempool-viz/" target="_blank" class="project-title-link">
-                                        Leios Mempool Simulation
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">Leios</span>
-                                <span class="tech-tag">Simulation</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Interactive mempool visualization tool for the Leios protocol. Explores front-running opportunities and attack vectors to build educational resources for community understanding of protocol security.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="web,blockchain">
-                        <div class="project-logo">
-                            <img src="https://dripdropz.io/favicon.ico" alt="Drip Dropz logo" class="project-logo-img">
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://dripdropz.io/" target="_blank" class="project-title-link">
-                                        Drip Dropz – NFT Marketplace
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">Plutus</span>
-                                <span class="tech-tag">CIP-30</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Production NFT marketplace on Cardano with smart contract integration for trading, bidding, and swapping. Implemented wallet standards and event-driven sync patterns later adopted by IOG.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain,infrastructure,architecture">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">D</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://github.com/will-break-it/dolos" target="_blank" class="project-title-link">
-                                        Dolos – Chain Indexer Extension
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Rust</span>
-                                <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">Blockchain Indexing</span>
-                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Extended <a href="https://docs.txpipe.io/dolos" target="_blank">Dolos</a> chain indexer to support DEX script addresses for Lace wallet's swap feature. Custom fork enabling efficient DEX data retrieval and aggregation.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">L</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://github.com/will-break-it/lucid" target="_blank" class="project-title-link">
-                                        Lucid – UTXO Chaining Extension
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">UTXO Model</span>
-                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Extended Cardano transaction library with UTXO chaining capability for complex multi-transaction workflows and atomic operation sequences.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain,infrastructure,architecture">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">S</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://github.com/will-break-it/scrolls" target="_blank" class="project-title-link">
-                                        Scrolls – Multi-DEX Indexing
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Rust</span>
-                                <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">DEX Protocols</span>
-                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Extended Cardano indexing tool for smart contracts across major DEXes (SundaeSwap, Minswap, WingRiders, MuesliSwap). Comprehensive DeFi data aggregation.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain,architecture">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">DS</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://github.com/will-break-it/dex-order-serialization-lib" target="_blank" class="project-title-link">
-                                        DEX Order Serialization Library
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">TypeScript</span>
-                                <span class="tech-tag">npm Package</span>
-                                <span class="tech-tag">DEX Integration</span>
-                                <span class="tech-tag" style="background: #28a745; color: white;">Open Source</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Published npm package for swap transaction construction across multiple Cardano DEXes. Foundation for Lace wallet's swap feature.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain,infrastructure">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">BP</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>Berlin Pool – Cardano Stakepool</h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Cardano</span>
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">Terraform</span>
-                                <span class="tech-tag">Ansible</span>
-                                <span class="tech-tag">Prometheus</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Production Cardano consensus node infrastructure. Operated 2,000+ blocks with 99.9% uptime and managed 15M+ ADA delegation.</p>
-                    </div>
-
-                    <div class="project-card" data-tags="blockchain">
-                        <div class="project-logo">
-                            <div class="project-logo-placeholder">VX</div>
-                        </div>
-                        <div class="project-header">
-                            <div class="project-title-row">
-                                <h3>
-                                    <a href="https://github.com/will-break-it/vertx-pow-blockchain" target="_blank" class="project-title-link">
-                                        Vert.x PoW Blockchain
-                                        <svg class="external-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                            <polyline points="15 3 21 3 21 9"></polyline>
-                                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                                        </svg>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="project-tech">
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">Vert.x</span>
-                                <span class="tech-tag">Proof of Work</span>
-                            </div>
-                        </div>
-                        <p class="project-description">Educational blockchain implementation from scratch. Built proof-of-work consensus, block validation, and peer-to-peer networking.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Engineer CV Page -->
-        <div id="product-engineer" class="page">
-            <p><strong lang="en">Product Engineer</strong><strong lang="de">Product Engineer</strong></p>
-
-            <div class="contact">
-                <span lang="en">Berlin, DE | German & English (fluent) | <em>Full contact details available on request</em></span>
-                <span lang="de">Berlin, DE | Deutsch & Englisch (fließend) | <em>Vollständige Kontaktdaten auf Anfrage</em></span><br>
-                <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
-                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
-            </div>
-
-            <div class="badges">
-                <span class="badge" lang="en">10+ Years Experience</span>
-                <span class="badge" lang="de">10+ Jahre Erfahrung</span>
-                <span class="badge">Berlin, DE</span>
-                <span class="badge" lang="en">Product + Engineering</span>
-                <span class="badge" lang="de">Product + Engineering</span>
-            </div>
-
-            <h2 lang="en">PROFILE</h2>
-            <h2 lang="de">PROFIL</h2>
-            <p lang="en">Product-minded engineer with 10+ years shipping user-focused products from zero to production. Strong technical foundation combined with deep product sense - I understand how exceptional engineering creates exceptional user experiences. Track record of building products that drive revenue, achieve high retention, and solve real user problems.</p>
-            <p lang="de">Product-orientierter Engineer mit über 10 Jahren Erfahrung im Shipping nutzer-fokussierter Produkte von Null bis Produktion. Starke technische Basis kombiniert mit tiefem Product Sense - ich verstehe, wie außergewöhnliches Engineering außergewöhnliche User Experiences schafft. Nachweisliche Erfolge beim Aufbau von Produkten, die Umsatz generieren, hohe Retention erreichen und echte Nutzerprobleme lösen.</p>
-
-            <p lang="en"><strong>Key strengths:</strong> Revenue generation • User retention • Cross-functional collaboration • 0→1 product development • Technical-to-business translation • Rapid prototyping</p>
-            <p lang="de"><strong>Kernkompetenzen:</strong> Umsatzgenerierung • User Retention • Cross-funktionale Zusammenarbeit • 0→1 Produktentwicklung • Technisch-geschäftliche Übersetzung • Rapid Prototyping</p>
-
-            <h2 lang="en">CORE TECHNOLOGIES</h2>
-            <h2 lang="de">KERN-TECHNOLOGIEN</h2>
-            <div class="skills">
-                <p><strong lang="en">Languages:</strong><strong lang="de">Sprachen:</strong> TypeScript • Rust • Swift • Kotlin • Python • Java</p>
-                <p><strong>Full-Stack:</strong> React • React Native • Node.js • NestJS • PostgreSQL • Supabase</p>
-                <p><strong>Mobile:</strong> iOS (Swift) • Android (Kotlin) • Cross-platform architecture • Offline-first design</p>
-                <p><strong lang="en">Product Tools:</strong><strong lang="de">Product Tools:</strong> A/B testing • Analytics • User research • Metrics tracking</p>
-            </div>
-
-            <h2 lang="en">EXPERIENCE</h2>
-            <h2 lang="de">ERFAHRUNG</h2>
-
-            <div class="job">
-                <h3 lang="en">Technical Lead – Byzantine-Resistant PubSub Network</h3>
-                <h3 lang="de">Technical Lead – Byzantine-Resistant PubSub Network</h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Feb 2026 - Present</p>
-                <ul>
-                    <li lang="en">Lead a team of 4 engineers & researchers building a Byzantine-resistant pub/sub network</li>
-                    <li lang="de">Leite ein Team von 4 Ingenieuren & Forschern beim Aufbau eines Byzantine-resistenten Pub/Sub-Netzwerks</li>
-                    <li lang="en">Formally verifying a research proposal and shipping a working prototype</li>
-                    <li lang="de">Formale Verifikation eines Forschungsvorschlags und Auslieferung eines funktionsfähigen Prototyps</li>
-                    <li lang="en">Evaluating peer-sampling protocols against specific security properties</li>
-                    <li lang="de">Bewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Product-Focused Technical Leadership – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <h3 lang="de">Product-Fokussierte Technische Führung – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
-                <ul>
-                    <li lang="en">Led 7-person team delivering <strong>MetaDex swap feature</strong> - Lace's <strong>first revenue stream</strong></li>
-                    <li lang="de">Leitete 7-köpfiges Team bei der Entwicklung des <strong>MetaDex Swap Features</strong> - Lace's <strong>erster Umsatzstrom</strong></li>
-                    <li lang="en">Re-architected wallet backend → <strong>45% faster sync times</strong>, >60% cost reduction</li>
-                    <li lang="de">Backend-Neuarchitektur → <strong>45% schnellere Sync-Zeiten</strong>, >60% Kostensenkung</li>
-                    <li lang="en">Balanced technical complexity with shipping velocity - delivered in 3-month timeline</li>
-                    <li lang="de">Balance zwischen technischer Komplexität und Shipping-Geschwindigkeit - geliefert in 3 Monaten</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <h3 lang="de">Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Feb 2026</p>
-                <ul>
-                    <li lang="en">Host monthly public demos on YouTube (<strong>~5k views</strong>) with live Q&A, translating research into developer content</li>
-                    <li lang="de">Monatliche öffentliche Demos auf YouTube (<strong>~5k Views</strong>) mit Live Q&A, übersetze Forschung in Developer Content</li>
-                    <li lang="en">Direct team of 8 across research, formal methods, and engineering</li>
-                    <li lang="de">Leite Team von 8 Personen über Research, formale Methoden und Engineering</li>
-                    <li lang="en">Authored <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> focused on developer adoption</li>
-                    <li lang="de">Verfasste <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> mit Fokus auf Developer Adoption</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Co-Founder & CTO – CityXcape Inc.</h3>
-                <h3 lang="de">Co-Founder & CTO – CityXcape Inc.</h3>
-                <p class="job-meta">San Francisco, CA • Feb 2015 - Sep 2016</p>
-                <ul>
-                    <li lang="en">Raised <strong>~€150k seed funding</strong> from angel investors</li>
-                    <li lang="de">Raised <strong>~€150k Seed-Funding</strong> von Angel Investoren</li>
-                    <li lang="en">Built iOS app from concept to App Store launch</li>
-                    <li lang="de">iOS App von Konzept bis App Store Launch entwickelt</li>
-                    <li lang="en">Iterated rapidly based on user feedback and behavioral data</li>
-                    <li lang="de">Schnelle Iteration basierend auf User Feedback und Verhaltensdaten</li>
-                </ul>
-            </div>
-
-            <h2 lang="en">SIDE PROJECTS</h2>
-            <h2 lang="de">SIDE PROJECTS</h2>
-
-            <div class="job">
-                <h3>Dump it! – AI Note-Taking App • 2023 - 2025</h3>
-                <p>iOS • Android • Web</p>
-                <ul>
-                    <li lang="en">Shipped on <strong>3 platforms simultaneously</strong> (iOS, Android, Web) solo in 3 months</li>
-                    <li lang="de"><strong>3 Plattformen gleichzeitig</strong> (iOS, Android, Web) solo in 3 Monaten shipped</li>
-                    <li lang="en">Built on <strong>Supabase</strong> (PostgreSQL) with Row Level Security, Edge Functions, and real-time sync</li>
-                    <li lang="de">Aufgebaut auf <strong>Supabase</strong> (PostgreSQL) mit Row Level Security, Edge Functions und Echtzeit-Sync</li>
-                    <li lang="en">Successfully <strong>monetized via subscription model</strong> with active user base</li>
-                    <li lang="de">Erfolgreich <strong>monetarisiert via Subscription Model</strong> mit aktiver Nutzerbasis</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Pagebase – Freelance Development Agency • 2024 - Present</h3>
-                <p><a href="https://pagebase.dev" target="_blank">pagebase.dev</a></p>
-                <ul>
-                    <li lang="en">Berlin-based agency specializing in <strong>Supabase</strong> and <strong>PostgreSQL</strong> backends</li>
-                    <li lang="de">Berliner Agentur spezialisiert auf <strong>Supabase</strong> und <strong>PostgreSQL</strong> Backends</li>
-                    <li lang="en">Full-stack web/mobile development, AI automation, and blockchain integration</li>
-                    <li lang="de">Full-Stack Web/Mobile Entwicklung, KI-Automatisierung und Blockchain-Integration</li>
-                    <li lang="en">Open-source first approach with focus on avoiding vendor lock-in</li>
-                    <li lang="de">Open-Source-first Ansatz mit Fokus auf Vermeidung von Vendor Lock-in</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Drip Dropz – NFT Marketplace • 2022 - 2024</h3>
-                <ul>
-                    <li lang="en"><strong>First revenue within 48 hours</strong> of launch</li>
-                    <li lang="de"><strong>Erster Umsatz innerhalb von 48 Stunden</strong> nach Launch</li>
-                    <li lang="en">Launched with <strong>10,000+ NFT listings</strong></li>
-                    <li lang="de">Launch mit <strong>10.000+ NFT Listings</strong></li>
-                    <li lang="en">Built complete marketplace from scratch using React/TypeScript</li>
-                    <li lang="de">Kompletter Marketplace von Grund auf mit React/TypeScript gebaut</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Leios Mempool Simulation • 2025</h3>
-                <p><a href="https://leios.cardano-scaling.org/mempool-viz/" target="_blank">leios.cardano-scaling.org/mempool-viz</a></p>
-                <ul>
-                    <li lang="en">Interactive visualization tool exploring <strong>front-running opportunities</strong> and attack vectors in the Leios protocol</li>
-                    <li lang="de">Interaktives Visualisierungstool zur Erforschung von <strong>Front-Running-Möglichkeiten</strong> und Angriffsvektoren im Leios-Protokoll</li>
-                    <li lang="en">Built educational resources for <strong>community understanding</strong> of protocol security</li>
-                    <li lang="de">Erstellung von Bildungsressourcen für das <strong>Community-Verständnis</strong> der Protokollsicherheit</li>
-                </ul>
-            </div>
-
-            <h2 lang="en">EDUCATION</h2>
-            <h2 lang="de">BILDUNG</h2>
-            <p lang="en"><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
-            <p lang="de"><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
-
-            <p lang="en"><strong>Bachelor of Science in Computer Science</strong><br>
-            DHBW Stuttgart • Germany • 2011 - 2014</p>
-            <p lang="de"><strong>Bachelor of Science in Informatik</strong><br>
-            DHBW Stuttgart • Deutschland • 2011 - 2014</p>
-        </div>
-
-        <!-- Engineer CV Page -->
-        <div id="engineer" class="page">
-            <p><strong lang="en">Senior/Staff Software Engineer</strong><strong lang="de">Senior/Staff Software Engineer</strong></p>
-
-            <div class="contact">
-                <span lang="en">Berlin, DE | German & English (fluent) | <em>Full contact details available on request</em></span>
-                <span lang="de">Berlin, DE | Deutsch & Englisch (fließend) | <em>Vollständige Kontaktdaten auf Anfrage</em></span><br>
-                <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
-                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
-            </div>
-
-            <div class="badges">
-                <span class="badge" lang="en">10+ Years Experience</span>
-                <span class="badge" lang="de">10+ Jahre Erfahrung</span>
-                <span class="badge">Berlin, DE</span>
-                <span class="badge" lang="en">Systems & Infrastructure</span>
-                <span class="badge" lang="de">Systems & Infrastructure</span>
-            </div>
-
-            <h2 lang="en">PROFILE</h2>
-            <h2 lang="de">PROFIL</h2>
-            <p lang="en">Hands-on systems engineer with 10+ years building high-performance, distributed systems from the ground up. Deep expertise in TypeScript, Rust, and Swift across backend infrastructure, blockchain protocols, and native mobile development. Passionate about solving hard technical problems - from protocol design to performance optimization to cryptographic security.</p>
-            <p lang="de">Hands-on Systems Engineer mit über 10 Jahren Erfahrung im Aufbau hochperformanter, verteilter Systeme. Tiefe Expertise in TypeScript, Rust und Swift über Backend-Infrastruktur, Blockchain-Protokolle und native Mobile-Entwicklung. Leidenschaft für das Lösen harter technischer Probleme - von Protocol Design über Performance-Optimierung bis zu kryptographischer Sicherheit.</p>
-
-            <p lang="en"><strong>Core focus:</strong> Distributed systems • Performance optimization • Blockchain infrastructure • Cryptography • Native mobile • Systems programming</p>
-            <p lang="de"><strong>Kernfokus:</strong> Verteilte Systeme • Performance-Optimierung • Blockchain-Infrastruktur • Kryptographie • Native Mobile • Systems Programming</p>
-
-            <h2 lang="en">TECHNICAL EXPERTISE</h2>
-            <h2 lang="de">TECHNISCHE EXPERTISE</h2>
-            <div class="skills">
-                <p><strong lang="en">Primary Languages:</strong><strong lang="de">Hauptsprachen:</strong></p>
-                <p lang="en"><strong>TypeScript</strong> (Expert) - 6+ years building production backends, React apps, Node.js services</p>
-                <p lang="de"><strong>TypeScript</strong> (Expert) - 6+ Jahre Production Backends, React Apps, Node.js Services</p>
-                <p lang="en"><strong>Rust</strong> (Proficient) - Embedded systems, blockchain tooling, performance-critical components</p>
-                <p lang="de"><strong>Rust</strong> (Proficient) - Embedded Systems, Blockchain Tooling, performance-kritische Komponenten</p>
-                <p lang="en"><strong>Swift</strong> (Proficient) - Native iOS development, Secure Enclave integration</p>
-                <p lang="de"><strong>Swift</strong> (Proficient) - Native iOS Entwicklung, Secure Enclave Integration</p>
-
-                <p><strong lang="en">Systems & Infrastructure:</strong><strong lang="de">Systems & Infrastructure:</strong></p>
-                <p>Event-driven architectures • Microservices • gRPC • WebSocket • PostgreSQL internals • Redis • Docker • Terraform</p>
-
-                <p><strong lang="en">Blockchain & Cryptography:</strong><strong lang="de">Blockchain & Kryptographie:</strong></p>
-                <p>Cardano consensus • eUTxO model • Plutus smart contracts • End-to-end encryption • Diffie-Hellman • AES</p>
-            </div>
-
-            <h2 lang="en">EXPERIENCE</h2>
-            <h2 lang="de">ERFAHRUNG</h2>
-
-            <div class="job">
-                <h3 lang="en">Protocol Engineering – Byzantine-Resistant PubSub Network</h3>
-                <h3 lang="de">Protocol Engineering – Byzantine-Resistant PubSub Network</h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Feb 2026 - Present</p>
-                <ul>
-                    <li lang="en">Building a working prototype of a Byzantine-resistant pub/sub overlay network</li>
-                    <li lang="de">Entwickle einen funktionsfähigen Prototyp eines Byzantine-resistenten Pub/Sub-Overlay-Netzwerks</li>
-                    <li lang="en">Formally verifying the research proposal behind the protocol</li>
-                    <li lang="de">Formale Verifikation des Forschungsvorschlags hinter dem Protokoll</li>
-                    <li lang="en">Reevaluating peer-sampling protocols for specific security properties</li>
-                    <li lang="de">Neubewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</li>
-                    <li lang="en">Leading a team of 4 engineers & researchers</li>
-                    <li lang="de">Leite ein Team von 4 Ingenieuren & Forschern</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Blockchain Infrastructure Engineer – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <h3 lang="de">Blockchain Infrastructure Engineer – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
-                <ul>
-                    <li lang="en">Built custom chain indexer with <strong>>2,000 tx/s ingest capacity</strong> for mainnet/testnet</li>
-                    <li lang="de">Entwickelte Custom Chain Indexer mit <strong>>2.000 tx/s Ingest-Kapazität</strong> für Mainnet/Testnet</li>
-                    <li lang="en">Implemented <strong>bloom filter</strong> for fast membership testing of stake credentials</li>
-                    <li lang="de">Implementierte <strong>Bloom Filter</strong> für schnelles Membership Testing von Stake Credentials</li>
-                    <li lang="en">Migrated from poll-based to <strong>event-driven architecture</strong> using PostgreSQL LISTEN/NOTIFY</li>
-                    <li lang="de">Migration von Poll-basiert zu <strong>Event-driven Architektur</strong> mit PostgreSQL LISTEN/NOTIFY</li>
-                    <li lang="en">Reduced sync latency by <strong>45%</strong>, cut infrastructure costs by <strong>>60%</strong></li>
-                    <li lang="de">Sync-Latenz um <strong>45%</strong> reduziert, Infrastrukturkosten um <strong>>60%</strong> gesenkt</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Protocol Engineering – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <h3 lang="de">Protocol Engineering – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Feb 2026</p>
-                <ul>
-                    <li lang="en">Develop simulation frameworks for protocol validation</li>
-                    <li lang="de">Entwickle Simulations-Frameworks für Protocol Validation</li>
-                    <li lang="en">Contribute to <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> technical specification</li>
-                    <li lang="de">Beitrag zu <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a> Technical Specification</li>
-                    <li lang="en">Bridge theoretical research with practical implementation constraints</li>
-                    <li lang="de">Bridge zwischen theoretischer Forschung und praktischen Implementierungs-Constraints</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Native Mobile Development – Dump it!</h3>
-                <h3 lang="de">Native Mobile Entwicklung – Dump it!</h3>
-                <p class="job-meta">Side Project • 2023 - Present</p>
-                <p>iOS • Android • Web</p>
-                <ul>
-                    <li lang="en"><strong>Two-Phase LLM Pipeline:</strong> Claude Haiku for intent classification, conflict resolution for ambiguous cases</li>
-                    <li lang="de"><strong>Zwei-Phasen LLM Pipeline:</strong> Claude Haiku für Intent-Klassifikation, Konfliktauflösung für mehrdeutige Fälle</li>
-                    <li lang="en"><strong>Vector Search:</strong> Sentence transformers (768-dim embeddings), adaptive match quality analysis</li>
-                    <li lang="de"><strong>Vektor-Suche:</strong> Sentence Transformers (768-dim Embeddings), adaptive Match-Quality-Analyse</li>
-                    <li lang="en"><strong>iOS (Swift):</strong> SwiftUI, Secure Enclave integration, SQLite with FTS5</li>
-                    <li lang="de"><strong>iOS (Swift):</strong> SwiftUI, Secure Enclave Integration, SQLite mit FTS5</li>
-                    <li lang="en"><strong>Android (Kotlin):</strong> Jetpack Compose, Room database, WorkManager</li>
-                    <li lang="de"><strong>Android (Kotlin):</strong> Jetpack Compose, Room Database, WorkManager</li>
-                    <li lang="en"><strong>End-to-End Encryption:</strong> Diffie-Hellman key exchange, AES-256-GCM</li>
-                    <li lang="de"><strong>End-to-End Verschlüsselung:</strong> Diffie-Hellman Key Exchange, AES-256-GCM</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">IoT & Embedded Systems – Mobility Data Lab</h3>
-                <h3 lang="de">IoT & Embedded Systems – Mobility Data Lab</h3>
-                <p class="job-meta">Senior Software Engineer • Feb 2020 - Nov 2021</p>
-                <ul>
-                    <li lang="en">Developed firmware for embedded devices in <strong>Rust</strong></li>
-                    <li lang="de">Firmware für Embedded Devices in <strong>Rust</strong> entwickelt</li>
-                    <li lang="en">Built secure OTA update mechanism with rollback capabilities</li>
-                    <li lang="de">Sicheren OTA-Update-Mechanismus mit Rollback-Fähigkeiten gebaut</li>
-                    <li lang="en">Built high-throughput event processing using <strong>Vert.x</strong> (reactive JVM framework)</li>
-                    <li lang="de">High-Throughput Event Processing mit <strong>Vert.x</strong> (reaktives JVM Framework) gebaut</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Compiler Development – Deloitte</h3>
-                <h3 lang="de">Compiler-Entwicklung – Deloitte</h3>
-                <p class="job-meta">Senior Software Engineer • Sep 2016 - Nov 2019</p>
-                <ul>
-                    <li lang="en">Built <strong>3-stage migration toolchain:</strong> parser → AST transformer → Java code generator</li>
-                    <li lang="de">Entwickelte <strong>3-stufige Migrations-Toolchain:</strong> Parser → AST Transformer → Java Code Generator</li>
-                    <li lang="en">Migrated <strong>16M lines of code</strong> from proprietary DSL to Java 8</li>
-                    <li lang="de">Migrierte <strong>16M Zeilen Code</strong> von proprietärer DSL zu Java 8</li>
-                    <li lang="en">Achieved <strong>>99.9% compatibility rate</strong> through differential testing</li>
-                    <li lang="de">Erreichte <strong>>99,9% Kompatibilitätsrate</strong> durch Differential Testing</li>
-                    <li lang="en">Saved client <strong>€6M annually</strong> in licensing costs</li>
-                    <li lang="de">Sparte Client <strong>€6M jährlich</strong> an Lizenzkosten</li>
-                </ul>
-            </div>
-
-            <h2 lang="en">SIDE INFRASTRUCTURE</h2>
-            <h2 lang="de">SIDE INFRASTRUCTURE</h2>
-
-            <div class="job">
-                <h3 lang="en">Berlin Pool – Cardano Stakepool Operations • 2021 - 2024</h3>
-                <h3 lang="de">Berlin Pool – Cardano Stakepool Operations • 2021 - 2024</h3>
-                <ul>
-                    <li lang="en">Produced <strong>2,000+ mainnet blocks</strong>, maintained <strong>99.9% uptime</strong></li>
-                    <li lang="de">Produzierte <strong>2.000+ Mainnet Blöcke</strong>, <strong>99,9% Uptime</strong> aufrechterhalten</li>
-                    <li lang="en">Managed <strong>15M+ ADA delegation</strong> (~$10M+ value at peak)</li>
-                    <li lang="de">Verwaltete <strong>15M+ ADA Delegation</strong> (~$10M+ Wert zu Spitzenzeiten)</li>
-                    <li lang="en">Automated deployment using Docker, Ansible, and Terraform</li>
-                    <li lang="de">Automatisiertes Deployment mit Docker, Ansible und Terraform</li>
-                </ul>
-            </div>
-
-            <h2 lang="en">EDUCATION</h2>
-            <h2 lang="de">BILDUNG</h2>
-            <p lang="en"><strong>Bachelor of Science in Computer Science</strong><br>
-            DHBW Stuttgart • Germany • 2011 - 2014</p>
-            <p lang="de"><strong>Bachelor of Science in Informatik</strong><br>
-            DHBW Stuttgart • Deutschland • 2011 - 2014</p>
-
-            <p lang="en"><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
-            <p lang="de"><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
-        </div>
-
-        <!-- Architect CV Page -->
-        <div id="architect" class="page">
-            <p><strong lang="en">Technical Architect & Solutions Architect</strong><strong lang="de">Technical Architect & Solutions Architect</strong></p>
-
-            <div class="contact">
-                <span lang="en">Berlin, DE | German & English (fluent) | <em>Full contact details available on request</em></span>
-                <span lang="de">Berlin, DE | Deutsch & Englisch (fließend) | <em>Vollständige Kontaktdaten auf Anfrage</em></span><br>
-                <a href="https://linkedin.com/in/wwolff" target="_blank">linkedin.com/in/wwolff</a> •
-                <a href="https://github.com/will-break-it" target="_blank">github.com/will-break-it</a>
-            </div>
-
-            <div class="badges">
-                <span class="badge" lang="en">10+ Years Experience</span>
-                <span class="badge" lang="de">10+ Jahre Erfahrung</span>
-                <span class="badge">Berlin, DE</span>
-                <span class="badge" lang="en">Architecture & Strategy</span>
-                <span class="badge" lang="de">Architektur & Strategie</span>
-            </div>
-
-            <h2 lang="en">PROFILE</h2>
-            <h2 lang="de">PROFIL</h2>
-            <p lang="en">Technical architect with 10+ years designing and implementing large-scale distributed systems, blockchain infrastructure, and high-performance applications. Expert at translating complex technical challenges into elegant architectural solutions that deliver measurable business value - 45% latency reduction, 60%+ cost savings, €6M annual savings.</p>
-            <p lang="de">Technical Architect mit über 10 Jahren Erfahrung im Design und der Implementierung großer verteilter Systeme, Blockchain-Infrastruktur und hochperformanter Anwendungen. Experte darin, komplexe technische Herausforderungen in elegante architektonische Lösungen zu übersetzen, die messbaren Business Value liefern - 45% Latenzreduktion, 60%+ Kosteneinsparungen, €6M jährliche Einsparungen.</p>
-
-            <p lang="en"><strong>Core strengths:</strong> System design • Technical strategy • Architecture documentation • Cross-team coordination • Performance optimization • Technology evaluation</p>
-            <p lang="de"><strong>Kernstärken:</strong> System Design • Technische Strategie • Architektur-Dokumentation • Team-übergreifende Koordination • Performance-Optimierung • Technologie-Evaluation</p>
-
-            <h2 lang="en">ARCHITECTURAL EXPERTISE</h2>
-            <h2 lang="de">ARCHITEKTUR-EXPERTISE</h2>
-            <div class="skills">
-                <p><strong lang="en">System Design:</strong><strong lang="de">System Design:</strong></p>
-                <p>Distributed systems • Event-driven architectures • Microservices • Real-time data pipelines • Blockchain infrastructure • High-availability systems</p>
-
-                <p><strong lang="en">Technical Leadership:</strong><strong lang="de">Technische Führung:</strong></p>
-                <p>Architecture decision records (ADRs) • Technical specifications and CIPs • Technology evaluation • Cross-functional coordination • Risk assessment</p>
-
-                <p><strong lang="en">Technologies:</strong><strong lang="de">Technologien:</strong></p>
-                <p>TypeScript • Rust • Java • PostgreSQL • Redis • Docker • Terraform • gRPC • WebSocket • Blockchain protocols</p>
-            </div>
-
-            <h2 lang="en">EXPERIENCE</h2>
-            <h2 lang="de">ERFAHRUNG</h2>
-
-            <div class="job">
-                <h3 lang="en">Technical Architect – Byzantine-Resistant PubSub Network</h3>
-                <h3 lang="de">Technical Architect – Byzantine-Resistant PubSub Network</h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Feb 2026 - Present</p>
-                <ul>
-                    <li lang="en">Lead a team of 5 (4 engineers & researchers plus myself) designing a Byzantine-resistant pub/sub overlay network</li>
-                    <li lang="de">Leite ein Team von 5 Personen (4 Ingenieure & Forscher plus mir selbst) beim Entwurf eines Byzantine-resistenten Pub/Sub-Overlay-Netzwerks</li>
-                    <li lang="en">Formally verifying a research proposal and building a working prototype</li>
-                    <li lang="de">Formale Verifikation eines Forschungsvorschlags und Entwicklung eines funktionsfähigen Prototyps</li>
-                    <li lang="en">Reevaluating peer-sampling protocols for specific security properties</li>
-                    <li lang="de">Neubewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <h3 lang="de">Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
-                <ul>
-                    <li lang="en"><strong>Backend Architecture Redesign:</strong> Re-architected to event-driven system using PostgreSQL LISTEN/NOTIFY → 45% latency reduction, >60% cost savings</li>
-                    <li lang="de"><strong>Backend-Architektur Redesign:</strong> Neuarchitektur zu Event-driven System mit PostgreSQL LISTEN/NOTIFY → 45% Latenzreduktion, >60% Kosteneinsparungen</li>
-                    <li lang="en"><strong>Chain Indexer Architecture:</strong> Purpose-built indexer with bloom filters, credential-based indexing, >2,000 tx/s throughput</li>
-                    <li lang="de"><strong>Chain Indexer Architektur:</strong> Purpose-built Indexer mit Bloom Filtern, Credential-basierter Indexierung, >2.000 tx/s Durchsatz</li>
-                    <li lang="en">Authored <a href="https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX" target="_blank">CIP proposal</a> for wallet indexing standards</li>
-                    <li lang="de">Verfasste <a href="https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX" target="_blank">CIP Proposal</a> für Wallet Indexing Standards</li>
-                    <li lang="en">Led 7-person cross-functional team delivering MetaDex integration (first revenue stream)</li>
-                    <li lang="de">Leitete 7-köpfiges cross-funktionales Team bei MetaDex Integration (erster Umsatzstrom)</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <h3 lang="de">Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Feb 2026</p>
-                <ul>
-                    <li lang="en">Authored <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>: Comprehensive protocol specification with layers, interfaces, consensus mechanisms</li>
-                    <li lang="de">Verfasste <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>: Umfassende Protocol Specification mit Layern, Interfaces, Consensus-Mechanismen</li>
-                    <li lang="en">Established decision log tracking architectural choices and rationale</li>
-                    <li lang="de">Etablierte Decision Log zur Verfolgung architektonischer Entscheidungen und Begründungen</li>
-                    <li lang="en">Direct 8-person team across formal methods, research, and engineering</li>
-                    <li lang="de">Leite 8-köpfiges Team über formale Methoden, Research und Engineering</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Solutions Architect</h3>
-                <h3 lang="de">Solutions Architect</h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2021 - Nov 2022</p>
-                <ul>
-                    <li lang="en">Architected complete Plutus smart-contract stack for collateralized debt positions (CDP platform)</li>
-                    <li lang="de">Entwickelte vollständigen Plutus Smart-Contract Stack für Collateralized Debt Positions (CDP Platform)</li>
-                    <li lang="en">Delivered technical workshops and hands-on training for <strong>100+ Amazon engineers</strong> on distributed systems</li>
-                    <li lang="de">Führte technische Workshops und Hands-on Training für <strong>100+ Amazon Engineers</strong> zu Distributed Systems durch</li>
-                    <li lang="en">Created educational content and reusable architecture patterns enabling developer adoption</li>
-                    <li lang="de">Erstellte Educational Content und wiederverwendbare Architektur-Patterns zur Förderung der Developer Adoption</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 lang="en">Senior Software Engineer & Architect – Deloitte</h3>
-                <h3 lang="de">Senior Software Engineer & Architect – Deloitte</h3>
-                <p class="job-meta">Sep 2016 - Nov 2019 • 3 years, 2 months</p>
-                <ul>
-                    <li lang="en"><strong>Migration Architecture:</strong> 3-stage automated pipeline (Parser → Transformer → Generator) for 16M LoC transformation</li>
-                    <li lang="de"><strong>Migrations-Architektur:</strong> 3-stufige automatisierte Pipeline (Parser → Transformer → Generator) für 16M LoC Transformation</li>
-                    <li lang="en">Result: <strong>€6M annual license cost savings</strong> while maintaining functionality</li>
-                    <li lang="de">Ergebnis: <strong>€6M jährliche Lizenzkosteneinsparungen</strong> bei gleichbleibender Funktionalität</li>
-                    <li lang="en">Designed differential testing framework comparing old vs. new system outputs (>99.9% compatibility)</li>
-                    <li lang="de">Entwickelte Differential Testing Framework zum Vergleich alter vs. neuer System-Outputs (>99,9% Kompatibilität)</li>
-                </ul>
-            </div>
-
-            <h2 lang="en">ARCHITECTURAL CONSULTING</h2>
-            <h2 lang="de">ARCHITEKTUR-CONSULTING</h2>
-
-            <div class="job">
-                <h3>Dump it! – Cross-Platform Application Architecture • 2023 - 2025</h3>
-                <ul>
-                    <li lang="en"><strong>Supabase Backend:</strong> PostgreSQL with Row Level Security, Edge Functions for serverless compute, real-time subscriptions</li>
-                    <li lang="de"><strong>Supabase Backend:</strong> PostgreSQL mit Row Level Security, Edge Functions für serverless Compute, Echtzeit-Subscriptions</li>
-                    <li lang="en"><strong>Event-Sourced Architecture:</strong> Immutable event stream with async task-based pipeline (transcribe → ingest → extract → match → resolve → execute)</li>
-                    <li lang="de"><strong>Event-Sourced Architektur:</strong> Unveränderlicher Event Stream mit async Task-basierter Pipeline (transcribe → ingest → extract → match → resolve → execute)</li>
-                    <li lang="en"><strong>Two-Phase LLM Pipeline:</strong> Haiku for classification with prompt caching, LLM for conflict resolution with statistical context</li>
-                    <li lang="de"><strong>Zwei-Phasen LLM Pipeline:</strong> Haiku für Klassifikation mit Prompt Caching, LLM für Konfliktauflösung mit statistischem Kontext</li>
-                    <li lang="en"><strong>Adaptive Vector Search:</strong> Dynamic quality thresholds, recency bias, gap analysis for ambiguity detection</li>
-                    <li lang="de"><strong>Adaptive Vektor-Suche:</strong> Dynamische Quality Thresholds, Recency Bias, Gap-Analyse zur Mehrdeutigkeitserkennung</li>
-                    <li lang="en"><strong>Offline-First Design:</strong> Local-first data model with eventual consistency, persistent queue for reliable sync</li>
-                    <li lang="de"><strong>Offline-First Design:</strong> Local-first Datenmodell mit eventueller Konsistenz, persistente Queue für zuverlässigen Sync</li>
-                </ul>
-            </div>
-
-            <h2 lang="en">EDUCATION</h2>
-            <h2 lang="de">BILDUNG</h2>
-            <p lang="en"><strong>Bachelor of Science in Computer Science</strong><br>
-            DHBW Stuttgart • Germany • 2011 - 2014</p>
-            <p lang="de"><strong>Bachelor of Science in Informatik</strong><br>
-            DHBW Stuttgart • Deutschland • 2011 - 2014</p>
-
-            <p lang="en"><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
-            <p lang="de"><strong>International Business</strong><br>
-            Hult International Business School • San Francisco, CA • 2014 - 2015</p>
         </div>
     </div>
 
@@ -3031,64 +2360,6 @@
             langLabel.textContent = lang === 'en' ? 'DE' : 'EN';
         });
 
-        // Navigation
-        const navButtons = document.querySelectorAll('.nav-btn');
-        const pages = document.querySelectorAll('.page');
-        const header = document.getElementById('header');
-
-        function goHome() {
-            // Remove active from all nav buttons
-            navButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Show home page
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById('home').classList.add('active');
-
-            // Hide navigation in header
-            header.classList.remove('with-nav');
-
-            // Update URL
-            history.replaceState(null, null, '#home');
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        navButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const target = this.dataset.target;
-
-                // Update active button
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                // Update active page
-                pages.forEach(page => page.classList.remove('active'));
-                document.getElementById(target).classList.add('active');
-
-                // Show navigation in header
-                header.classList.add('with-nav');
-
-                // Update URL hash without scrolling
-                history.replaceState(null, null, '#' + target);
-
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        });
-
-        // Handle initial hash on page load
-        const initialHash = window.location.hash.slice(1);
-        if (initialHash && initialHash !== '' && initialHash !== 'home') {
-            const targetButton = document.querySelector(`[data-target="${initialHash}"]`);
-            if (targetButton) {
-                targetButton.click();
-            }
-        } else {
-            // No hash or home hash - show home page
-            document.getElementById('home').classList.add('active');
-        }
-
         // Collapsible job sections
         document.addEventListener('click', function(e) {
             const jobHeader = e.target.closest('.job-header');
@@ -3140,47 +2411,23 @@
             });
         }
 
-        // Initialize sidebar tracking when CV page is active
-        if (document.getElementById('cv').classList.contains('active')) {
-            initSidebarTracking();
+        // Outline auto-highlight (single page, runs on load)
+        initSidebarTracking();
+
+        // Show more / fewer projects
+        const showMoreBtn = document.getElementById('show-more-projects');
+        const projectsGrid = document.getElementById('projects-grid');
+        if (showMoreBtn && projectsGrid) {
+            showMoreBtn.addEventListener('click', function() {
+                const showAll = projectsGrid.classList.toggle('show-all');
+                showMoreBtn.classList.toggle('expanded', showAll);
+                showMoreBtn.setAttribute('aria-expanded', showAll ? 'true' : 'false');
+                const en = showMoreBtn.querySelector('span[lang="en"]');
+                const de = showMoreBtn.querySelector('span[lang="de"]');
+                if (en) en.textContent = showAll ? 'Show less' : 'Show more';
+                if (de) de.textContent = showAll ? 'Weniger anzeigen' : 'Mehr anzeigen';
+            });
         }
-
-        // Re-initialize when navigating to CV page
-        navButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.dataset.target === 'cv') {
-                    setTimeout(initSidebarTracking, 100);
-                }
-            });
-        });
-
-        // Project filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.projects-grid .project-card');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filter = this.dataset.filter;
-
-                // Update active button
-                filterButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-
-                // Filter projects
-                projectCards.forEach(card => {
-                    if (filter === 'all') {
-                        card.classList.remove('hidden');
-                    } else {
-                        const tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
-                        if (tags.includes(filter)) {
-                            card.classList.remove('hidden');
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    }
-                });
-            });
-        });
     </script>
 </body>
 </html>
