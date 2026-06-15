@@ -844,6 +844,14 @@
             color: var(--color-text-light);
         }
 
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm) var(--spacing-md);
+            margin-top: var(--spacing-sm);
+        }
+
         .cv-meta-icon {
             width: 16px;
             height: 16px;
@@ -904,6 +912,10 @@
         }
 
         /* Education Section */
+        #education {
+            margin-top: var(--spacing-xl);
+        }
+
         .education-item {
             margin-bottom: var(--spacing-md);
         }
@@ -948,10 +960,10 @@
         }
 
         .project-logo-img {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: 6px;
         }
 
         .project-logo-img.cover {
@@ -979,16 +991,16 @@
         }
 
         .project-logo-placeholder {
-            width: 48px;
-            height: 48px;
-            background: var(--color-accent);
-            color: var(--color-bg);
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            background: var(--color-bg-alt);
+            color: var(--color-text-lighter);
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         /* Project Filters */
@@ -1025,37 +1037,53 @@
         /* Project Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: var(--spacing-md);
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg) var(--spacing-md);
         }
 
         .project-card.hidden {
             display: none;
         }
 
-        /* Collapsed projects: hide extra cards until expanded */
-        .projects-grid:not(.show-all) .project-card.extra {
-            display: none;
+        /* Collapsed projects: animate extra cards open/closed */
+        .projects-extra-wrap {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s ease;
+        }
+
+        .projects-extra-wrap.open {
+            grid-template-rows: 1fr;
+        }
+
+        .projects-extra-inner {
+            overflow: hidden;
+        }
+
+        .projects-grid--extra {
+            margin-top: var(--spacing-md);
         }
 
         .show-more-btn {
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: var(--spacing-xs);
-            margin-top: var(--spacing-md);
-            padding: var(--spacing-xs) var(--spacing-md);
-            background: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            color: var(--color-text);
+            width: fit-content;
+            margin: var(--spacing-md) auto 0;
+            padding: var(--spacing-xs);
+            background: none;
+            border: none;
+            color: var(--color-accent);
             font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .show-more-btn:hover {
-            border-color: var(--color-text-lighter);
+            opacity: 0.7;
+            text-decoration: underline;
         }
 
         .show-more-icon {
@@ -1078,11 +1106,10 @@
         }
 
         .project-card {
-            margin-bottom: var(--spacing-lg);
-            padding: var(--spacing-md);
-            background: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
+            margin: 0;
+            padding: 0;
+            background: none;
+            border: none;
         }
 
         .project-header {
@@ -1099,7 +1126,7 @@
 
         .project-title-row h3 {
             margin: 0;
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             font-weight: 600;
         }
 
@@ -1128,19 +1155,19 @@
 
         .tech-tag {
             display: inline-block;
-            padding: 3px 8px;
-            background: transparent;
-            border: 1px solid var(--color-border);
-            border-radius: 3px;
-            font-size: 0.75rem;
+            padding: 2px 8px;
+            background: var(--color-bg-alt);
+            border: none;
+            border-radius: 4px;
+            font-size: 0.7rem;
             color: var(--color-text-lighter);
             font-weight: 400;
-            opacity: 0.7;
         }
 
         .project-description {
             color: var(--color-text-light);
-            line-height: 1.6;
+            line-height: 1.55;
+            font-size: 0.9rem;
             margin: 0;
         }
 
@@ -1385,6 +1412,31 @@
                     </a>
                 </div>
 
+                <div class="hero-meta">
+                    <span class="cv-meta-item">
+                        <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Berlin, DE
+                    </span>
+                    <span class="cv-meta-item">
+                        <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span lang="en">German & English (fluent)</span>
+                        <span lang="de">Deutsch & Englisch (fließend)</span>
+                    </span>
+                    <span class="cv-meta-item">
+                        <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span lang="en">Contact available on request</span>
+                        <span lang="de">Kontakt auf Anfrage verfügbar</span>
+                    </span>
+                </div>
+
                 <div class="bio">
                     <p lang="en">Hey! I'm Will, a versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. I've worked everywhere from enterprise (Deloitte on pension systems and insurance) to blockchain infrastructure (IOG/Cardano), shipping on mobile, web, desktop, and custom hardware. I thrive on variety and adapting to new domains.</p>
                     <p lang="de">Hey! Ich bin Will, ein vielseitiger Engineer mit über 10 Jahren Erfahrung in verschiedensten Branchen, Plattformen und Unternehmensgrößen. Von Enterprise-Systemen (Deloitte - Rentensysteme und Versicherungen) bis zur Blockchain-Infrastruktur (IOG/Cardano), von Mobile über Web und Desktop bis zu Custom Hardware. Ich liebe Vielfalt und die Anpassung an neue Bereiche.</p>
@@ -1437,38 +1489,6 @@
 
                 <!-- Main CV Content -->
                 <div class="cv-main">
-                    <!-- Header -->
-                    <div class="cv-header">
-                        <div class="cv-title">
-                            <span lang="en">Software Engineer & Technical Architect</span>
-                            <span lang="de">Software Engineer & Technical Architect</span>
-                        </div>
-                        <div class="cv-meta">
-                            <span class="cv-meta-item">
-                                <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                Berlin, DE
-                            </span>
-                            <span class="cv-meta-item">
-                                <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                                <span lang="en">German & English (fluent)</span>
-                                <span lang="de">Deutsch & Englisch (fließend)</span>
-                            </span>
-                            <span class="cv-meta-item">
-                                <svg class="cv-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <span lang="en">Contact available on request</span>
-                                <span lang="de">Kontakt auf Anfrage verfügbar</span>
-                            </span>
-                        </div>
-                    </div>
-
                     <!-- Profile Section -->
                     <section id="profile">
                         <h2>
@@ -1953,7 +1973,7 @@
                             <span lang="en">Projects</span>
                             <span lang="de">Projekte</span>
                         </h2>
-                        <div class="projects-grid" id="projects-grid">
+                                                <div class="projects-grid">
                         <div class="project-card" data-tags="blockchain,architecture">
                         <div class="project-logo">
                             <img src="leios-social-preview.jpg" alt="Ouroboros Leios" class="project-logo-img cover">
@@ -2034,7 +2054,12 @@
                         <p class="project-description">Berlin-based freelance agency specializing in Supabase and PostgreSQL backends, web/mobile apps, and AI automation. Open-source first approach with focus on clean architecture and avoiding vendor lock-in.</p>
                     </div>
 
-                        <div class="project-card extra" data-tags="web">
+                        
+                        </div>
+                        <div class="projects-extra-wrap" id="projects-extra">
+                            <div class="projects-extra-inner">
+                                <div class="projects-grid projects-grid--extra">
+<div class="project-card extra" data-tags="web">
                         <div class="project-logo">
                             <img src="https://underwater.journeys.cy/logo.png" alt="Underwater Journeys logo" class="project-logo-img">
                         </div>
@@ -2267,6 +2292,9 @@
                         </div>
                         <p class="project-description">Educational blockchain implementation from scratch. Built proof-of-work consensus, block validation, and peer-to-peer networking.</p>
                     </div>
+                        
+                                </div>
+                            </div>
                         </div>
                         <button class="show-more-btn" id="show-more-projects" aria-expanded="false">
                             <span lang="en">Show more</span>
@@ -2416,16 +2444,16 @@
 
         // Show more / fewer projects
         const showMoreBtn = document.getElementById('show-more-projects');
-        const projectsGrid = document.getElementById('projects-grid');
-        if (showMoreBtn && projectsGrid) {
+        const projectsExtra = document.getElementById('projects-extra');
+        if (showMoreBtn && projectsExtra) {
             showMoreBtn.addEventListener('click', function() {
-                const showAll = projectsGrid.classList.toggle('show-all');
-                showMoreBtn.classList.toggle('expanded', showAll);
-                showMoreBtn.setAttribute('aria-expanded', showAll ? 'true' : 'false');
+                const open = projectsExtra.classList.toggle('open');
+                showMoreBtn.classList.toggle('expanded', open);
+                showMoreBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
                 const en = showMoreBtn.querySelector('span[lang="en"]');
                 const de = showMoreBtn.querySelector('span[lang="de"]');
-                if (en) en.textContent = showAll ? 'Show less' : 'Show more';
-                if (de) de.textContent = showAll ? 'Weniger anzeigen' : 'Mehr anzeigen';
+                if (en) en.textContent = open ? 'Show less' : 'Show more';
+                if (de) de.textContent = open ? 'Weniger anzeigen' : 'Mehr anzeigen';
             });
         }
     </script>
