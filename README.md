@@ -4,5 +4,5 @@ Software engineer who goes deep across domains — blockchain protocols, distrib
 
 ### 👉 [**Find out more →**](https://wwolff.pages.dev)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-wwolff-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/wwolff)
-[![X](https://img.shields.io/badge/@will__break__it-000000?style=flat&logo=x&logoColor=white)](https://x.com/will_break_it)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-wwolff-0d9488?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/wwolff)
+[![X](https://img.shields.io/badge/@will__break__it-0d9488?style=flat&logo=x&logoColor=white)](https://x.com/will_break_it)
