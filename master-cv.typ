@@ -118,7 +118,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Global Coordination:* Coordinated with offshore teams in India; established testing standards adopted organization-wide]
 ]
 
-#exp("Co-Founder & CTO", "Feb 2015 – Sep 2016", "CityXcape Inc., San Francisco")[
+#exp("Co-Founder & CTO", "Feb 2015 – Sep 2016", link("https://cityxcape.com/")[CityXcape Inc., San Francisco])[
   Technical co-founder of social discovery platform for exploring cities through community-driven recommendations.
   #v(2pt)
   #b[*Product Development:* Built native iOS app (Swift) and Django/Rails backend from concept to App Store launch]

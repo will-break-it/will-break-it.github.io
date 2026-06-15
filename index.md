@@ -73,7 +73,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Coordinated India on-site delivery and architected end-to-end testing approach
 
 ### **Co-Founder & CTO**
-**CityXcape Inc.** • *San Francisco, CA* • <span class="date">Feb 2015 - Sep 2016</span>
+**[CityXcape Inc.](https://cityxcape.com/)** • *San Francisco, CA* • <span class="date">Feb 2015 - Sep 2016</span>
 - Co-founded social discovery platform for exploring cities through community-driven "secret spots"
 - Raised ~€150k in seed funding; built iOS native app and Django/Ruby on Rails web platform
 - Led technical development from concept to App Store launch
