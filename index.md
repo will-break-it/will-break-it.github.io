@@ -39,7 +39,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 - Formally verifying a research proposal and building a working prototype
 - Reevaluating peer-sampling protocols that come with specific security properties
 
-### **R&D Innovation Lead & Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
+### **Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
 **Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Feb 2026</span>
 - Directed 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
 - Produced architecture, [CIP-0164](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md) and decision log guiding current implementation phase

@@ -70,7 +70,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
 ]
 
-#exp("R&D Innovation Lead & Technical Architect", "Nov 2024 – Feb 2026", "Input Output Global (IOG)")[
+#exp("Technical Architect", "Nov 2024 – Feb 2026", "Input Output Global (IOG)")[
   Led research and development of Ouroboros Leios, a high-throughput overlay protocol for Cardano blockchain, coordinating cross-functional team and driving toward mainnet implementation.
   #v(2pt)
   #b[*Technical Leadership & Team Coordination:* Direct team of 8 researchers and engineers across formal methods, protocol design, and prototype development]
