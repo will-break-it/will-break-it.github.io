@@ -19,10 +19,16 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 # Sitemap

@@ -1,36 +1,50 @@
-# William Wolff - Software Engineer & Technical Architect
+# William Wolff — Software Engineer & Technical Architect
 
-> Portfolio and CV for William Wolff, a software engineer with 10+ years of experience in blockchain infrastructure, distributed systems, and product development.
+> Single-page portfolio and CV for William Wolff, a software engineer with 10+ years of experience across blockchain infrastructure, distributed systems, mobile, and IoT. Currently technical architect for a Byzantine-resistant publish/subscribe network at Input Output Global (IOG).
 
 ## About
 
-This is the personal portfolio and CV website for William Wolff, showcasing:
+Personal portfolio and CV. Curious by default, focused when it counts — experience spans enterprise (Deloitte), blockchain infrastructure (IOG/Cardano), IoT, and mobile. Founder DNA, with deep expertise in distributed systems, secure application development, and event-driven architecture.
 
-- **Professional Experience**: R&D Innovation Lead at Input Output Global (IOG) working on Ouroboros Leios high-throughput protocol for Cardano blockchain
-- **Technical Expertise**: Blockchain infrastructure, distributed systems, event-driven architecture, smart contracts, cryptography
-- **Projects**: Voice-first apps, NFT marketplaces, chain indexers, DEX integration libraries, stake pool operations
-- **Open Source Contributions**: Dolos (chain indexer), Lucid (transaction library), Scrolls (multi-DEX indexing), DEX order serialization library
+## Site structure
 
-## Site Structure
+The site is a single scrolling page with these sections (anchor links):
 
-- `/` - Home page with portfolio overview
-- `/#cv` - Full curriculum vitae with detailed work history
-- `/#projects-page` - Comprehensive project showcase
+- `/#profile` — short professional summary
+- `/#technologies` — technology stack
+- `/#experience` — full work history
+- `/#publications` — published work
+- `/#projects` — selected projects
+- `/#education` — education
 
-## Content
+## Experience highlights
 
-The site includes:
-- Detailed work experience from 2015-present
-- Technical projects across blockchain, mobile, and web development
-- Technology stack: TypeScript, Rust, Swift, Kotlin, Python, Java, Haskell
-- Focus areas: Cardano blockchain, eUTxO model, Plutus smart contracts, distributed systems
+- **Technical Architect — Byzantine-Resistant PubSub Network**, IOG (Feb 2026–present): leading a team of 5, formally verifying a research proposal and building a prototype; evaluating peer-sampling protocols for specific security properties.
+- **Technical Architect — Ouroboros Leios**, IOG (Nov 2024–Feb 2026): led R&D for Cardano's high-throughput overlay protocol; principal author of CIP-0164.
+- **Technical Architect — Lace Wallet**, IOG (Nov 2022–Nov 2024): event-driven re-architecture (45% latency reduction, 60%+ cost savings), custom chain indexer (2,000+ tx/s), MetaDex swap feature.
+- **Solutions Architect**, IOG (Nov 2021–Nov 2022): Plutus smart-contract architecture; workshops for 100+ Amazon engineers.
+- **Senior Software Engineer**, Mobility Data Lab (Feb 2020–Nov 2021): IoT and connected-vehicle systems.
+- **Software Engineer → Lead Engineer**, Deloitte (Sep 2016–Nov 2019): 16M-line legacy migration toolchain; €6M/yr license savings.
+- **Co-Founder & CTO**, CityXcape (Feb 2015–Sep 2016): social discovery platform; raised ~€150k seed.
 
-## Contact
+## Publications
 
-Contact information available on request through the website.
+- **CIP-0164: Ouroboros Leios** — principal author. Canonical architecture and design specification for Cardano's high-throughput protocol. https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md
+
+## Technologies
+
+TypeScript, Rust, Swift, Kotlin, Python, Java, Haskell. Focus areas: Cardano / eUTxO, Plutus smart contracts, distributed systems, event-driven architecture, cryptography, secure application development.
+
+## Links
+
+- Portfolio & CV: https://wwolff.pages.dev
+- GitHub: https://github.com/will-break-it
+- LinkedIn: https://linkedin.com/in/wwolff
 
 ## Languages
 
-Content available in:
-- English (default)
-- German (Deutsch)
+Content available in English (default) and German.
+
+## Contact
+
+Available on request through the website.
