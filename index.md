@@ -33,9 +33,15 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ## EXPERIENCE
 
-### **R&D Innovation Lead Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
-**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Present</span>
-- Direct 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
+### **Technical Architect – Byzantine-Resistant PubSub Network**
+**Input Output Global (IOG)** • *Remote* • <span class="date">Feb 2026 - Present</span>
+- Lead a team of 4 engineers & researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network
+- Formally verifying a research proposal and building a working prototype
+- Reevaluating peer-sampling protocols that come with specific security properties
+
+### **R&D Innovation Lead & Technical Architect – [Ouroboros Leios](https://www.youtube.com/watch?v=YEcYVygdhzU)**
+**Input Output Global (IOG)** • *Remote* • <span class="date">Nov 2024 - Feb 2026</span>
+- Directed 8 researchers & engineers (formal methods, protocol design, prototype) exploring high-throughput overlay for Cardano through simulation-driven approach
 - Produced architecture, [CIP-0164](https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md) and decision log guiding current implementation phase
 - Host monthly public demos & Q&A sessions (YouTube ~5k views average)
 - Organized week-long on-site workshop that reduced open research questions
@@ -78,7 +84,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 ### **Dump it! – Voice first note taking**
 *Mobile & Web Development* • <span class="date">2023 - Present</span>
-- Built native [iOS](https://apps.apple.com/de/app/dump-it/id6448620477) (Swift), [Android](https://play.google.com/store/apps/details?id=app.dump.it) (Kotlin), and React [Web](https://dumpit.app) applications with end-to-end encryption
+- Built native iOS (Swift), Android (Kotlin), and React Web applications with end-to-end encryption
 - Implemented Diffie-Hellman key exchange + AES for secure note storage using Supabase backend
 - Self-hosted Whisper v3 for speech-to-text • GPT-4 API integration for summaries/translations
 - Designed offline-first architecture with persistent queue system for seamless cross-platform syncing

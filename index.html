@@ -727,6 +727,92 @@
             font-weight: bold;
         }
 
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            margin-top: var(--spacing-lg);
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 56px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .company {
+            position: relative;
+            padding-left: 88px;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .company:last-child {
+            padding-bottom: 0;
+        }
+
+        .company::before {
+            content: "";
+            position: absolute;
+            left: 51px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 2px solid var(--color-bg);
+            box-sizing: border-box;
+        }
+
+        .company-marker {
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 44px;
+            text-align: right;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+
+        .company-head {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .company-name {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .company-span {
+            display: block;
+            margin-top: 2px;
+            font-size: 0.85rem;
+            color: var(--color-text-lighter);
+        }
+
+        .timeline .role {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .timeline .role:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline .role .job-title h3 {
+            font-size: 1rem;
+            color: var(--color-accent);
+        }
+
+        .timeline .role .job-date {
+            font-weight: 500;
+        }
+
         /* CV Header Styling */
         .cv-meta {
             display: flex;
@@ -1136,6 +1222,23 @@
                 flex-wrap: wrap;
             }
 
+            .timeline::before {
+                left: 44px;
+            }
+
+            .company {
+                padding-left: 64px;
+            }
+
+            .company::before {
+                left: 39px;
+            }
+
+            .company-marker {
+                width: 34px;
+                font-size: 0.8rem;
+            }
+
             .tech-tag {
                 font-size: 0.7rem;
                 padding: 2px 6px;
@@ -1413,29 +1516,74 @@
                             <span lang="de">Erfahrung</span>
                         </h2>
 
-                        <div class="job">
+                        <div class="timeline">
+
+                        <div class="company">
+                            <div class="company-marker">2021</div>
+                            <div class="company-head">
+                                <h3 class="company-name">Input Output Global (IOG)</h3>
+                                <span class="company-span">
+                                    <span lang="en">4 yrs 7 mo · Remote · Nov 2021 – Present</span>
+                                    <span lang="de">4 Jahre, 7 Monate · Remote · Nov 2021 – Heute</span>
+                                </span>
+                            </div>
+
+                        <div class="job role">
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>
-                                        <span lang="en">Technical Architect – <a href="http://leios.cardano-scaling.org/" target="_blank">Ouroboros Leios</a></span>
-                                        <span lang="de">Technischer Architekt – <a href="http://leios.cardano-scaling.org/" target="_blank">Ouroboros Leios</a></span>
+                                        <span lang="en">Technical Architect – Byzantine-Resistant PubSub Network</span>
+                                        <span lang="de">Technischer Architekt – Byzantine-Resistant PubSub Network</span>
                                     </h3>
                                     <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
                                 </div>
                                 <div class="job-meta">
-                                    <span class="job-company">Input Output Global (IOG)</span> •
-                                    <span class="job-location">Remote</span> •
-                                    <span class="job-date">Nov 2024 - Present</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">1 year, 2 months</span>
-                                        <span lang="de">1 Jahr, 2 Monate</span>
-                                    </span>
+                                    <span class="job-date">Feb 2026 - Present</span>
                                 </div>
                                 <p class="job-summary">
-                                    <span lang="en">Leading R&D for Ouroboros Leios, a high-throughput protocol for Cardano blockchain</span>
-                                    <span lang="de">Leite R&D für Ouroboros Leios, ein Hochdurchsatz-Protokoll für die Cardano Blockchain</span>
+                                    <span lang="en">Leading R&D for a Byzantine-resistant pub/sub network — formal verification and prototyping</span>
+                                    <span lang="de">Leite R&D für ein Byzantine-resistentes Pub/Sub-Netzwerk — formale Verifikation und Prototyping</span>
+                                </p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>
+                                            <span lang="en">Lead a team of 4 engineers & researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network</span>
+                                            <span lang="de">Leite ein Team von 4 Ingenieuren & Forschern (plus mir selbst) beim Entwurf eines Byzantine-resistenten Pub/Sub-Overlay-Netzwerks</span>
+                                        </li>
+                                        <li>
+                                            <span lang="en">Formally verifying a research proposal and building a working prototype</span>
+                                            <span lang="de">Formale Verifikation eines Forschungsvorschlags und Entwicklung eines funktionsfähigen Prototyps</span>
+                                        </li>
+                                        <li>
+                                            <span lang="en">Reevaluating peer-sampling protocols for specific security properties</span>
+                                            <span lang="de">Neubewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="job role">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>
+                                        <span lang="en">R&D Innovation Lead & Technical Architect – <a href="http://leios.cardano-scaling.org/" target="_blank">Ouroboros Leios</a></span>
+                                        <span lang="de">R&D Innovation Lead & Technischer Architekt – <a href="http://leios.cardano-scaling.org/" target="_blank">Ouroboros Leios</a></span>
+                                    </h3>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-date">Nov 2024 - Feb 2026</span>
+                                </div>
+                                <p class="job-summary">
+                                    <span lang="en">Led R&D for Ouroboros Leios, a high-throughput protocol for Cardano blockchain</span>
+                                    <span lang="de">Leitete R&D für Ouroboros Leios, ein Hochdurchsatz-Protokoll für die Cardano Blockchain</span>
                                 </p>
                             </div>
                             <div class="job-content">
@@ -1466,25 +1614,19 @@
                             </div>
                         </div>
 
-                        <div class="job">
+                        <div class="job role">
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>
-                                        <span lang="en">Technical Architect</span>
-                                        <span lang="de">Technical Architect</span>
+                                        <span lang="en">Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></span>
+                                        <span lang="de">Technischer Architekt – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></span>
                                     </h3>
                                     <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
                                 </div>
                                 <div class="job-meta">
-                                    <span class="job-company">Input Output Global (IOG) - Lace Wallet</span> •
-                                    <span class="job-location">Remote</span> •
-                                    <span class="job-date">Nov 2022 - Nov 2024</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">2 years</span>
-                                        <span lang="de">2 Jahre</span>
-                                    </span>
+                                    <span class="job-date">Nov 2022 - Nov 2024</span>
                                 </div>
                                 <p class="job-summary">
                                     <span lang="en">Led technical architecture for Lace with Event-Driven Architecture, delivering 45% performance improvement</span>
@@ -1515,7 +1657,7 @@
                             </div>
                         </div>
 
-                        <div class="job">
+                        <div class="job role">
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>
@@ -1527,13 +1669,7 @@
                                     </svg>
                                 </div>
                                 <div class="job-meta">
-                                    <span class="job-company">Input Output Global (IOG)</span> •
-                                    <span class="job-location">Remote</span> •
-                                    <span class="job-date">Nov 2021 - Nov 2022</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">1 year</span>
-                                        <span lang="de">1 Jahr</span>
-                                    </span>
+                                    <span class="job-date">Nov 2021 - Nov 2022</span>
                                 </div>
                                 <p class="job-summary">
                                     <span lang="en">Designed blockchain solutions and educated enterprise partners on Cardano architecture</span>
@@ -1560,7 +1696,19 @@
                             </div>
                         </div>
 
-                        <div class="job">
+                        </div><!-- /company IOG -->
+
+                        <div class="company">
+                            <div class="company-marker">2020</div>
+                            <div class="company-head">
+                                <h3 class="company-name">Mobility Data Lab GmbH</h3>
+                                <span class="company-span">
+                                    <span lang="en">1 yr 9 mo · Berlin, DE · Feb 2020 – Nov 2021</span>
+                                    <span lang="de">1 Jahr, 9 Monate · Berlin, DE · Feb 2020 – Nov 2021</span>
+                                </span>
+                            </div>
+
+                        <div class="job role">
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>
@@ -1572,13 +1720,7 @@
                                     </svg>
                                 </div>
                                 <div class="job-meta">
-                                    <span class="job-company">Mobility Data Lab GmbH</span> •
-                                    <span class="job-location">Berlin, DE</span> •
-                                    <span class="job-date">Feb 2020 - Nov 2021</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">1 year, 9 months</span>
-                                        <span lang="de">1 Jahr, 9 Monate</span>
-                                    </span>
+                                    <span class="job-date">Feb 2020 - Nov 2021</span>
                                 </div>
                                 <p class="job-summary">
                                     <span lang="en">Built IoT and data processing systems for connected vehicle platform</span>
@@ -1609,25 +1751,31 @@
                             </div>
                         </div>
 
-                        <div class="job">
+                        </div><!-- /company Mobility -->
+
+                        <div class="company">
+                            <div class="company-marker">2016</div>
+                            <div class="company-head">
+                                <h3 class="company-name">Deloitte US</h3>
+                                <span class="company-span">
+                                    <span lang="en">3 yrs 2 mo · San Francisco, CA · Sep 2016 – Nov 2019</span>
+                                    <span lang="de">3 Jahre, 2 Monate · San Francisco, CA · Sep 2016 – Nov 2019</span>
+                                </span>
+                            </div>
+
+                        <div class="job role">
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>
-                                        <span lang="en">Senior Software Engineer</span>
-                                        <span lang="de">Senior Software Engineer</span>
+                                        <span lang="en">Lead Engineer & Senior Software Engineer</span>
+                                        <span lang="de">Lead Engineer & Senior Software Engineer</span>
                                     </h3>
                                     <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
                                 </div>
                                 <div class="job-meta">
-                                    <span class="job-company">Deloitte US</span> •
-                                    <span class="job-location">San Francisco, CA</span> •
-                                    <span class="job-date">Sep 2016 - Nov 2019</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">3 years, 2 months</span>
-                                        <span lang="de">3 Jahre, 2 Monate</span>
-                                    </span>
+                                    <span class="job-date">2018 - Nov 2019</span>
                                 </div>
                                 <p class="job-summary">
                                     <span lang="en">Led migration of 16M lines of code, saving €6M annually in licensing costs</span>
@@ -1638,16 +1786,12 @@
                                 <div class="job-content-inner">
                                     <ul>
                                         <li>
-                                            <span lang="en">Architected 3-stage migration toolchain (parser → converter → runtime) for 16M LoC transformation</span>
-                                            <span lang="de">Entwarf 3-stufige Migrations-Toolchain (Parser → Converter → Runtime) für 16M LoC Transformation</span>
-                                        </li>
-                                        <li>
                                             <span lang="en">Cut annual license costs by €6M for major German insurance company</span>
                                             <span lang="de">Reduzierte jährliche Lizenzkosten um €6M für großes deutsches Versicherungsunternehmen</span>
                                         </li>
                                         <li>
-                                            <span lang="en">Grew team from 3 → 20 engineers; promoted to lead architect within 24 months</span>
-                                            <span lang="de">Vergrößerte Team von 3 → 20 Engineers; zum Lead Architect innerhalb von 24 Monaten befördert</span>
+                                            <span lang="en">Grew team from 3 → 20 engineers after promotion to lead</span>
+                                            <span lang="de">Vergrößerte Team von 3 → 20 Engineers nach Beförderung zum Lead</span>
                                         </li>
                                         <li>
                                             <span lang="en">Achieved >99.9% compatibility through differential testing framework</span>
@@ -1658,7 +1802,54 @@
                             </div>
                         </div>
 
-                        <div class="job">
+                        <div class="job role">
+                            <div class="job-header">
+                                <div class="job-title">
+                                    <h3>
+                                        <span lang="en">Software Engineer</span>
+                                        <span lang="de">Software Engineer</span>
+                                    </h3>
+                                    <svg class="job-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="job-meta">
+                                    <span class="job-date">Sep 2016 - 2018</span>
+                                </div>
+                                <p class="job-summary">
+                                    <span lang="en">Built the migration toolchain that moved 16M lines of legacy code to Java</span>
+                                    <span lang="de">Entwickelte die Migrations-Toolchain, die 16M Zeilen Legacy-Code nach Java migrierte</span>
+                                </p>
+                            </div>
+                            <div class="job-content">
+                                <div class="job-content-inner">
+                                    <ul>
+                                        <li>
+                                            <span lang="en">Architected 3-stage migration toolchain (parser → converter → runtime) for 16M LoC transformation</span>
+                                            <span lang="de">Entwarf 3-stufige Migrations-Toolchain (Parser → Converter → Runtime) für 16M LoC Transformation</span>
+                                        </li>
+                                        <li>
+                                            <span lang="en">Moved 16M lines of code from a legacy DSL to Java 8</span>
+                                            <span lang="de">Migrierte 16M Zeilen Code von einer Legacy-DSL nach Java 8</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div><!-- /company Deloitte -->
+
+                        <div class="company">
+                            <div class="company-marker">2015</div>
+                            <div class="company-head">
+                                <h3 class="company-name">CityXcape Inc.</h3>
+                                <span class="company-span">
+                                    <span lang="en">1 yr 7 mo · San Francisco, CA · Feb 2015 – Sep 2016</span>
+                                    <span lang="de">1 Jahr, 7 Monate · San Francisco, CA · Feb 2015 – Sep 2016</span>
+                                </span>
+                            </div>
+
+                        <div class="job role">
                             <div class="job-header">
                                 <div class="job-title">
                                     <h3>
@@ -1670,13 +1861,7 @@
                                     </svg>
                                 </div>
                                 <div class="job-meta">
-                                    <span class="job-company">CityXcape Inc.</span> •
-                                    <span class="job-location">San Francisco, CA</span> •
-                                    <span class="job-date">Feb 2015 - Sep 2016</span> •
-                                    <span class="job-duration">
-                                        <span lang="en">1 year, 7 months</span>
-                                        <span lang="de">1 Jahr, 7 Monate</span>
-                                    </span>
+                                    <span class="job-date">Feb 2015 - Sep 2016</span>
                                 </div>
                                 <p class="job-summary">
                                     <span lang="en">Co-founded social discovery platform, raised €150k seed funding</span>
@@ -1702,6 +1887,10 @@
                                 </div>
                             </div>
                         </div>
+
+                        </div><!-- /company CityXcape -->
+
+                        </div><!-- /timeline -->
                     </section>
 
                     <!-- Projects Section -->
@@ -1742,8 +1931,8 @@
                                 <div class="job-content-inner">
                                     <ul>
                                         <li>
-                                            <span lang="en">Built native <a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank">iOS (Swift)</a>, <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank">Android (Kotlin)</a>, and <a href="https://dumpit.app" target="_blank">web (React)</a> apps with feature parity</span>
-                                            <span lang="de">Entwickelte native <a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank">iOS (Swift)</a>, <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank">Android (Kotlin)</a> und <a href="https://dumpit.app" target="_blank">Web (React)</a> Apps mit Feature-Parität</span>
+                                            <span lang="en">Built native iOS (Swift), Android (Kotlin), and web (React) apps with feature parity</span>
+                                            <span lang="de">Entwickelte native iOS (Swift), Android (Kotlin) und Web (React) Apps mit Feature-Parität</span>
                                         </li>
                                         <li>
                                             <span lang="en">Implemented two-phase LLM pipeline: Claude Haiku for intent classification, semantic conflict resolution</span>
@@ -1948,10 +2137,8 @@
                         </div>
                         <div class="project-header">
                             <div class="project-title-row">
-                                <h3>
-                                    <a href="https://dumpit.app" target="_blank" class="project-title-link">
-                                        Dump it! – Voice-First Note Taking App
-                                    </a>
+                                <h3 class="project-title-link">
+                                    Dump it! – Voice-First Note Taking App
                                 </h3>
                             </div>
                             <div class="project-tech">
@@ -2344,6 +2531,20 @@
             <h2 lang="de">ERFAHRUNG</h2>
 
             <div class="job">
+                <h3 lang="en">Technical Lead – Byzantine-Resistant PubSub Network</h3>
+                <h3 lang="de">Technical Lead – Byzantine-Resistant PubSub Network</h3>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Feb 2026 - Present</p>
+                <ul>
+                    <li lang="en">Lead a team of 4 engineers & researchers building a Byzantine-resistant pub/sub network</li>
+                    <li lang="de">Leite ein Team von 4 Ingenieuren & Forschern beim Aufbau eines Byzantine-resistenten Pub/Sub-Netzwerks</li>
+                    <li lang="en">Formally verifying a research proposal and shipping a working prototype</li>
+                    <li lang="de">Formale Verifikation eines Forschungsvorschlags und Auslieferung eines funktionsfähigen Prototyps</li>
+                    <li lang="en">Evaluating peer-sampling protocols against specific security properties</li>
+                    <li lang="de">Bewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</li>
+                </ul>
+            </div>
+
+            <div class="job">
                 <h3 lang="en">Product-Focused Technical Leadership – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
                 <h3 lang="de">Product-Fokussierte Technische Führung – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
                 <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
@@ -2360,7 +2561,7 @@
             <div class="job">
                 <h3 lang="en">R&D Innovation Lead – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
                 <h3 lang="de">R&D Innovation Lead – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Present</p>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Feb 2026</p>
                 <ul>
                     <li lang="en">Host monthly public demos on YouTube (<strong>~5k views</strong>) with live Q&A, translating research into developer content</li>
                     <li lang="de">Monatliche öffentliche Demos auf YouTube (<strong>~5k Views</strong>) mit Live Q&A, übersetze Forschung in Developer Content</li>
@@ -2390,7 +2591,7 @@
 
             <div class="job">
                 <h3>Dump it! – AI Note-Taking App • 2023 - 2025</h3>
-                <p><a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank">iOS</a> • <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank">Android</a> • <a href="https://dumpit.app" target="_blank">Web</a></p>
+                <p>iOS • Android • Web</p>
                 <ul>
                     <li lang="en">Shipped on <strong>3 platforms simultaneously</strong> (iOS, Android, Web) solo in 3 months</li>
                     <li lang="de"><strong>3 Plattformen gleichzeitig</strong> (iOS, Android, Web) solo in 3 Monaten shipped</li>
@@ -2508,6 +2709,22 @@
             <h2 lang="de">ERFAHRUNG</h2>
 
             <div class="job">
+                <h3 lang="en">Protocol Engineering – Byzantine-Resistant PubSub Network</h3>
+                <h3 lang="de">Protocol Engineering – Byzantine-Resistant PubSub Network</h3>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Feb 2026 - Present</p>
+                <ul>
+                    <li lang="en">Building a working prototype of a Byzantine-resistant pub/sub overlay network</li>
+                    <li lang="de">Entwickle einen funktionsfähigen Prototyp eines Byzantine-resistenten Pub/Sub-Overlay-Netzwerks</li>
+                    <li lang="en">Formally verifying the research proposal behind the protocol</li>
+                    <li lang="de">Formale Verifikation des Forschungsvorschlags hinter dem Protokoll</li>
+                    <li lang="en">Reevaluating peer-sampling protocols for specific security properties</li>
+                    <li lang="de">Neubewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</li>
+                    <li lang="en">Leading a team of 4 engineers & researchers</li>
+                    <li lang="de">Leite ein Team von 4 Ingenieuren & Forschern</li>
+                </ul>
+            </div>
+
+            <div class="job">
                 <h3 lang="en">Blockchain Infrastructure Engineer – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
                 <h3 lang="de">Blockchain Infrastructure Engineer – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
                 <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
@@ -2526,7 +2743,7 @@
             <div class="job">
                 <h3 lang="en">Protocol Engineering – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
                 <h3 lang="de">Protocol Engineering – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Present</p>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Feb 2026</p>
                 <ul>
                     <li lang="en">Develop simulation frameworks for protocol validation</li>
                     <li lang="de">Entwickle Simulations-Frameworks für Protocol Validation</li>
@@ -2541,7 +2758,7 @@
                 <h3 lang="en">Native Mobile Development – Dump it!</h3>
                 <h3 lang="de">Native Mobile Entwicklung – Dump it!</h3>
                 <p class="job-meta">Side Project • 2023 - Present</p>
-                <p><a href="https://apps.apple.com/de/app/dump-it/id6448620477" target="_blank">iOS</a> • <a href="https://play.google.com/store/apps/details?id=app.dump.it" target="_blank">Android</a> • <a href="https://dumpit.app" target="_blank">Web</a></p>
+                <p>iOS • Android • Web</p>
                 <ul>
                     <li lang="en"><strong>Two-Phase LLM Pipeline:</strong> Claude Haiku for intent classification, conflict resolution for ambiguous cases</li>
                     <li lang="de"><strong>Zwei-Phasen LLM Pipeline:</strong> Claude Haiku für Intent-Klassifikation, Konfliktauflösung für mehrdeutige Fälle</li>
@@ -2659,6 +2876,20 @@
             <h2 lang="de">ERFAHRUNG</h2>
 
             <div class="job">
+                <h3 lang="en">Technical Architect – Byzantine-Resistant PubSub Network</h3>
+                <h3 lang="de">Technical Architect – Byzantine-Resistant PubSub Network</h3>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Feb 2026 - Present</p>
+                <ul>
+                    <li lang="en">Lead a team of 5 (4 engineers & researchers plus myself) designing a Byzantine-resistant pub/sub overlay network</li>
+                    <li lang="de">Leite ein Team von 5 Personen (4 Ingenieure & Forscher plus mir selbst) beim Entwurf eines Byzantine-resistenten Pub/Sub-Overlay-Netzwerks</li>
+                    <li lang="en">Formally verifying a research proposal and building a working prototype</li>
+                    <li lang="de">Formale Verifikation eines Forschungsvorschlags und Entwicklung eines funktionsfähigen Prototyps</li>
+                    <li lang="en">Reevaluating peer-sampling protocols for specific security properties</li>
+                    <li lang="de">Neubewertung von Peer-Sampling-Protokollen hinsichtlich spezifischer Sicherheitseigenschaften</li>
+                </ul>
+            </div>
+
+            <div class="job">
                 <h3 lang="en">Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
                 <h3 lang="de">Technical Architect – <a href="https://www.lace.io/" target="_blank">Lace Wallet</a></h3>
                 <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2022 - Nov 2024</p>
@@ -2677,7 +2908,7 @@
             <div class="job">
                 <h3 lang="en">R&D Innovation Lead & Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
                 <h3 lang="de">R&D Innovation Lead & Technical Architect – <a href="https://www.youtube.com/watch?v=YEcYVygdhzU" target="_blank">Ouroboros Leios</a></h3>
-                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Present</p>
+                <p class="job-meta">Input Output Global (IOG) • Remote • Nov 2024 - Feb 2026</p>
                 <ul>
                     <li lang="en">Authored <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>: Comprehensive protocol specification with layers, interfaces, consensus mechanisms</li>
                     <li lang="de">Verfasste <a href="https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md" target="_blank">CIP-0164</a>: Umfassende Protocol Specification mit Layern, Interfaces, Consensus-Mechanismen</li>

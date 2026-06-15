@@ -62,8 +62,16 @@ Passionate about working on technically challenging problems that contribute to 
 
 #section("Experience")
 
-#exp("R&D Innovation Lead & Technical Architect", "Nov 2024 – Present", "Input Output Global (IOG)")[
-  Leading research and development of Ouroboros Leios, a high-throughput overlay protocol for Cardano blockchain, coordinating cross-functional team and driving toward mainnet implementation.
+#exp("Technical Architect – Byzantine-Resistant PubSub Network", "Feb 2026 – Present", "Input Output Global (IOG)")[
+  Leading research and development of a Byzantine-resistant publish/subscribe network, formally verifying a research proposal and building a prototype.
+  #v(2pt)
+  #b[*Technical Leadership:* Lead a team of 4 engineers and researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network]
+  #b[*Formal Verification:* Formally verifying a research proposal and building a working prototype]
+  #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
+]
+
+#exp("R&D Innovation Lead & Technical Architect", "Nov 2024 – Feb 2026", "Input Output Global (IOG)")[
+  Led research and development of Ouroboros Leios, a high-throughput overlay protocol for Cardano blockchain, coordinating cross-functional team and driving toward mainnet implementation.
   #v(2pt)
   #b[*Technical Leadership & Team Coordination:* Direct team of 8 researchers and engineers across formal methods, protocol design, and prototype development]
   #b[*Defining Direction:* Translated open research into executable roadmap—authored #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]] #linebreak() (Cardano Improvement Proposal, industry RFC comparable to Bitcoin's BIPs or IETF standards)]
@@ -101,12 +109,12 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Pilot Launch:* Successfully launched with 20+ vehicles]
 ]
 
-#exp("Senior Software Engineer & Migration Lead", "Sep 2016 – Nov 2019", "Deloitte, San Francisco")[
-  Led large-scale legacy system migration for major German insurance company.
+#exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", "Deloitte, San Francisco")[
+  Joined as Software Engineer and was promoted to lead a large-scale legacy system migration for a major German insurance company.
   #v(2pt)
   #b[*Migration Toolchain:* Redesigned Cobol-to-Java architecture for functional language (ISA); 3-stage pipeline: parser → AST → Java codegen, plus runtime emulation layer preserving original ISA/IDM behavior]
   #b[*Business Impact:* Saved client €6M annually in licensing costs]
-  #b[*Team Growth:* Scaled team from 3 to 20 engineers over 24 months; promoted to lead architect]
+  #b[*Team Growth:* Promoted to Lead within 24 months; scaled team from 3 to 20 engineers]
   #b[*Global Coordination:* Coordinated with offshore teams in India; established testing standards adopted organization-wide]
 ]
 
