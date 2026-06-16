@@ -16,3 +16,5 @@ vendor/
 
 # Private resumes (role-specific, not for public)
 private/ 
+# Wrangler / Cloudflare local state
+.wrangler/
