@@ -1258,56 +1258,98 @@
 
         /* Print Styles */
         @media print {
-            header, .theme-toggle, .cv-prompt, .nav-tabs {
-                display: none;
-            }
+            @page { margin: 1.4cm; }
 
-            .container {
-                max-width: none;
-                padding: 0;
+            /* Force light, printable colors regardless of the active theme */
+            :root,
+            [data-theme="dark"] {
+                --color-text: #1a1a1a;
+                --color-text-light: #333333;
+                --color-text-lighter: #555555;
+                --color-border: #cccccc;
+                --color-accent: #0d9488;
+                --color-bg: #ffffff;
+                --color-bg-alt: #f0f0f0;
             }
 
             body {
-                font-size: 11pt;
+                font-size: 10pt;
                 line-height: 1.4;
-                color: #000;
+                color: #1a1a1a;
                 background: #fff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
-            h1 {
-                font-size: 18pt;
+            .container { max-width: none; padding: 0; }
+
+            /* Hide interactive chrome and decorative bits */
+            .header-controls,
+            .cv-sidebar,
+            .profile-image,
+            .cv-download,
+            .show-more-btn,
+            .job-toggle,
+            .project-logo {
+                display: none !important;
             }
 
-            h2 {
-                font-size: 14pt;
-                page-break-after: avoid;
+            /* Header becomes the centered name */
+            header {
+                display: block !important;
+                text-align: center;
+                border-bottom: none !important;
+                margin: 0 0 4pt 0;
             }
 
-            h3 {
-                font-size: 12pt;
-                page-break-after: avoid;
+            .logo {
+                font-size: 21pt;
+                font-weight: 700;
+                color: #1a1a1a;
+                letter-spacing: 0.5pt;
             }
 
-            .job {
+            /* Hero → compact, centered intro (no photo) */
+            #home { margin-bottom: 6pt; }
+            .intro-section { text-align: center; }
+            .tagline { font-size: 10pt; color: #555; margin: 2pt 0; }
+            .social-links { gap: 8pt; margin: 2pt 0; }
+            .social-link { width: auto; height: auto; opacity: 1; }
+            .social-link svg { width: 12px; height: 12px; }
+            .hero-meta { justify-content: center; gap: 3pt 12pt; margin: 3pt 0 8pt 0; font-size: 9pt; }
+            .bio { font-size: 10pt; }
+            .bio p { margin: 3pt 0; }
+
+            /* Single column (drop the outline sidebar layout) */
+            .cv-layout { display: block; }
+            .cv-main { width: 100%; min-width: 0; }
+
+            /* Expand every collapsible so all content prints */
+            .job-content { max-height: none !important; overflow: visible !important; }
+            .projects-extra-wrap { grid-template-rows: 1fr !important; }
+            .projects-extra-inner { overflow: visible !important; }
+
+            /* Flatten the experience timeline (rail/dots/year markers are screen-only) */
+            .timeline::before,
+            .company::before,
+            .company-marker { display: none !important; }
+            .company { padding-left: 0 !important; padding-bottom: 8pt; }
+
+            /* Headings + section spacing */
+            h2 { font-size: 13pt; page-break-after: avoid; }
+            .company-name { font-size: 12pt; }
+            section, #education { margin-top: 8pt !important; }
+
+            /* Keep entries together across page breaks */
+            .job, .role, .company, .education-item, .project-card {
                 page-break-inside: avoid;
             }
 
-            a {
-                border-bottom: none;
-                color: #000;
-            }
+            /* Projects: compact two-column text layout */
+            .projects-grid { grid-template-columns: 1fr 1fr !important; gap: 8pt 16pt !important; }
+            .tech-tag { background: #f0f0f0; border: none; font-size: 8pt; }
 
-            .intro-section {
-                display: none;
-            }
-
-            .page {
-                display: block !important;
-            }
-
-            .page:not(#cv) {
-                display: none !important;
-            }
+            a { border-bottom: none; color: #0d9488; }
         }
 
         /* Responsive */
