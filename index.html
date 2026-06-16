@@ -884,37 +884,6 @@
             margin: var(--spacing-xs) 0 var(--spacing-lg);
         }
 
-        .cv-download {
-            display: flex;
-            justify-content: center;
-            margin-top: var(--spacing-md);
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-            padding: var(--spacing-xs) var(--spacing-md);
-            background: var(--color-accent);
-            color: var(--color-bg);
-            border-radius: 6px;
-            text-decoration: none;
-            border-bottom: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: opacity 0.2s ease;
-        }
-
-        .download-btn:hover {
-            opacity: 0.85;
-            border-bottom: none;
-        }
-
-        .download-icon {
-            width: 16px;
-            height: 16px;
-        }
-
         .cv-meta-icon {
             width: 16px;
             height: 16px;
@@ -1322,7 +1291,14 @@
 
             /* Single column (drop the outline sidebar layout) */
             .cv-layout { display: block; }
-            .cv-main { width: 100%; min-width: 0; }
+            .cv-main { width: 100%; min-width: 0; display: flex; flex-direction: column; }
+
+            /* Print order: Experience first, then Technologies, then the rest */
+            #experience { order: 1; }
+            #technologies { order: 2; }
+            #publications { order: 3; }
+            #projects { order: 4; }
+            #education { order: 5; }
 
             /* Expand every collapsible so all content prints */
             .job-content { max-height: none !important; overflow: visible !important; }
@@ -1581,18 +1557,6 @@
                 <div class="bio">
                     <p lang="en">Hey! I'm Will, a software engineer with 10+ years across enterprise (Deloitte), blockchain infrastructure (IOG/Cardano), mobile, and IoT. Currently technical architect for a Byzantine-resistant pub/sub network at IOG. Founder DNA, deep in distributed systems and secure software — curious by default, focused when it counts.</p>
                     <p lang="de">Hey! Ich bin Will, ein Software Engineer mit über 10 Jahren Erfahrung — von Enterprise (Deloitte) über Blockchain-Infrastruktur (IOG/Cardano) bis zu Mobile und IoT. Aktuell technischer Architekt für ein Byzantine-resistentes Pub/Sub-Netzwerk bei IOG. Gründer-DNA, zuhause in verteilten Systemen und sicherer Software — neugierig von Natur aus, fokussiert wenn es zählt.</p>
-                </div>
-
-                <div class="cv-download">
-                    <a href="williamwolff-cv.pdf" download class="download-btn">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        <span lang="en">Download CV (PDF)</span>
-                        <span lang="de">CV herunterladen (PDF)</span>
-                    </a>
                 </div>
             </div>
         </div>
