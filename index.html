@@ -101,8 +101,8 @@
             --color-text-lighter: #6a6a6a;
             --color-border: #e5e5e5;
             --color-accent: #000;
-            --color-bg: #fff;
-            --color-bg-alt: #f8f9fa;
+            --color-bg: #f5f7f5;
+            --color-bg-alt: #e9ede9;
             --color-link-hover: #333;
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
@@ -221,6 +221,32 @@
         .lang-toggle:hover {
             color: var(--color-text);
             transform: scale(1.05);
+        }
+
+        .header-pdf-btn {
+            background: none;
+            border: none;
+            border-bottom: none;
+            color: var(--color-text-lighter);
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            margin-bottom: -2px;
+        }
+
+        .header-pdf-btn:hover {
+            color: var(--color-text);
+            transform: scale(1.05);
+            border-bottom: none;
+        }
+
+        .header-pdf-btn svg {
+            width: 20px;
+            height: 20px;
+            display: block;
         }
 
         .theme-toggle .theme-icon {
@@ -1398,6 +1424,14 @@
                     </a>
                 </div>
 
+                <a href="williamwolff-cv.pdf" download class="header-pdf-btn" title="Download CV (PDF)" aria-label="Download CV (PDF)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </a>
+
                 <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
                     <span class="lang-label">DE</span>
                 </button>
@@ -1480,7 +1514,7 @@
                 </div>
 
                 <div class="cv-download">
-                    <a href="master-cv.pdf" download class="download-btn">
+                    <a href="williamwolff-cv.pdf" download class="download-btn">
                         <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>

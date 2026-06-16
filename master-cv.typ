@@ -12,7 +12,7 @@
 #align(center)[
   #text(size: 22pt, weight: "bold", tracking: 0.5pt)[WILLIAM WOLFF]
   #v(2pt)
-  #text(size: 10pt, fill: muted)[Software Engineer · Technical Architect · Product Thinker]
+  #text(size: 10pt, fill: muted)[Software Engineer · Technical Architect · Builder]
   #v(4pt)
   #text(size: 9pt, fill: muted)[Berlin, Germany · German & English]
   #v(2pt)
@@ -56,9 +56,7 @@
 
 #section("Profile")
 
-Curious, relentlessly-learning engineer with 10+ years building high-impact products from green-field prototype to production at scale. Deep expertise in blockchain infrastructure, distributed systems, and secure application development. Founder DNA with proven ability to ship products that generate revenue and drive user engagement. Strong product sense—understanding how exceptional engineering creates exceptional user experiences. Track record of technical leadership, growing teams, and making strategic architectural decisions that reduce costs and improve performance.
-
-Passionate about working on technically challenging problems that contribute to meaningful missions—progressing humanity through better technology, infrastructure, and user experiences.
+Software engineer with 10+ years across enterprise (Deloitte), blockchain infrastructure (IOG/Cardano), mobile, and IoT. Currently technical architect for a Byzantine-resistant pub/sub network at IOG. Founder DNA, deep in distributed systems and secure software — curious by default, focused when it counts.
 
 #section("Experience")
 
@@ -70,7 +68,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
 ]
 
-#exp("Technical Architect", "Nov 2024 – Feb 2026", link("https://www.iog.io/")[Input Output Global (IOG)])[
+#exp("Technical Architect – Ouroboros Leios", "Nov 2024 – Feb 2026", link("https://www.iog.io/")[Input Output Global (IOG)])[
   Led research and development of Ouroboros Leios, a high-throughput overlay protocol for Cardano blockchain, coordinating cross-functional team and driving toward mainnet implementation.
   #v(2pt)
   #b[*Technical Leadership & Team Coordination:* Direct team of 8 researchers and engineers across formal methods, protocol design, and prototype development]
@@ -126,9 +124,15 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Team Leadership:* Led technical team of 2-3 contract developers; defined product vision and roadmap]
 ]
 
+#section("Published Work")
+
+#exp("CIP-0164: Ouroboros Leios", "2025", "Cardano Improvement Proposal · Principal Author")[
+  Canonical architecture and design specification for Cardano's high-throughput overlay protocol—an open industry RFC comparable to Bitcoin's BIPs and IETF standards. Read it at #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]].
+]
+
 #section("Projects")
 
-#exp("Ouroboros Leios – Protocol Architecture", "2024 – Present", "Cardano Research")[
+#exp("Ouroboros Leios – Protocol Architecture & CIP", "2024 – Present", "Cardano Research")[
   Co-authored protocol specification and architecture for Cardano's next-generation throughput layer.
   #v(2pt)
   #b[*CIP Authorship:* Principal author of #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]]—the canonical architecture design document guiding implementation teams]
@@ -144,6 +148,13 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*AI Pipeline:* Two-phase LLM processing (Claude for intent, pgvector for semantic search, Whisper for speech-to-text)]
   #b[*Architecture:* Event-sourced with SSE streaming; offline-first with persistent queue sync]
   #b[*Traction:* 5k+ notes, 200+ users, 70% weekly retention; shipped to App Store and Google Play]
+]
+
+#exp("Pagebase – Freelance Development Agency", "2024 – Present", "Founder")[
+  Berlin-based agency building Supabase/PostgreSQL backends, web and mobile apps, and AI automation.
+  #v(2pt)
+  #b[*Approach:* Open-source first, with a focus on clean architecture and avoiding vendor lock-in]
+  #b[*Stack:* Supabase, PostgreSQL, React/React Native, edge functions, CI/CD]
 ]
 
 #exp("Drip Dropz – NFT Marketplace", "2022 – 2024", "Cardano")[
@@ -163,7 +174,7 @@ Passionate about working on technically challenging problems that contribute to 
   #b[*Infrastructure:* Automated deployment with Docker, Ansible, Terraform; Prometheus/Grafana monitoring]
 ]
 
-#section("Skills")
+#section("Technologies")
 
 #let skill(category, items) = {
   text(weight: "bold", size: 9pt)[#category]
@@ -197,7 +208,3 @@ Passionate about working on technically challenging problems that contribute to 
   [*B.Sc. Computer Science* · #text(fill: muted)[DHBW Stuttgart, Germany]],
   text(fill: muted)[2011 – 2014]
 )
-
-#section("Interests")
-
-Beach Volleyball · Freediving · Fitness · Economics & Blockchain Technology · Science Fiction · Open Source
