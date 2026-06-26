@@ -60,7 +60,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
 
 #section("Experience")
 
-#exp("Technical Architect – Byzantine-Resistant PubSub Network", "Feb 2026 – Present", link("https://www.iog.io/")[Input Output Global (IOG)])[
+#exp("Technical Architect – Byzantine-Resistant PubSub Network", "Feb 2026 – Present", [#link("https://www.iog.io/")[Input Output Global (IOG)] · Contract])[
   Leading research and development of a Byzantine-resistant publish/subscribe network, formally verifying a research proposal and building a prototype.
   #v(2pt)
   #b[*Technical Leadership:* Lead a team of 4 engineers and researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network]
@@ -68,7 +68,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
 ]
 
-#exp("Technical Architect – Ouroboros Leios", "Nov 2024 – Feb 2026", link("https://www.iog.io/")[Input Output Global (IOG)])[
+#exp("Technical Architect – Ouroboros Leios", "Nov 2024 – Feb 2026", [#link("https://www.iog.io/")[Input Output Global (IOG)] · Contract])[
   Led research and development of Ouroboros Leios, a high-throughput overlay protocol for Cardano blockchain, coordinating cross-functional team and driving toward mainnet implementation.
   #v(2pt)
   #b[*Technical Leadership & Team Coordination:* Direct team of 8 researchers and engineers across formal methods, protocol design, and prototype development]
@@ -79,7 +79,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Workshop Facilitation:* Organized week-long on-site workshop that reduced open research questions and aligned team on implementation strategy]
 ]
 
-#exp("Technical Architect – Lace Wallet", "Nov 2022 – Nov 2024", link("https://www.iog.io/")[Input Output Global (IOG)])[
+#exp("Technical Architect – Lace Wallet", "Nov 2022 – Nov 2024", [#link("https://www.iog.io/")[Input Output Global (IOG)] · Contract])[
   Led technical architecture and backend infrastructure for Lace, a next-generation Cardano wallet, delivering significant performance improvements and new revenue-generating features.
   #v(2pt)
   #b[*Backend Re-Architecture:* Re-engineered from poll-based to event-driven architecture—45% latency reduction, 60%+ infrastructure cost savings]
@@ -90,7 +90,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Technical Innovation:* Developed background web worker sync approach later adopted by team as standard pattern]
 ]
 
-#exp("Solutions Architect", "Nov 2021 – Nov 2022", link("https://www.iog.io/")[Input Output Global (IOG)])[
+#exp("Solutions Architect", "Nov 2021 – Nov 2022", [#link("https://www.iog.io/")[Input Output Global (IOG)] · Contract])[
   Designed blockchain solutions and educated enterprise partners on Cardano's technical architecture.
   #v(2pt)
   #b[*Smart Contract Architecture:* Designed complete Plutus stack for collateralized debt position (CDP) platform]
