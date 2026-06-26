@@ -35,12 +35,7 @@ jobs:
           rsync -a \
             --exclude='.git' \
             --exclude='.github' \
-            --exclude='_layouts' \
-            --exclude='_config.yml' \
-            --exclude='Gemfile' \
-            --exclude='Gemfile.lock' \
             --exclude='README.md' \
-            --exclude='index.md' \
             --exclude='master-cv.typ' \
             --exclude='.gitignore' \
             --exclude='.DS_Store' \
