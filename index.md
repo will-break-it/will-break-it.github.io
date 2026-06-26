@@ -21,7 +21,7 @@ Curious, relentlessly-learning engineer & technical architect, with founder DNA 
 
 **Languages:** TypeScript • Rust • Swift • Java/Kotlin • Python • Bash
 
-**Frameworks & Libraries:** React/React Native • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)
+**Frameworks & Libraries:** React/React Native • Spring Boot • Vert.x • Node.js • NestJS • gRPC • Plutus (Haskell)
 
 **Data & Storage:** PostgreSQL • Supabase • ELK Stack • Redis
 
