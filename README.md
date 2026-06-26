@@ -1,4 +1,4 @@
-# Hi, I'm Will 👋
+# Hi, I'm Willi 👋
 
 Software engineer who goes deep across domains — blockchain protocols, distributed systems, mobile, and IoT. Curious by default, focused when it counts. Currently technical architect for a Byzantine-resistant pub/sub network at **[IOG](https://www.iog.io/)**.
 

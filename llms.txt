@@ -1,6 +1,6 @@
-# Will Wolff — Software Engineer & Technical Architect
+# Willi Wolff — Software Engineer & Technical Architect
 
-> Single-page portfolio and CV for Will Wolff, a software engineer with 10+ years of experience across blockchain infrastructure, distributed systems, mobile, and IoT. Currently technical architect for a Byzantine-resistant publish/subscribe network at Input Output Global (IOG).
+> Single-page portfolio and CV for Willi Wolff, a software engineer with 10+ years of experience across blockchain infrastructure, distributed systems, mobile, and IoT. Currently technical architect for a Byzantine-resistant publish/subscribe network at Input Output Global (IOG).
 
 ## About
 
