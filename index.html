@@ -2515,12 +2515,23 @@
                         currentId = section.id;
                     }
                 }
-                // At (or near) the bottom of the page, force the last section active
-                // so short trailing sections like Education always highlight.
-                const scrolledToBottom =
+                // Near the bottom the reading line can't reach short trailing
+                // sections (everything is collapsed by default, so the page is
+                // short). Rather than blindly forcing the last section active,
+                // pick whichever section actually fills the most of the viewport.
+                const atBottom =
                     window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-                if (scrolledToBottom) {
-                    currentId = sections[sections.length - 1].id;
+                if (atBottom) {
+                    const vh = window.innerHeight;
+                    let bestVisible = -1;
+                    for (const section of sections) {
+                        const r = section.getBoundingClientRect();
+                        const visible = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
+                        if (visible > bestVisible) {
+                            bestVisible = visible;
+                            currentId = section.id;
+                        }
+                    }
                 }
                 setActive(currentId);
             }
