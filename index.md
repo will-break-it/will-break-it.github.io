@@ -1,9 +1,9 @@
 ---
 layout: default
-title: William Wolff - Software Engineer & Technical Architect
+title: Will Wolff - Software Engineer & Technical Architect
 ---
 
-# WILLIAM WOLFF
+# WILL WOLFF
 **Software Engineer & Technical Architect**
 
 Berlin, DE | German & English (fluent) | *Full contact details available on request*

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <title>William Wolff - Software Engineer & Technical Architect</title>
-    <meta name="title" content="William Wolff - Software Engineer & Technical Architect">
+    <title>Will Wolff - Software Engineer & Technical Architect</title>
+    <meta name="title" content="Will Wolff - Software Engineer & Technical Architect">
     <meta name="description" content="Versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. From enterprise (Deloitte) to blockchain infrastructure (IOG/Cardano). Expert in TypeScript, Rust, Swift, distributed systems, and cryptography.">
     <meta name="keywords" content="Software Engineer, Technical Architect, Solutions Architect, PostgreSQL, Supabase, Blockchain, TypeScript, Rust, Swift, Cardano, Distributed Systems, Full-Stack Developer, Mobile Development, Developer Relations, Berlin">
-    <meta name="author" content="William Wolff">
+    <meta name="author" content="Will Wolff">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="language" content="English, German">
     <link rel="canonical" href="https://will-break-it.github.io/">
@@ -17,7 +17,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://will-break-it.github.io/">
-    <meta property="og:title" content="William Wolff - Software Engineer & Technical Architect">
+    <meta property="og:title" content="Will Wolff - Software Engineer & Technical Architect">
     <meta property="og:description" content="Versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. Expert in distributed systems, blockchain, and mobile development.">
     <meta property="og:image" content="https://will-break-it.github.io/assets/images/will.jpg">
     <meta property="og:locale" content="en_US">
@@ -26,7 +26,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://will-break-it.github.io/">
-    <meta property="twitter:title" content="William Wolff - Software Engineer & Technical Architect">
+    <meta property="twitter:title" content="Will Wolff - Software Engineer & Technical Architect">
     <meta property="twitter:description" content="Versatile engineer with 10+ years building across diverse industries, platforms, and company sizes. Expert in distributed systems, blockchain, and mobile development.">
     <meta property="twitter:image" content="https://will-break-it.github.io/assets/images/will.jpg">
     <meta property="twitter:creator" content="@will_break_it">
@@ -45,7 +45,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "William Wolff",
+      "name": "Will Wolff",
       "url": "https://will-break-it.github.io/",
       "image": "https://will-break-it.github.io/assets/images/will.jpg",
       "sameAs": [
@@ -135,6 +135,8 @@
         /* Base Styles */
         html {
             -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            scroll-padding-top: 24px;
         }
 
         body {
@@ -1448,7 +1450,7 @@
     <div class="container">
         <!-- Header -->
         <header id="header">
-            <a href="#home" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">William Wolff</a>
+            <a href="#home" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Will Wolff</a>
 
 
             <div class="header-controls">
@@ -1504,7 +1506,7 @@
         <!-- Home/Intro Page -->
         <div id="home">
             <div class="intro-section">
-                <img src="assets/images/will.jpg" alt="William Wolff" class="profile-image">
+                <img src="assets/images/will.jpg" alt="Will Wolff" class="profile-image">
 
                 <p class="tagline">
                     <span lang="en">Software Engineer • Technical Architect • Builder</span>
@@ -1626,6 +1628,8 @@
                                 <div class="tech-items">
                                     <span class="tech-item">React / React Native</span>
                                     <span class="tech-item">Node.js / NestJS</span>
+                                    <span class="tech-item">Spring Boot</span>
+                                    <span class="tech-item">Vert.x</span>
                                     <span class="tech-item">SwiftUI</span>
                                     <span class="tech-item">Jetpack Compose</span>
                                     <span class="tech-item">Flutter</span>
@@ -2494,67 +2498,25 @@
             }
         });
 
-        // Sidebar navigation scroll tracking
-        function initSidebarTracking() {
+        // Sidebar outline: plain HTML anchor navigation. The links jump to
+        // their sections natively (CSS scroll-behavior: smooth handles the
+        // animation); we only mirror the current hash onto the active link.
+        function initSidebarHighlight() {
             const navLinks = Array.from(document.querySelectorAll('.cv-nav-link'));
-            const sections = Array.from(document.querySelectorAll('.cv-main section'));
+            if (navLinks.length === 0) return;
 
-            if (sections.length === 0 || navLinks.length === 0) return;
-
-            function setActive(id) {
+            function highlightFromHash() {
+                const hash = window.location.hash;
                 navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    link.classList.toggle('active', link.getAttribute('href') === hash);
                 });
             }
 
-            function updateActive() {
-                const offset = 140; // distance from top that counts as "current"
-                let currentId = sections[0].id;
-                for (const section of sections) {
-                    if (section.getBoundingClientRect().top - offset <= 0) {
-                        currentId = section.id;
-                    }
-                }
-                // Near the bottom the reading line can't reach short trailing
-                // sections (everything is collapsed by default, so the page is
-                // short). Rather than blindly forcing the last section active,
-                // pick whichever section actually fills the most of the viewport.
-                const atBottom =
-                    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-                if (atBottom) {
-                    const vh = window.innerHeight;
-                    let bestVisible = -1;
-                    for (const section of sections) {
-                        const r = section.getBoundingClientRect();
-                        const visible = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
-                        if (visible > bestVisible) {
-                            bestVisible = visible;
-                            currentId = section.id;
-                        }
-                    }
-                }
-                setActive(currentId);
-            }
-
-            window.addEventListener('scroll', updateActive, { passive: true });
-            window.addEventListener('resize', updateActive, { passive: true });
-            updateActive();
-
-            // Handle click navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').slice(1);
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
+            window.addEventListener('hashchange', highlightFromHash);
+            highlightFromHash();
         }
 
-        // Outline auto-highlight (single page, runs on load)
-        initSidebarTracking();
+        initSidebarHighlight();
 
         // Show more / fewer projects
         const showMoreBtn = document.getElementById('show-more-projects');

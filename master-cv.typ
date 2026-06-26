@@ -10,7 +10,7 @@
 
 // Header
 #align(center)[
-  #text(size: 22pt, weight: "bold", tracking: 0.5pt)[WILLIAM WOLFF]
+  #text(size: 22pt, weight: "bold", tracking: 0.5pt)[WILL WOLFF]
   #v(2pt)
   #text(size: 10pt, fill: muted)[Software Engineer · Technical Architect · Builder]
   #v(4pt)
