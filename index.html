@@ -632,9 +632,9 @@
                 width: 200px;
                 flex-shrink: 0;
                 position: sticky;
-                top: var(--spacing-md);
+                top: 80px; /* clear the sticky header */
                 align-self: flex-start;
-                max-height: calc(100vh - var(--spacing-xl));
+                max-height: calc(100vh - 80px - var(--spacing-md));
                 overflow-y: auto;
                 padding-left: var(--spacing-lg);
             }
