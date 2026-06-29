@@ -64,7 +64,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   Leading research and development of a Byzantine-resistant publish/subscribe network, formally verifying a research proposal and building a prototype.
   #v(2pt)
   #b[*Technical Leadership:* Lead a team of 4 engineers and researchers designing a Byzantine-resistant pub/sub overlay network]
-  #b[*Formal Verification:* Formally verifying the #link("https://www.iog.io/papers/securecyclon-dependable-peer-sampling")[#text(fill: accent)[SecureCyclon]] peer-sampling protocol stack and building a working prototype]
+  #b[*Formal Verification:* Formally verifying the #link("https://www.iog.io/papers/securecyclon-dependable-peer-sampling")[#text(fill: accent)[SecureCyclon]] peer-sampling protocol stack and building a working prototype via spec-driven development (#link("https://github.com/github/spec-kit")[#text(fill: accent)[spec-kit]])]
   #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
 ]
 
