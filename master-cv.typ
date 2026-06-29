@@ -155,7 +155,6 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
 #exp("Pagebase – Freelance Development Agency", "2024 – Present", "Founder")[
   Berlin-based agency building Supabase/PostgreSQL backends, web and mobile apps, and AI automation.
   #v(2pt)
-  #b[*Approach:* Open-source first, with a focus on clean architecture and avoiding vendor lock-in]
   #b[*Stack:* Supabase, PostgreSQL, React/React Native, edge functions, CI/CD]
 ]
 
