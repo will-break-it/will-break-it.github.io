@@ -126,7 +126,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
 
 #section("Published Work")
 
-#exp("CIP-0164: Ouroboros Leios", "2025", "Cardano Improvement Proposal · Principal Author")[
+#exp("CIP-0164: Ouroboros Leios", "2025", "Cardano Improvement Proposal")[
   Canonical architecture and design specification for Cardano's high-throughput overlay protocol—an open industry RFC comparable to Bitcoin's BIPs and IETF standards. Read it at #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]].
 ]
 
