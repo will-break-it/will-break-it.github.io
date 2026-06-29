@@ -136,7 +136,7 @@
         html {
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
-            scroll-padding-top: 24px;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -174,12 +174,56 @@
             gap: var(--spacing-md);
             border-bottom: 2px solid transparent;
             padding-bottom: 0;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-bg);
+            padding-top: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        /* Subtle separation once the header is pinned and scrolled. */
+        header.scrolled {
+            border-bottom-color: var(--color-border);
+            box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.25);
         }
 
         header.with-nav {
             border-bottom-color: var(--color-border);
             margin-bottom: var(--spacing-md);
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Header avatar: collapsed by default, scales in once scrolled. */
+        .header-avatar {
+            height: 38px;
+            width: 0;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-border);
+            opacity: 0;
+            transform: scale(0.3);
+            transform-origin: left center;
+            margin-right: 0;
+            flex-shrink: 0;
+            transition: width 0.35s ease, opacity 0.35s ease,
+                        transform 0.35s ease, margin-right 0.35s ease;
+        }
+
+        header.scrolled .header-avatar {
+            width: 38px;
+            opacity: 1;
+            transform: scale(1);
+            margin-right: 12px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .header-avatar { transition: none; }
         }
 
         .logo {
@@ -1285,6 +1329,7 @@
 
             /* Hide interactive chrome and decorative bits */
             .header-controls,
+            .header-avatar,
             .cv-sidebar,
             .profile-image,
             .cv-download,
@@ -1293,6 +1338,9 @@
             .project-logo {
                 display: none !important;
             }
+
+            /* Don't pin the header in print */
+            header { position: static !important; box-shadow: none !important; }
 
             /* Header becomes the centered name */
             header {
@@ -1480,7 +1528,10 @@
     <div class="container">
         <!-- Header -->
         <header id="header">
-            <a href="#home" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Willi Wolff</a>
+            <div class="header-brand">
+                <img class="header-avatar" src="assets/images/will.jpg" alt="" aria-hidden="true">
+                <a href="#home" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Willi Wolff</a>
+            </div>
 
 
             <div class="header-controls">
@@ -2564,6 +2615,18 @@
         }
 
         initSidebarHighlight();
+
+        // Reveal the header avatar (scale-in) once the hero scrolls out of view,
+        // keeping the sticky header's controls reachable at any scroll position.
+        (function () {
+            const header = document.getElementById('header');
+            if (!header) return;
+            const onScroll = () => {
+                header.classList.toggle('scrolled', window.scrollY > 120);
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
 
         // Show more / fewer projects
         const showMoreBtn = document.getElementById('show-more-projects');
