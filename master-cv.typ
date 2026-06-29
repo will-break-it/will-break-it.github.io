@@ -63,8 +63,8 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
 #exp("Technical Architect – Byzantine-Resistant PubSub Network", "Feb 2026 – Present", [#link("https://www.iog.io/")[Input Output Global (IOG)] · Contract])[
   Leading research and development of a Byzantine-resistant publish/subscribe network, formally verifying a research proposal and building a prototype.
   #v(2pt)
-  #b[*Technical Leadership:* Lead a team of 4 engineers and researchers (plus myself) designing a Byzantine-resistant pub/sub overlay network]
-  #b[*Formal Verification:* Formally verifying a research proposal and building a working prototype]
+  #b[*Technical Leadership:* Lead a team of 4 engineers and researchers designing a Byzantine-resistant pub/sub overlay network]
+  #b[*Formal Verification:* Formally verifying the #link("https://www.iog.io/papers/securecyclon-dependable-peer-sampling")[#text(fill: accent)[SecureCyclon]] peer-sampling protocol stack and building a working prototype]
   #b[*Protocol Security:* Reevaluating peer-sampling protocols that come with specific security properties]
 ]
 
@@ -76,6 +76,8 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Architecture & Strategy:* Designed simulation-driven approach validating protocol behavior before mainnet; created decision log tracking architectural choices and rationale]
   #b[*Cross-Org Coordination:* Bridge formal methods researchers, protocol engineers, and product teams—navigating complex technical trade-offs]
   #b[*Communication:* Host monthly public demos and Q&A sessions (5k+ average views); translate complex research for diverse audiences]
+  #b[*Public Reporting:* Report protocol research and progress to the public domain via the project #link("http://leios.cardano-scaling.org/")[#text(fill: accent)[website]] and regular reports]
+  #b[*MEV Analysis:* Investigated #link("https://ethereum.org/en/developers/docs/mev/")[#text(fill: accent)[MEV]] (Miner Extractable Value) impact on Leios via #link("https://leios.cardano-scaling.org/mempool-viz/")[#text(fill: accent)[mempool analysis and simulation]]]
   #b[*Workshop Facilitation:* Organized week-long on-site workshop that reduced open research questions and aligned team on implementation strategy]
 ]
 
