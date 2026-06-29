@@ -85,7 +85,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Backend Re-Architecture:* Re-engineered from poll-based to event-driven architecture—45% latency reduction, 60%+ infrastructure cost savings]
   #b[*Custom Chain Indexer:* Built indexer with bloom filters and credential-based indexing; 2,000+ tx/s ingest capacity, sub-second wallet sync]
   #b[*Industry Standards:* Authored #link("https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX")[#text(fill: accent)[CIP proposal]] for wallet indexing standards adopted in ecosystem]
-  #b[*Product Leadership:* Led 7-person cross-functional team (3 FE, 2 BE, 1 QA, 1 PM) delivering MetaDex swap feature—first revenue stream for Lace]
+  #b[*Product Leadership:* Led 7-person cross-functional team (3 FE, 2 BE, 1 QA, 1 PM) delivering MetaDex swap feature]
   #b[*Shared Tooling:* Built transaction construction libraries and event-driven patterns adopted across multiple product teams]
   #b[*Technical Innovation:* Developed background web worker sync approach later adopted by team as standard pattern]
 ]
