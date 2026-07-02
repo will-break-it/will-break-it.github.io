@@ -109,8 +109,8 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Pilot Launch:* Successfully launched with 20+ vehicles]
 ]
 
-#exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", link("https://www.deloitte.com/global/en/services/consulting/services/systems-delivery-modernization.html")[Deloitte, San Francisco])[
-  Joined as Software Engineer and was promoted to lead a large-scale legacy system migration for a major German insurance company.
+#exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", link("https://www.deloitte.com/global/en/services/consulting/services/systems-delivery-modernization.html")[Deloitte, Austin TX → Ulm, Germany])[
+  Joined as Software Engineer in Austin, Texas, then relocated to Ulm, Germany as Senior Software Engineer, where I was promoted to lead a large-scale legacy system migration for a major German insurance company.
   #v(2pt)
   #b[*Migration Toolchain:* Redesigned Cobol-to-Java architecture for functional language (ISA); 3-stage pipeline: parser → AST → Java codegen, plus runtime emulation layer preserving original ISA/IDM behavior]
   #b[*Business Impact:* Saved client €6M annually in licensing costs]
