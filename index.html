@@ -1590,7 +1590,7 @@
                     </a>
                 </div>
 
-                <a href="willi-wolff-cv.pdf" download class="header-pdf-btn" title="Download CV (PDF)" aria-label="Download CV (PDF)">
+                <a href="willi-wolff-cv-en.pdf" download id="cv-download" class="header-pdf-btn" title="Download CV (PDF)" aria-label="Download CV (PDF)">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -2627,6 +2627,7 @@
         // Language Toggle
         const langToggle = document.getElementById('lang-toggle');
         const langLabel = document.querySelector('.lang-label');
+        const cvDownload = document.getElementById('cv-download');
 
         // Detect browser language or use saved preference
         function getBrowserLanguage() {
@@ -2634,15 +2635,24 @@
             return lang.startsWith('de') ? 'de' : 'en';
         }
 
-        const currentLang = localStorage.getItem('lang') || getBrowserLanguage();
-        html.setAttribute('data-lang', currentLang);
-        langLabel.textContent = currentLang === 'en' ? 'DE' : 'EN';
+        // Point the download button at the CV PDF matching the active language
+        function updateCvDownload(lang) {
+            if (!cvDownload) return;
+            cvDownload.setAttribute('href', 'willi-wolff-cv-' + lang + '.pdf');
+        }
+
+        function applyLang(lang) {
+            html.setAttribute('data-lang', lang);
+            langLabel.textContent = lang === 'en' ? 'DE' : 'EN';
+            updateCvDownload(lang);
+        }
+
+        applyLang(localStorage.getItem('lang') || getBrowserLanguage());
 
         langToggle.addEventListener('click', function() {
             const lang = html.getAttribute('data-lang') === 'en' ? 'de' : 'en';
-            html.setAttribute('data-lang', lang);
             localStorage.setItem('lang', lang);
-            langLabel.textContent = lang === 'en' ? 'DE' : 'EN';
+            applyLang(lang);
         });
 
         // Collapsible job sections
