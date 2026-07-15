@@ -56,7 +56,7 @@
 
 #section("Profile")
 
-Software engineer with 10+ years across enterprise (Deloitte), blockchain infrastructure (IOG/Cardano), mobile, and IoT. Currently technical architect for a Byzantine-resistant pub/sub network at IOG. Founder DNA, deep in distributed systems and secure software — curious by default, focused when it counts.
+Software engineer with 10+ years across enterprise (Deloitte), blockchain infrastructure (Bitcoin/Cardano), mobile, and IoT. Currently technical architect for a Byzantine-resistant pub/sub network at IOG. Founder DNA, deep in distributed systems and secure software. I own problems end-to-end: get a working version running early — rough is fine — to surface risks fast, then iterate. At my best in small teams on hard problems — and happy to step beyond the pure engineering role when a project calls for it.
 
 #section("Experience")
 

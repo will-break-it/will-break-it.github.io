@@ -56,7 +56,7 @@
 
 #section("Profil")
 
-Software Engineer mit über 10 Jahren Erfahrung — von Enterprise (Deloitte) über Blockchain-Infrastruktur (IOG/Cardano) bis zu Mobile und IoT. Aktuell technischer Architekt für ein Byzantine-resistentes Pub/Sub-Netzwerk bei IOG. Gründer-DNA, zuhause in verteilten Systemen und sicherer Software — neugierig von Natur aus, fokussiert wenn es zählt.
+Software Engineer mit über 10 Jahren Erfahrung — von Enterprise (Deloitte) über Blockchain-Infrastruktur (Bitcoin/Cardano) bis zu Mobile und IoT. Aktuell technischer Architekt für ein Byzantine-resistentes Pub/Sub-Netzwerk bei IOG. Gründer-DNA, zuhause in verteilten Systemen und sicherer Software. Ich übernehme Probleme End-to-End: früh eine lauffähige Version bauen — ruhig noch unpoliert —, um Risiken schnell aufzudecken, dann iterieren. Am stärksten in kleinen Teams an anspruchsvollen Problemen — und wenn ein Projekt es braucht, übernehme ich auch Aufgaben über die reine Entwicklung hinaus.
 
 #section("Berufserfahrung")
 
