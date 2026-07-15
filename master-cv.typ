@@ -75,8 +75,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Defining Direction:* Translated open research into executable roadmap—authored #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]] #linebreak() (Cardano Improvement Proposal, industry RFC comparable to Bitcoin's BIPs or IETF standards)]
   #b[*Architecture & Strategy:* Designed simulation-driven approach validating protocol behavior before mainnet; created decision log tracking architectural choices and rationale]
   #b[*Cross-Org Coordination:* Bridge formal methods researchers, protocol engineers, and product teams—navigating complex technical trade-offs]
-  #b[*Communication:* Host monthly public demos and Q&A sessions (5k+ average views); translate complex research for diverse audiences]
-  #b[*Public Reporting:* Report protocol research and progress to the public domain via the project #link("http://leios.cardano-scaling.org/")[#text(fill: accent)[website]] and regular reports]
+  #b[*Point of Contact:* Technical point of contact for the project: presented progress and findings in large internal reviews and publicly via monthly demos and Q&A sessions (5k+ average views), the project #link("http://leios.cardano-scaling.org/")[#text(fill: accent)[website]], and regular reports]
   #b[*MEV Analysis:* Investigated #link("https://ethereum.org/en/developers/docs/mev/")[#text(fill: accent)[MEV]] (Miner Extractable Value) impact on Leios via #link("https://leios.cardano-scaling.org/mempool-viz/")[#text(fill: accent)[mempool analysis and simulation]]]
   #b[*Workshop Facilitation:* Organized week-long on-site workshop that reduced open research questions and aligned team on implementation strategy]
 ]
@@ -85,6 +84,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   Led technical architecture and backend infrastructure for Lace, a next-generation Cardano wallet, delivering significant performance improvements and new revenue-generating features.
   #v(2pt)
   #b[*Backend Re-Architecture:* Re-engineered from poll-based to event-driven architecture—45% latency reduction, 60%+ infrastructure cost savings]
+  #b[*Go-Live:* Took the re-architected backend to production for the public Lace 1.0 launch]
   #b[*Custom Chain Indexer:* Built indexer with bloom filters and credential-based indexing; 2,000+ tx/s ingest capacity, sub-second wallet sync]
   #b[*Industry Standards:* Authored #link("https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX")[#text(fill: accent)[CIP proposal]] for wallet indexing standards adopted in ecosystem]
   #b[*Product Leadership:* Led 7-person cross-functional team (3 FE, 2 BE, 1 QA, 1 PM) delivering MetaDex swap feature]
@@ -106,7 +106,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #b[*Fleet Management:* Delivered complete OTA fleet-update pipeline for connected vehicle hardware]
   #b[*IoT Platform:* Built OTA update mechanism (Rust embedded, Vert.x backend) with rollback capabilities]
   #b[*Analytics:* Designed real-time data pipeline using ELK stack for Miles and Share Now car-sharing services]
-  #b[*Pilot Launch:* Successfully launched with 20+ vehicles]
+  #b[*Go-Live:* Launched the pilot in production with 20+ vehicles]
 ]
 
 #exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", link("https://www.deloitte.com/global/en/services/consulting/services/systems-delivery-modernization.html")[Deloitte, Austin TX → Ulm, Germany])[
@@ -114,6 +114,7 @@ Software engineer with 10+ years across enterprise (Deloitte), blockchain infras
   #v(2pt)
   #b[*Migration Toolchain:* Redesigned Cobol-to-Java architecture for functional language (ISA); 3-stage pipeline: parser → AST → Java codegen, plus runtime emulation layer preserving original ISA/IDM behavior]
   #b[*Business Impact:* Saved client €6M annually in licensing costs]
+  #b[*Go-Lives:* Delivered two production go-lives on separate migration projects: a major German insurer and a US state pension fund and social security agency]
   #b[*Team Growth:* Promoted to Lead within 24 months; scaled team from 3 to 20 engineers]
   #b[*Global Coordination:* Coordinated with offshore teams in India; established testing standards adopted organization-wide]
 ]

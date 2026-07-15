@@ -75,8 +75,7 @@ Software Engineer mit über 10 Jahren Erfahrung, von Enterprise (Deloitte) über
   #b[*Richtungsvorgabe:* Übersetzte offene Forschung in eine umsetzbare Roadmap — verfasste #link("https://github.com/cardano-scaling/CIPs/blob/leios/CIP-0164/README.md")[#text(fill: accent)[CIP-0164]] #linebreak() (Cardano Improvement Proposal, Industrie-RFC vergleichbar mit Bitcoins BIPs oder IETF-Standards)]
   #b[*Architektur & Strategie:* Entwarf einen simulationsgetriebenen Ansatz zur Validierung des Protokollverhaltens vor dem Mainnet; erstellte ein Decision-Log zur Nachverfolgung architektonischer Entscheidungen und deren Begründung]
   #b[*Cross-Org-Koordination:* Verbinde Forscher formaler Methoden, Protokoll-Engineers und Produktteams — navigiere komplexe technische Trade-offs]
-  #b[*Kommunikation:* Veranstalte monatliche öffentliche Demos und Q&A-Sessions (5k+ durchschnittliche Aufrufe); übersetze komplexe Forschung für unterschiedliche Zielgruppen]
-  #b[*Öffentliche Berichterstattung:* Berichte Protokollforschung und Fortschritte für die Öffentlichkeit über die Projekt-#link("http://leios.cardano-scaling.org/")[#text(fill: accent)[Website]] und regelmäßige Reports]
+  #b[*Ansprechpartner:* Technischer Ansprechpartner des Projekts: präsentierte Fortschritte und Ergebnisse in großen internen Reviews sowie öffentlich über monatliche Demos und Q&A-Sessions (5k+ durchschnittliche Aufrufe), die Projekt-#link("http://leios.cardano-scaling.org/")[#text(fill: accent)[Website]] und regelmäßige Reports]
   #b[*MEV-Analyse:* Untersuchte #link("https://ethereum.org/en/developers/docs/mev/")[#text(fill: accent)[MEV]]-Auswirkungen (Miner Extractable Value) auf Leios mittels #link("https://leios.cardano-scaling.org/mempool-viz/")[#text(fill: accent)[Mempool-Analyse und -Simulation]]]
   #b[*Workshop-Leitung:* Organisierte einen einwöchigen On-Site-Workshop, der offene Forschungsfragen reduzierte und das Team auf die Umsetzungsstrategie ausrichtete]
 ]
@@ -85,6 +84,7 @@ Software Engineer mit über 10 Jahren Erfahrung, von Enterprise (Deloitte) über
   Leitete die technische Architektur und Backend-Infrastruktur für Lace, ein Cardano-Wallet der nächsten Generation, mit erheblichen Performance-Verbesserungen und neuen umsatzgenerierenden Features.
   #v(2pt)
   #b[*Backend-Neuarchitektur:* Von poll-basierter auf event-getriebene Architektur umgestellt — 45% weniger Latenz, 60%+ Einsparungen bei Infrastrukturkosten]
+  #b[*Go-Live:* Brachte das neu architektierte Backend für den öffentlichen Lace-1.0-Launch in Produktion]
   #b[*Eigener Chain-Indexer:* Indexer mit Bloom-Filtern und credential-basiertem Indexing entwickelt; 2.000+ Tx/s Ingest-Kapazität, Wallet-Sync unter einer Sekunde]
   #b[*Industriestandards:* Verfasste einen #link("https://github.com/will-break-it/wallet-architecture/tree/main/docs/CIP/CIP-XXXX")[#text(fill: accent)[CIP-Vorschlag]] für Wallet-Indexing-Standards, der im Ökosystem übernommen wurde]
   #b[*Produktleitung:* Leitete ein 7-köpfiges cross-funktionales Team (3 FE, 2 BE, 1 QA, 1 PM) bei der Auslieferung des MetaDex-Swap-Features]
@@ -106,7 +106,7 @@ Software Engineer mit über 10 Jahren Erfahrung, von Enterprise (Deloitte) über
   #b[*Fleet Management:* Lieferte eine komplette OTA-Flotten-Update-Pipeline für Connected-Vehicle-Hardware]
   #b[*IoT-Plattform:* Entwickelte einen OTA-Update-Mechanismus (Rust embedded, Vert.x-Backend) mit Rollback-Fähigkeit]
   #b[*Analytics:* Entwarf eine Echtzeit-Datenpipeline mit ELK-Stack für die Carsharing-Dienste Miles und Share Now]
-  #b[*Pilot-Launch:* Erfolgreich mit 20+ Fahrzeugen gestartet]
+  #b[*Go-Live:* Pilot mit 20+ Fahrzeugen produktiv gestartet]
 ]
 
 #exp("Software Engineer → Lead Engineer & Senior Software Engineer", "Sep 2016 – Nov 2019", link("https://www.deloitte.com/global/en/services/consulting/services/systems-delivery-modernization.html")[Deloitte, Austin TX → Ulm, Deutschland])[
@@ -114,6 +114,7 @@ Software Engineer mit über 10 Jahren Erfahrung, von Enterprise (Deloitte) über
   #v(2pt)
   #b[*Migrations-Toolchain:* Redesign der Cobol-zu-Java-Architektur für eine funktionale Sprache (ISA); 3-stufige Pipeline: Parser → AST → Java-Codegen, plus Runtime-Emulationsschicht zur Wahrung des ursprünglichen ISA/IDM-Verhaltens]
   #b[*Business Impact:* Sparte dem Kunden jährlich 6 Mio. € an Lizenzkosten]
+  #b[*Go-Lives:* Zwei Produktiv-Go-Lives in separaten Migrationsprojekten: ein großer deutscher Versicherer sowie Pensionsfonds und Sozialversicherung eines US-Bundesstaats]
   #b[*Team-Wachstum:* Innerhalb von 24 Monaten zum Lead befördert; Team von 3 auf 20 Engineers skaliert]
   #b[*Globale Koordination:* Koordination mit Offshore-Teams in Indien; etablierte organisationsweit übernommene Teststandards]
 ]
