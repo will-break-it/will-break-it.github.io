@@ -4,7 +4,7 @@
 
 ## About
 
-Personal portfolio and CV. Experience spans enterprise (Deloitte), blockchain infrastructure (Bitcoin/Cardano), IoT, and mobile. Founder DNA, with deep expertise in distributed systems, secure application development, and event-driven architecture. Works end-to-end: ship a working version early to surface risks fast, then iterate. At his best in small teams on hard problems, stepping beyond the pure engineering role when a project calls for it.
+Personal portfolio and CV. Experience spans enterprise (Deloitte), blockchain infrastructure (Bitcoin/Cardano), IoT, and mobile. Founder DNA, with deep expertise in distributed systems, secure application development, and event-driven architecture. Works end-to-end: builds a rough working version early, finds the risks, then iterates. Does his best work in small teams on hard problems and takes on more than pure engineering when a project needs it.
 
 ## Site structure
 
