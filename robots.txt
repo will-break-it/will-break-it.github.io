@@ -1,35 +1,8 @@
-# robots.txt for will-break-it.github.io
+# Retired mirror. The site lives at https://wwolff.pages.dev
+# Crawling stays allowed so the redirect and canonical can be followed and
+# the old URL's signals consolidate onto the new host.
 
 User-agent: *
 Allow: /
 
-# Allow all AI/LLM crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-# Sitemap
-Sitemap: https://will-break-it.github.io/sitemap.xml
+Sitemap: https://wwolff.pages.dev/sitemap.xml
