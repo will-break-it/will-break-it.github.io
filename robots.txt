@@ -1,8 +1,8 @@
-# Retired mirror. The site lives at https://wwolff.pages.dev
+# Retired mirror. The site lives at https://williwolff.com
 # Crawling stays allowed so the redirect and canonical can be followed and
 # the old URL's signals consolidate onto the new host.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://wwolff.pages.dev/sitemap.xml
+Sitemap: https://williwolff.com/sitemap.xml
